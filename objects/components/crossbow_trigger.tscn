@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnhqarhhe1kve"]
+
+[ext_resource type="Script" path="res://scripts/crossbow_trigger.gd" id="1_ct81v"]
+
+[node name="CrossbowTrigger" type="Node"]
+script = ExtResource("1_ct81v")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcnlhqgfi657a"]
+
+[ext_resource type="PackedScene" uid="uid://oocdsxrwxwck" path="res://objects/components/movement_behaviour.tscn" id="1_3rgf4"]
+[ext_resource type="Script" path="res://scripts/axis_movement.gd" id="2_yqtuj"]
+
+[node name="AxisMovement" instance=ExtResource("1_3rgf4")]
+script = ExtResource("2_yqtuj")
+axis = Vector3(0, 0, 0)

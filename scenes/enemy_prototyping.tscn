@@ -1,0 +1,77 @@
+[gd_scene load_steps=14 format=3 uid="uid://co0aao6gckri2"]
+
+[ext_resource type="Script" path="res://addons/godot-xr-tools/staging/scene_base.gd" id="1_uft1j"]
+[ext_resource type="Script" path="res://post_processing/1bit_effect.gd" id="2_jnqjw"]
+[ext_resource type="Script" path="res://post_processing/palette_swapping_effect.gd" id="3_20526"]
+[ext_resource type="Script" path="res://scripts/world_environment.gd" id="4_scms1"]
+[ext_resource type="PackedScene" uid="uid://c03ds84nb1pvy" path="res://objects/enemy_spawner.tscn" id="15_jx4in"]
+[ext_resource type="PackedScene" uid="uid://54jegna8r7wy" path="res://objects/enemies/enemy.tscn" id="16_22fai"]
+[ext_resource type="Script" path="res://addons/free_look_camera/free_look_camera.gd" id="17_bnofx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bpf1y"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_dcxts"]
+sky_material = SubResource("ProceduralSkyMaterial_bpf1y")
+
+[sub_resource type="Environment" id="Environment_ar6ij"]
+background_mode = 2
+sky = SubResource("Sky_dcxts")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_jxc8d"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = false
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("2_jnqjw")
+glsl_file = "res://post_processing/1bit.glsl"
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_yijgy"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = false
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("3_20526")
+black_color = Color(0.0228208, 0.0228208, 0.0245217, 1)
+white_color = Color(0.929412, 0.854902, 0.717647, 1)
+glsl_file = "res://post_processing/palette_swapping.glsl"
+
+[sub_resource type="Compositor" id="Compositor_1ps8u"]
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_jxc8d"), SubResource("CompositorEffect_yijgy")])
+
+[node name="SceneBase" type="Node3D"]
+script = ExtResource("1_uft1j")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ar6ij")
+compositor = SubResource("Compositor_1ps8u")
+script = ExtResource("4_scms1")
+enabled = false
+
+[node name="Objs" type="Node3D" parent="."]
+
+[node name="Entities" type="Node3D" parent="."]
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="EnemySpawner" parent="Enemies" node_paths=PackedStringArray("enemies", "player") instance=ExtResource("15_jx4in")]
+enemies = NodePath("..")
+player = NodePath("../../Camera3D")
+spawn_cooldown = 100.0
+enemy_scene = ExtResource("16_22fai")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -9.5907)
+current = true
+script = ExtResource("17_bnofx")

@@ -1,0 +1,7 @@
+Un gioco in cui devi costruire la tua torre da zero, sulla torre puoi attaccare delle armi che possono essere utilizzare per ammazzare diversi tipi di nemici (i nemici per via della regola 1bit devono avere modelli e forme distinguibili l'una dall'altra).
+
+Durante le ondate i nemici attaccheranno prima la torre e poi te, per riparare la torre è necessario comprare i mattoni e ripiazzarli all'interno dei bui formatisi.
+
+L'obiettivo è costruire una torre in grado di raggiungere i cieli/paradiso.
+
+Magari pensavo che per il design dei nemici potrei fare degli robe tipo gli angeli biblicamente accurati: occhi con un bordello di ali e cerchi attorno.

@@ -1,0 +1,96 @@
+[gd_scene load_steps=12 format=3 uid="uid://bf6h0c6myuv8q"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_p0iuu"]
+[ext_resource type="PackedScene" uid="uid://dnukot3s50pwy" path="res://objects/components/hit_box.tscn" id="2_kgww4"]
+[ext_resource type="PackedScene" uid="uid://clw4eesarcb1l" path="res://objects/components/movement_behaviours/combine_movements.tscn" id="3_v73df"]
+[ext_resource type="PackedScene" uid="uid://j8disy850j84" path="res://objects/components/movement_behaviours/sine_axis_movement.tscn" id="4_eiwi2"]
+[ext_resource type="PackedScene" uid="uid://dcnlhqgfi657a" path="res://objects/components/movement_behaviours/axis_movement.tscn" id="5_uj2fr"]
+[ext_resource type="PackedScene" uid="uid://cahuhrywy2u5s" path="res://objects/components/movement_behaviours/noisy_movement.tscn" id="6_b1vc7"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_hdwye"]
+radius = 0.25
+height = 0.5
+radial_segments = 16
+rings = 8
+
+[sub_resource type="SphereMesh" id="SphereMesh_u708i"]
+flip_faces = true
+radius = 0.625
+height = 1.25
+radial_segments = 16
+rings = 8
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ejs8j"]
+points = PackedVector3Array(-0.246202, -0.0434123, 0, -0.227501, -0.0434123, 0.0941814, -0.246202, 0.0433633, 0, -0.227501, -0.0434123, -0.0942296, -0.216511, -0.125, 0, -0.174096, -0.0434123, 0.174048, -0.227501, 0.0433633, 0.0941814, -0.200027, -0.125, 0.0828064, -0.153129, -0.125, 0.153081, -0.227501, 0.0433633, -0.0942296, -0.216511, 0.125, 0, -0.174096, -0.0434123, -0.174096, -0.153129, -0.125, -0.153129, -0.200027, -0.125, -0.0828546, -0.160745, -0.191513, 0, -0.0942296, -0.0434123, 0.227452, -0.174096, 0.0433633, 0.174048, -0.153129, 0.125, 0.153081, -0.200027, 0.125, 0.0828064, -0.148502, -0.191513, 0.0614541, -0.0828546, -0.125, 0.199979, -0.113654, -0.191513, 0.113606, -0.0615023, -0.191513, 0.148454, -0.200027, 0.125, -0.0828546, -0.153129, 0.125, -0.153129, -0.174096, 0.0433633, -0.174096, -0.160745, 0.191464, 0, -0.0942296, -0.0434123, -0.227501, -0.0828546, -0.125, -0.200027, -0.0615023, -0.191513, -0.148502, -0.113654, -0.191513, -0.113654, -0.148502, -0.191513, -0.0615023, -0.0789986, -0.234926, -0.0327273, -0.0855055, -0.234926, 0, -0.0789986, -0.234926, 0.0326791, 0, -0.0434123, 0.246202, -0.0942296, 0.0433633, 0.227452, -0.0828546, 0.125, 0.199979, -0.0615023, 0.191464, 0.148454, -0.113654, 0.191464, 0.113606, -0.148502, 0.191464, 0.0614541, -0.0604901, -0.234926, 0.0604419, 0, -0.125, 0.216463, 0, -0.191513, 0.160696, -0.0327273, -0.234926, 0.0789504, -0.148502, 0.191464, -0.0615023, -0.0942296, 0.0433633, -0.227501, -0.113654, 0.191464, -0.113654, -0.0615023, 0.191464, -0.148502, -0.0828546, 0.125, -0.200027, -0.0789986, 0.234877, 0.0326791, -0.0855055, 0.234877, 0, -0.0789986, 0.234877, -0.0327273, 0, -0.0434123, -0.246202, 0, -0.125, -0.216511, 0, -0.191513, -0.160745, -0.0327273, -0.234926, -0.0789986, -0.0604901, -0.234926, -0.0604901, 0, -0.25, 0, 0.0941814, -0.0434123, 0.227452, 0, 0.0433633, 0.246202, 0.0828064, -0.125, 0.199979, 0, 0.125, 0.216463, 0, 0.191464, 0.160696, -0.0327273, 0.234877, 0.0789504, -0.0604901, 0.234877, 0.0604419, 0.0614541, -0.191513, 0.148454, 0, -0.234926, 0.0854573, 0.0326791, -0.234926, 0.0789504, -0.0604901, 0.234877, -0.0604901, 0, 0.125, -0.216511, 0, 0.0433633, -0.246202, -0.0327273, 0.234877, -0.0789986, 0, 0.191464, -0.160745, 0, 0.25, 0, 0.0941814, -0.0434123, -0.227501, 0.0828064, -0.125, -0.200027, 0.0326791, -0.234926, -0.0789986, 0, -0.234926, -0.0855055, 0.0614541, -0.191513, -0.148502, 0.0604419, -0.234926, -0.0604901, 0.0789504, -0.234926, -0.0327273, 0.0854573, -0.234926, 0, 0.0789504, -0.234926, 0.0326791, 0.0604419, -0.234926, 0.0604419, 0.174048, -0.0434123, 0.174048, 0.0941814, 0.0433633, 0.227452, 0.153081, -0.125, 0.153081, 0.0828064, 0.125, 0.199979, 0.0614541, 0.191464, 0.148454, 0.0326791, 0.234877, 0.0789504, 0, 0.234877, 0.0854573, 0.113606, -0.191513, 0.113606, 0.0828064, 0.125, -0.200027, 0.0941814, 0.0433633, -0.227501, 0, 0.234877, -0.0855055, 0.0326791, 0.234877, -0.0789986, 0.0614541, 0.191464, -0.148502, 0.0789504, 0.234877, 0.0326791, 0.0854573, 0.234877, 0, 0.0789504, 0.234877, -0.0327273, 0.0604419, 0.234877, -0.0604901, 0.0604419, 0.234877, 0.0604419, 0.174048, -0.0434123, -0.174096, 0.153081, -0.125, -0.153129, 0.113606, -0.191513, -0.113654, 0.148454, -0.191513, -0.0615023, 0.160696, -0.191513, 0, 0.148454, -0.191513, 0.0614541, 0.227452, -0.0434123, 0.0941814, 0.174048, 0.0433633, 0.174048, 0.153081, 0.125, 0.153081, 0.199979, -0.125, 0.0828064, 0.113606, 0.191464, 0.113606, 0.153081, 0.125, -0.153129, 0.174048, 0.0433633, -0.174096, 0.113606, 0.191464, -0.113654, 0.148454, 0.191464, 0.0614541, 0.160696, 0.191464, 0, 0.148454, 0.191464, -0.0615023, 0.227452, -0.0434123, -0.0942296, 0.199979, -0.125, -0.0828546, 0.216463, -0.125, 0, 0.246202, -0.0434123, 0, 0.227452, 0.0433633, 0.0941814, 0.199979, 0.125, 0.0828064, 0.199979, 0.125, -0.0828546, 0.227452, 0.0433633, -0.0942296, 0.216463, 0.125, 0, 0.246202, 0.0433633, 0)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tnjhn"]
+top_radius = 0.0
+bottom_radius = 0.1
+height = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_j5nry"]
+radius = 0.777165
+
+[node name="Enemy" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 32
+script = ExtResource("1_p0iuu")
+speed = 1.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_hdwye")
+
+[node name="DamageIndicator" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+visible = false
+mesh = SubResource("SphereMesh_u708i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_ejs8j")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.313503, 0)
+mesh = SubResource("CylinderMesh_tnjhn")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.00529191, 0.385038)
+mesh = SubResource("CylinderMesh_tnjhn")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.4, -0.000988036, 0)
+mesh = SubResource("CylinderMesh_tnjhn")
+
+[node name="HitBox" parent="." groups=["Enemy"] instance=ExtResource("2_kgww4")]
+health = 2.0
+damaged_by = &"Player"
+
+[node name="CollisionShape3D" parent="HitBox" index="0"]
+shape = SubResource("SphereShape3D_j5nry")
+
+[node name="CombineMovements2" parent="." instance=ExtResource("3_v73df")]
+tooltip_lenght = 50.0
+tooltip_duration = 10.0
+
+[node name="AxisMovement" parent="CombineMovements2" instance=ExtResource("5_uj2fr")]
+axis = Vector3(0, 0, 1)
+
+[node name="SineAxisMovement" parent="CombineMovements2" instance=ExtResource("4_eiwi2")]
+axis = Vector3(1, 0, 0)
+amplitude = 2.0
+
+[node name="SineAxisMovement2" parent="CombineMovements2" instance=ExtResource("4_eiwi2")]
+axis = Vector3(0, 1, 0)
+amplitude = 2.0
+frequency = 2.0
+offset = 1.63
+
+[node name="NoisyMovement2" parent="CombineMovements2" instance=ExtResource("6_b1vc7")]
+axis = Vector3(1, 1, 0)
+noise_influence = 0.24
+tooltip_lenght = 29.235
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
+[connection signal="died" from="HitBox" to="." method="_on_hit_box_died"]
+[connection signal="health_changed" from="HitBox" to="." method="_on_hit_box_health_changed"]
+
+[editable path="HitBox"]

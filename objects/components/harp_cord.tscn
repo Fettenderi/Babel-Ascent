@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfg5nhp6kfrxo"]
+
+[ext_resource type="PackedScene" uid="uid://cme66uldrjl2i" path="res://addons/godot-xr-tools/interactables/interactable_area_button.tscn" id="1_1lmc0"]
+[ext_resource type="Script" path="res://scripts/harp_cord.gd" id="1_30ni5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pu56v"]
+size = Vector3(1, 0.02, 0.02)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8imd0"]
+size = Vector3(1, 0.142822, 0.155273)
+
+[node name="HarpCord" type="Node3D"]
+script = ExtResource("1_30ni5")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_pu56v")
+skeleton = NodePath("../InteractableAreaButton")
+
+[node name="InteractableAreaButton" parent="." instance=ExtResource("1_1lmc0")]
+visible = false
+button = NodePath("../MeshInstance3D2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableAreaButton"]
+shape = SubResource("BoxShape3D_8imd0")
+
+[connection signal="button_pressed" from="InteractableAreaButton" to="." method="_on_interactable_area_button_button_pressed"]
+
+[editable path="InteractableAreaButton"]

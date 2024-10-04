@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://clw4eesarcb1l"]
+
+[ext_resource type="PackedScene" uid="uid://oocdsxrwxwck" path="res://objects/components/movement_behaviour.tscn" id="1_g2hea"]
+[ext_resource type="Script" path="res://scripts/combine_movements.gd" id="2_8sqd1"]
+
+[node name="CombineMovements" instance=ExtResource("1_g2hea")]
+script = ExtResource("2_8sqd1")

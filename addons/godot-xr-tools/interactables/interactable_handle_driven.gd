@@ -31,6 +31,8 @@ func is_xr_class(name : String) -> bool:
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_to_group("InteractionBlocking", true)
+	
 	# Hook picked_up and dropped signals from all child handles
 	_hook_child_handles(self)
 
@@ -78,4 +80,5 @@ func _hook_child_handles(node: Node) -> void:
 
 	# Recurse into all children
 	for child in node.get_children():
-		_hook_child_handles(child)
+		if not child.is_in_group("InteractionBlocking"):
+			_hook_child_handles(child)

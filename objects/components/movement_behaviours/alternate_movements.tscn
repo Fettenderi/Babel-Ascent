@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://yfthreb74xp0"]
+
+[ext_resource type="PackedScene" uid="uid://oocdsxrwxwck" path="res://objects/components/movement_behaviour.tscn" id="1_den5j"]
+[ext_resource type="Script" path="res://scripts/alternate_movements.gd" id="2_0poex"]
+
+[node name="AlternateMovements" instance=ExtResource("1_den5j")]
+script = ExtResource("2_0poex")
+switching_time = 1.0

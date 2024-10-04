@@ -1,0 +1,66 @@
+[gd_scene load_steps=13 format=3 uid="uid://0b6nwjhbclx8"]
+
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_l667x"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_waui7"]
+[ext_resource type="Animation" uid="uid://s1vqcxyqcvea" path="res://addons/godot-xr-tools/hands/animations/right/Grip 5.res" id="3_0uyat"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="4_cowna"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_tqf3d"]
+[ext_resource type="PackedScene" uid="uid://d0qdej4i272k" path="res://objects/components/respawn_detector.tscn" id="6_il1jx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_b0x73"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_db1yd"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="Resource" id="Resource_ttg64"]
+script = ExtResource("4_cowna")
+open_pose = ExtResource("3_0uyat")
+closed_pose = ExtResource("3_0uyat")
+
+[sub_resource type="BoxMesh" id="BoxMesh_qgc1u"]
+flip_faces = true
+size = Vector3(0.11, 0.11, 0.11)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1261r"]
+shading_mode = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tlikm"]
+size = Vector3(0.396729, 0.393555, 0.413086)
+
+[node name="TheCube" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 65575
+script = ExtResource("1_l667x")
+second_hand_grab = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_b0x73")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_db1yd")
+
+[node name="GrabPointHandLeft" parent="." instance=ExtResource("2_waui7")]
+transform = Transform3D(0.932046, 0, -0.36234, 0, 1, 0, 0.36234, 0, 0.932046, -0.100951, 0.0382361, -0.0686306)
+hand_pose = SubResource("Resource_ttg64")
+editor_preview_mode = 1
+
+[node name="GrabPointHandRight" parent="." instance=ExtResource("5_tqf3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.136425, 0.038, -0.069)
+hand_pose = SubResource("Resource_ttg64")
+editor_preview_mode = 1
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_qgc1u")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_1261r")
+
+[node name="RespawnDetector" parent="." instance=ExtResource("6_il1jx")]
+
+[node name="CollisionShape3D" parent="RespawnDetector" index="0"]
+shape = SubResource("BoxShape3D_tlikm")
+
+[editable path="RespawnDetector"]

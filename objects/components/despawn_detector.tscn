@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://vkfp61dc58mr"]
+
+[ext_resource type="Script" path="res://scripts/despawn_detector.gd" id="1_om4cl"]
+
+[node name="DespawnDetector" type="Area3D"]
+collision_layer = 0
+collision_mask = 32
+script = ExtResource("1_om4cl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

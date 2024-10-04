@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://j8disy850j84"]
+
+[ext_resource type="PackedScene" uid="uid://oocdsxrwxwck" path="res://objects/components/movement_behaviour.tscn" id="1_rbffe"]
+[ext_resource type="Script" path="res://scripts/sine_axis_movement.gd" id="2_yv0dx"]
+
+[node name="SineAxisMovement" instance=ExtResource("1_rbffe")]
+script = ExtResource("2_yv0dx")
+axis = Vector3(0, 0, 0)
+amplitude = 1.0
+frequency = 1.0
+offset = 0.0

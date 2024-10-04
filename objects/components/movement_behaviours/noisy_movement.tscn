@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cahuhrywy2u5s"]
+
+[ext_resource type="PackedScene" uid="uid://oocdsxrwxwck" path="res://objects/components/movement_behaviour.tscn" id="1_r5130"]
+[ext_resource type="Script" path="res://scripts/noisy_movement.gd" id="2_eommd"]
+
+[node name="NoisyMovement" instance=ExtResource("1_r5130")]
+script = ExtResource("2_eommd")
+axis = Vector3(0, 0, 0)
+noise_influence = 1.0

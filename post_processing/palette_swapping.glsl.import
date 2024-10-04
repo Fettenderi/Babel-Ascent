@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://duah3kbssspmd"
+path="res://.godot/imported/palette_swapping.glsl-42d1cc4f1d84d53da4660013e3813453.res"
+
+[deps]
+
+source_file="res://post_processing/palette_swapping.glsl"
+dest_files=["res://.godot/imported/palette_swapping.glsl-42d1cc4f1d84d53da4660013e3813453.res"]
+
+[params]
+

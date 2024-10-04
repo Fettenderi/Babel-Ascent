@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp3v5c27d1i4i"]
+
+[ext_resource type="Script" path="res://scripts/harp_trigger.gd" id="1_e6gme"]
+
+[node name="HarpTrigger" type="Node3D"]
+script = ExtResource("1_e6gme")
