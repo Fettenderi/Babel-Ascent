@@ -31,6 +31,7 @@ func is_xr_class(name : String) -> bool:
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# Blocks other interactables on the same scene from using the same handles
 	add_to_group("InteractionBlocking", true)
 	
 	# Hook picked_up and dropped signals from all child handles

@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=4 uid="uid://dppmlrvrsvan"]
 
 [ext_resource type="Script" path="res://scripts/cannon_ball_pickable.gd" id="1_idlo2"]
-[ext_resource type="Material" uid="uid://r2f32d4cdrmd" path="res://assets/materials/handles.tres" id="2_4gpyv"]
 [ext_resource type="PackedScene" uid="uid://dpl8em1nk60vo" path="res://objects/components/hurt_box.tscn" id="2_angrv"]
+[ext_resource type="Material" uid="uid://dxnh4oswa4nrg" path="res://assets/materials/cannon_ball.tres" id="2_bt8ua"]
 [ext_resource type="PackedScene" uid="uid://vkfp61dc58mr" path="res://objects/components/despawn_detector.tscn" id="3_hd47a"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_ey567"]
 [ext_resource type="Animation" uid="uid://cnng6xumhw7cx" path="res://addons/godot-xr-tools/hands/animations/left/Rounded.res" id="5_8go44"]
@@ -69,7 +69,7 @@ second_hand_grab = 1
 [node name="CannonBallMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_iv5br")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("2_4gpyv")
+surface_material_override/0 = ExtResource("2_bt8ua")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 visible = false

@@ -68,6 +68,7 @@ damaged_by = &"Player"
 shape = SubResource("SphereShape3D_j5nry")
 
 [node name="CombineMovements2" parent="." instance=ExtResource("3_v73df")]
+show_tooltip = true
 tooltip_lenght = 50.0
 tooltip_duration = 10.0
 
