@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv7cbj335q85f"]
+
+[ext_resource type="SpriteFrames" uid="uid://dcu4xgi6h5vl3" path="res://assets/sprite_frames/notes_sprite_frames.tres" id="1_n6c0m"]
+[ext_resource type="Script" path="res://scripts/note.gd" id="2_30o8r"]
+[ext_resource type="PackedScene" uid="uid://dpl8em1nk60vo" path="res://objects/components/hurt_box.tscn" id="3_xp45f"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mg32o"]
+
+[node name="Note" type="AnimatedSprite3D"]
+pixel_size = 0.0009
+billboard = 1
+sprite_frames = ExtResource("1_n6c0m")
+script = ExtResource("2_30o8r")
+
+[node name="HurtBox" parent="." groups=["Player"] instance=ExtResource("3_xp45f")]
+
+[node name="CollisionShape3D" parent="HurtBox" index="0"]
+shape = SubResource("SphereShape3D_mg32o")
+
+[editable path="HurtBox"]

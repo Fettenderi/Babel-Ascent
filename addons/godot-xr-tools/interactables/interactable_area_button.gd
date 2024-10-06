@@ -12,6 +12,7 @@ extends Area3D
 
 ## Button pressed event
 signal button_pressed(button)
+signal button_pressed_precise(button, pos)
 
 ## Button released event
 signal button_released(button)
@@ -85,6 +86,7 @@ func _on_button_entered(item: Node3D) -> void:
 
 		# Emit the pressed signal
 		button_pressed.emit(self)
+		button_pressed_precise.emit(self, item.global_position)
 
 
 # Called when an area or body exits the button area
