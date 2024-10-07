@@ -8,10 +8,18 @@ class_name PlayerStats extends Node
 @onready var _current_health :=  health:
 	set(value):
 		_current_health = value
-		health_changhed.emit(_current_health)
+		health_changed.emit(_current_health)
 		
 		if value <= 0:
 			died.emit()
 
-signal health_changhed(value)
+var _current_light := 0:
+	set(value):
+		_current_light = value
+		light_changed.emit(_current_light)
+		
+
+signal health_changed(value)
 signal died
+
+signal light_changed(value)

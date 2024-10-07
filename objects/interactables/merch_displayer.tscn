@@ -1,0 +1,182 @@
+[gd_scene load_steps=8 format=3 uid="uid://bbhf0o63v45ur"]
+
+[ext_resource type="PackedScene" uid="uid://bq0l2igjq5icu" path="res://assets/models/merch_displayer.blend" id="1_5lbte"]
+[ext_resource type="Script" path="res://scripts/merch_displayer.gd" id="1_y0hxb"]
+[ext_resource type="PackedScene" uid="uid://ce7vysyvondf8" path="res://addons/godot-xr-tools/objects/snap_zone.tscn" id="3_t3i5x"]
+[ext_resource type="PackedScene" uid="uid://eg6vu61iipdj" path="res://objects/interactables/weighter.tscn" id="4_ogquy"]
+
+[sub_resource type="TextMesh" id="TextMesh_8kfq6"]
+text = "What I have"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1pggx"]
+resource_local_to_scene = true
+radius = 0.207064
+
+[sub_resource type="TextMesh" id="TextMesh_ew40v"]
+text = "What you get"
+
+[node name="MerchDisplayer" type="Node3D"]
+script = ExtResource("1_y0hxb")
+
+[node name="Merch" parent="." instance=ExtResource("1_5lbte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.414707, 0, -0.0093677)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Merch"]
+transform = Transform3D(1, 0, 0, 0, 0.870433, 0.492287, 0, -0.492287, 0.870433, 0.064614, 0.0490131, -0.61504)
+mesh = SubResource("TextMesh_8kfq6")
+
+[node name="SnapZone" parent="Merch" instance=ExtResource("3_t3i5x")]
+transform = Transform3D(0.69282, -0.393923, 0.0694593, 0, 0.138919, 0.787846, -0.4, -0.682295, 0.120307, 0.40133, 0.123228, 0.240712)
+snap_mode = 1
+snap_exclude = "Light"
+
+[node name="CollisionShape3D" parent="Merch/SnapZone" index="0"]
+visible = true
+shape = SubResource("SphereShape3D_1pggx")
+
+[node name="AudioStreamPlayer3D" parent="Merch/SnapZone" index="1"]
+visible = false
+
+[node name="SnapZone2" parent="Merch" instance=ExtResource("3_t3i5x")]
+transform = Transform3D(0.69282, -0.393923, 0.0694593, 0, 0.138919, 0.787846, -0.4, -0.682295, 0.120307, 0.40133, 0.123228, -0.183311)
+snap_exclude = "Light"
+
+[node name="CollisionShape3D" parent="Merch/SnapZone2" index="0"]
+visible = true
+shape = SubResource("SphereShape3D_1pggx")
+
+[node name="AudioStreamPlayer3D" parent="Merch/SnapZone2" index="1"]
+visible = false
+
+[node name="SnapZone3" parent="Merch" instance=ExtResource("3_t3i5x")]
+transform = Transform3D(0.69282, -0.393923, 0.0694593, 0, 0.138919, 0.787846, -0.4, -0.682295, 0.120307, 0.0436997, 0.123228, 0.240712)
+snap_exclude = "Light"
+
+[node name="CollisionShape3D" parent="Merch/SnapZone3" index="0"]
+visible = true
+shape = SubResource("SphereShape3D_1pggx")
+
+[node name="AudioStreamPlayer3D" parent="Merch/SnapZone3" index="1"]
+visible = false
+
+[node name="SnapZone4" parent="Merch" instance=ExtResource("3_t3i5x")]
+transform = Transform3D(0.69282, -0.393923, 0.0694593, 0, 0.138919, 0.787846, -0.4, -0.682295, 0.120307, 0.0437, 0.123228, -0.183312)
+snap_exclude = "Light"
+
+[node name="CollisionShape3D" parent="Merch/SnapZone4" index="0"]
+visible = true
+shape = SubResource("SphereShape3D_1pggx")
+
+[node name="AudioStreamPlayer3D" parent="Merch/SnapZone4" index="1"]
+visible = false
+
+[node name="SnapZone5" parent="Merch" instance=ExtResource("3_t3i5x")]
+transform = Transform3D(0.69282, -0.393923, 0.0694593, 0, 0.138919, 0.787846, -0.4, -0.682295, 0.120307, -0.312274, 0.123228, 0.240712)
+snap_exclude = "Light"
+
+[node name="CollisionShape3D" parent="Merch/SnapZone5" index="0"]
+visible = true
+shape = SubResource("SphereShape3D_1pggx")
+
+[node name="AudioStreamPlayer3D" parent="Merch/SnapZone5" index="1"]
+visible = false
+
+[node name="SnapZone6" parent="Merch" instance=ExtResource("3_t3i5x")]
+transform = Transform3D(0.69282, -0.393923, 0.0694593, 0, 0.138919, 0.787846, -0.4, -0.682295, 0.120307, -0.312273, 0.123228, -0.183312)
+snap_exclude = "Light"
+
+[node name="CollisionShape3D" parent="Merch/SnapZone6" index="0"]
+visible = true
+shape = SubResource("SphereShape3D_1pggx")
+
+[node name="AudioStreamPlayer3D" parent="Merch/SnapZone6" index="1"]
+visible = false
+
+[node name="SelectedMerch" parent="." instance=ExtResource("1_5lbte")]
+transform = Transform3D(-0.486354, 0, -4.25184e-08, 0, 0.486354, 0, 4.25184e-08, 0, -0.486354, 0.588835, 0.0179934, 0.288117)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SelectedMerch"]
+transform = Transform3D(-1, 4.3049e-08, -7.60889e-08, 0, 0.870356, 0.492424, 8.74228e-08, 0.492424, -0.870356, 0.0650001, 0.049, 0.615)
+mesh = SubResource("TextMesh_ew40v")
+
+[node name="SnapZone" parent="SelectedMerch" instance=ExtResource("3_t3i5x")]
+transform = Transform3D(0.866025, -0.492404, 0.0868241, 0, 0.173648, 0.984808, -0.5, -0.852868, 0.150384, 0.434628, 0.123228, 0.224807)
+snap_mode = 1
+snap_exclude = "Light"
+
+[node name="CollisionShape3D" parent="SelectedMerch/SnapZone" index="0"]
+visible = true
+shape = SubResource("SphereShape3D_1pggx")
+
+[node name="AudioStreamPlayer3D" parent="SelectedMerch/SnapZone" index="1"]
+visible = false
+
+[node name="SnapZone2" parent="SelectedMerch" instance=ExtResource("3_t3i5x")]
+transform = Transform3D(0.866025, -0.492404, 0.0868241, 0, 0.173648, 0.984808, -0.5, -0.852868, 0.150384, 0.434628, 0.123228, -0.186416)
+snap_exclude = "Light"
+
+[node name="CollisionShape3D" parent="SelectedMerch/SnapZone2" index="0"]
+visible = true
+shape = SubResource("SphereShape3D_1pggx")
+
+[node name="AudioStreamPlayer3D" parent="SelectedMerch/SnapZone2" index="1"]
+visible = false
+
+[node name="SnapZone3" parent="SelectedMerch" instance=ExtResource("3_t3i5x")]
+transform = Transform3D(0.866025, -0.492404, 0.0868241, 0, 0.173648, 0.984808, -0.5, -0.852868, 0.150384, 0.0324731, 0.123228, 0.224807)
+snap_exclude = "Light"
+
+[node name="CollisionShape3D" parent="SelectedMerch/SnapZone3" index="0"]
+visible = true
+shape = SubResource("SphereShape3D_1pggx")
+
+[node name="AudioStreamPlayer3D" parent="SelectedMerch/SnapZone3" index="1"]
+visible = false
+
+[node name="SnapZone4" parent="SelectedMerch" instance=ExtResource("3_t3i5x")]
+transform = Transform3D(0.866025, -0.492404, 0.0868241, 0, 0.173648, 0.984808, -0.5, -0.852868, 0.150384, 0.0324734, 0.123228, -0.186416)
+snap_exclude = "Light"
+
+[node name="CollisionShape3D" parent="SelectedMerch/SnapZone4" index="0"]
+visible = true
+shape = SubResource("SphereShape3D_1pggx")
+
+[node name="AudioStreamPlayer3D" parent="SelectedMerch/SnapZone4" index="1"]
+visible = false
+
+[node name="SnapZone5" parent="SelectedMerch" instance=ExtResource("3_t3i5x")]
+transform = Transform3D(0.866025, -0.492404, 0.0868241, 0, 0.173648, 0.984808, -0.5, -0.852868, 0.150384, -0.359691, 0.123228, 0.224807)
+snap_exclude = "Light"
+
+[node name="CollisionShape3D" parent="SelectedMerch/SnapZone5" index="0"]
+visible = true
+shape = SubResource("SphereShape3D_1pggx")
+
+[node name="AudioStreamPlayer3D" parent="SelectedMerch/SnapZone5" index="1"]
+visible = false
+
+[node name="SnapZone6" parent="SelectedMerch" instance=ExtResource("3_t3i5x")]
+transform = Transform3D(0.866025, -0.492404, 0.0868241, 0, 0.173648, 0.984808, -0.5, -0.852868, 0.150384, -0.35969, 0.123228, -0.186416)
+snap_exclude = "Light"
+
+[node name="CollisionShape3D" parent="SelectedMerch/SnapZone6" index="0"]
+visible = true
+shape = SubResource("SphereShape3D_1pggx")
+
+[node name="AudioStreamPlayer3D" parent="SelectedMerch/SnapZone6" index="1"]
+visible = false
+
+[node name="Weighter" parent="." instance=ExtResource("4_ogquy")]
+
+[editable path="Merch/SnapZone"]
+[editable path="Merch/SnapZone2"]
+[editable path="Merch/SnapZone3"]
+[editable path="Merch/SnapZone4"]
+[editable path="Merch/SnapZone5"]
+[editable path="Merch/SnapZone6"]
+[editable path="SelectedMerch/SnapZone"]
+[editable path="SelectedMerch/SnapZone2"]
+[editable path="SelectedMerch/SnapZone3"]
+[editable path="SelectedMerch/SnapZone4"]
+[editable path="SelectedMerch/SnapZone5"]
+[editable path="SelectedMerch/SnapZone6"]
