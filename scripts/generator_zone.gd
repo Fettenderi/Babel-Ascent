@@ -1,12 +1,12 @@
 @tool
 extends Node3D
 
-@export var entities : Node3D
-
 @export var object_scene : PackedScene:
 	set(value):
 		object_scene = value
 		_update_editor_preview()
+
+@onready var _entities : Node
 
 var _object_preview : Node3D = null
 
@@ -14,13 +14,17 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		_update_editor_preview()
 	else:
+		_entities = Node.new()
+		_entities.name = "Entities"
+		add_child(_entities, true)
+		
 		_spawn_object()
 
 func _spawn_object():
 	if object_scene:
 		var object_instance : Node3D = object_scene.instantiate()
 		
-		entities.add_child(object_instance, true)
+		_entities.add_child(object_instance, true)
 		
 		%SnapZone.pick_up_object(object_instance)
 

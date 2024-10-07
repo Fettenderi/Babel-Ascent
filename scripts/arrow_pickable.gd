@@ -16,8 +16,9 @@ func _ready() -> void:
 	
 	call_deferred("add_child", _despawn_timer, true)
 
-func throw(force: float) -> void:
-	add_constant_force(-force * transform.basis.z, Vector3.ZERO)
+func throw(force: Vector3, from: Vector3) -> void:
+	global_position = from
+	add_constant_force(force, Vector3.ZERO)
 	_despawn_timer.start(despawn_time)
 	enabled = false
 

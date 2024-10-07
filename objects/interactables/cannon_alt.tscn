@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bwfntoi2ykbx4"]
+[gd_scene load_steps=34 format=4 uid="uid://bwfntoi2ykbx4"]
 
 [ext_resource type="Script" path="res://scripts/cannon_alt.gd" id="1_q32ly"]
 [ext_resource type="Material" uid="uid://c07wny4rhorcw" path="res://assets/materials/cannon.tres" id="1_qnpri"]
@@ -144,6 +144,45 @@ radius = 0.3
 resource_local_to_scene = true
 radius = 0.3
 
+[sub_resource type="Gradient" id="Gradient_4fpl6"]
+offsets = PackedFloat32Array(0.320833, 0.670833)
+colors = PackedColorArray(0.838332, 0.343497, 0.245666, 1, 0.735322, 0.298418, 0.489905, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_88cdg"]
+gradient = SubResource("Gradient_4fpl6")
+
+[sub_resource type="Curve" id="Curve_cqh7f"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.202273), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_b6eay"]
+curve = SubResource("Curve_cqh7f")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1mkao"]
+angle_min = -90.0
+angle_max = 90.0
+spread = 180.0
+initial_velocity_max = 5.0
+angular_velocity_min = -288.0
+angular_velocity_max = 360.0
+scale_min = 0.5
+scale_max = 1.4
+scale_curve = SubResource("CurveTexture_b6eay")
+color_ramp = SubResource("GradientTexture1D_88cdg")
+hue_variation_min = -0.42
+hue_variation_max = 0.42
+turbulence_enabled = true
+turbulence_noise_strength = 0.0
+turbulence_noise_scale = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cr2nr"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_sd47d"]
+material = SubResource("StandardMaterial3D_cr2nr")
+radius = 0.2
+height = 0.4
+
 [node name="Cannon" type="Node3D"]
 script = ExtResource("1_q32ly")
 fire_force = 70.0
@@ -267,7 +306,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.453441, -0.732938)
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.432345, -0.460601)
 
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.543454, -0.923228)
+emitting = false
+amount = 50
+lifetime = 0.7
+one_shot = true
+explosiveness = 0.9
+randomness = 0.5
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_1mkao")
+draw_pass_1 = SubResource("SphereMesh_sd47d")
+
 [connection signal="button_pressed" from="CannonOrigin/InteractableJoystick/Cannon/LargeButton" to="." method="_on_large_button_button_pressed"]
+[connection signal="finished" from="GPUParticles3D" to="." method="_on_gpu_particles_3d_finished"]
 
 [editable path="CannonOrigin/InteractableJoystick/Cannon/BarrelOrigin/InteractableSlider/Barrel/Ammos/SnapZone"]
 [editable path="CannonOrigin/InteractableJoystick/Cannon/BarrelOrigin/InteractableSlider/Barrel/Ammos/SnapZone2"]

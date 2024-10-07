@@ -1,7 +1,7 @@
 class_name Note extends AnimatedSprite3D
 
 const KEY_NOTE := 0
-const PAUSE_NOTE := 19
+const FIRST_NOTE := 1
 
 const NOTE_SIZE := 0.0003
 

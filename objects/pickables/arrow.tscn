@@ -60,9 +60,11 @@ open_pose = ExtResource("7_yx4ne")
 closed_pose = ExtResource("7_yx4ne")
 
 [node name="Arrow" type="RigidBody3D" groups=["Arrow"]]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 collision_layer = 4
 collision_mask = 65575
 script = ExtResource("1_61d2c")
+direction = Vector3(0, 0, -1)
 second_hand_grab = 1
 
 [node name="ArrowMesh" type="MeshInstance3D" parent="."]

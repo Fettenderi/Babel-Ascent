@@ -1,8 +1,8 @@
 extends Node3D
 
 @export var fire_force := 100.0
-@export var cooldown_time := 0.5
-@export var delay_time := 1.5
+@export var cooldown_time := 0.4
+@export var delay_time := 0.3
 
 @export var cannon_ball_scene : PackedScene
 
@@ -12,7 +12,8 @@ extends Node3D
 @onready var _ammos : Array[XRToolsSnapZone] = []
 
 var _on_cooldown := false
-var _is_buffered := true
+var _has_fired := false
+var _is_buffered := false
 
 func _ready() -> void:
 	_cooldown_timer = Timer.new()
@@ -22,7 +23,7 @@ func _ready() -> void:
 	_cooldown_timer.wait_time = cooldown_time
 	_cooldown_timer.timeout.connect(_on_cooldown_timer_timeout)
 	call_deferred("add_child", _cooldown_timer, true)
-
+#
 	_delay_timer = Timer.new()
 	_delay_timer.name = "DelayTimer"
 	_delay_timer.autostart = false
@@ -38,11 +39,14 @@ func _ready() -> void:
 	_ammos.append_array(%Ammos.get_children())
 
 func _fire_cannon():
+	_remove_ammo()
 	var _cannon_ball_instance : CannonBallPickable = cannon_ball_scene.instantiate()
 	
 	_entities.add_child(_cannon_ball_instance, true)
 	
 	_cannon_ball_instance.throw((%FireHole.global_position - %BallDirection.global_position).normalized() * fire_force, %FireHole.global_position)
+
+	%GPUParticles3D.restart()
 
 func _has_ammo() -> bool:
 	for _ammo: XRToolsSnapZone in _ammos:
@@ -62,25 +66,24 @@ func _remove_ammo():
 
 func _on_large_button_button_pressed() -> void:
 	if not _has_ammo(): return
-	
-	if _on_cooldown:
+	if _on_cooldown: return
+	if _has_fired:
 		_is_buffered = true
 		return
 	
+	_has_fired = true
 	_on_cooldown = true
-	
 	_cooldown_timer.start()
-
+	_delay_timer.start()
 
 func _on_cooldown_timer_timeout():
-	_remove_ammo()
-	_fire_cannon()
-	if _is_buffered:
-		_on_cooldown = false
-		_is_buffered = false
-		_on_large_button_button_pressed()
-	else:
-		_delay_timer.start()
+	_on_cooldown = false
 	
 func _on_delay_timer_timeout():
-	_on_cooldown = false
+	_fire_cannon()
+
+func _on_gpu_particles_3d_finished() -> void:
+	_has_fired = false
+	if _is_buffered and _has_ammo():
+		_is_buffered = false
+		_fire_cannon()

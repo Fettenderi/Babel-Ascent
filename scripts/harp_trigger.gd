@@ -27,17 +27,20 @@ func throw():
 
 
 func play_note(note_position: Vector3, sprite_id: int, _sfx_id: int):
-	if not is_instance_valid(self): return
+	if not is_inside_tree(): return
 	
 	var _note_instance := note_scene.instantiate()
+	
+	_notes.add_child(_note_instance, true)
 	
 	if _note_instance is Note:
 		_note_instance.global_position = note_position
 		_note_instance.set_note(sprite_id)
-	
-	_notes.add_child(_note_instance, true)
+
 
 func _ready() -> void:
+	if Engine.is_editor_hint(): return
+	
 	for _child: HarpCord in get_children():
 		_child.cord_touched.connect(_cord_touched.bind(_cords_count))
 		_child.scale.y = 1.5 - 0.05 * _cords_count
@@ -53,7 +56,7 @@ func _cord_touched(pos: Vector3, _id: int) -> void:
 	if _id <= _last_touched:
 		_last_touched = _id
 		_streak = 0
-		play_note(pos, Note.PAUSE_NOTE, 0)
+		play_note(pos, Note.FIRST_NOTE, 0)
 		return
 	
 	_last_touched += 1

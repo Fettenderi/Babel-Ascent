@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuy8vga4ci0nn"]
+
+[ext_resource type="Script" path="res://globals/wave_system.gd" id="1_60jtu"]
+
+[node name="WaveSystem" type="Node"]
+script = ExtResource("1_60jtu")

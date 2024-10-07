@@ -14,7 +14,7 @@ func _ready() -> void:
 	_despawn_timer.one_shot = true
 	_despawn_timer.timeout.connect(_on_despawn_timer_timeout)
 	
-	call_deferred("add_child", _despawn_timer, true)
+	add_child(_despawn_timer, true)
 
 func throw(force: Vector3, from: Vector3) -> void:
 	global_position = from
