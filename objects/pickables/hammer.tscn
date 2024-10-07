@@ -69,16 +69,19 @@ second_hand_grab = 2
 mesh = SubResource("ArrayMesh_m6fgf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+visible = false
 shape = SubResource("ConvexPolygonShape3D_xcpd4")
 
 [node name="HurtBox" parent="." index="2" groups=["Player"] instance=ExtResource("7_il8ee")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0600324, -0.000229472)
+visible = false
 
 [node name="CollisionShape3D" parent="HurtBox" index="0"]
 shape = SubResource("BoxShape3D_sabxe")
 
 [node name="RespawnDetector" parent="." index="3" instance=ExtResource("9_nfy13")]
 transform = Transform3D(1.095, 0, 0, 0, 1.095, 0, 0, 0, 1.095, 0, 0, 0)
+visible = false
 
 [node name="CollisionShape3D" parent="RespawnDetector" index="0"]
 shape = SubResource("ConvexPolygonShape3D_w8wyj")

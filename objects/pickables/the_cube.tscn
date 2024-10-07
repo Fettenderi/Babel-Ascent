@@ -40,6 +40,7 @@ mesh = SubResource("BoxMesh_b0x73")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+visible = false
 shape = SubResource("BoxShape3D_db1yd")
 
 [node name="GrabPointHandLeft" parent="." instance=ExtResource("2_waui7")]
@@ -59,6 +60,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_1261r")
 
 [node name="RespawnDetector" parent="." instance=ExtResource("6_il1jx")]
+visible = false
 
 [node name="CollisionShape3D" parent="RespawnDetector" index="0"]
 shape = SubResource("BoxShape3D_tlikm")

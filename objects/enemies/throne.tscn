@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://f7ytql1kpjhc"]
+
+[ext_resource type="PackedScene" uid="uid://54jegna8r7wy" path="res://objects/enemies/enemy.tscn" id="1_fgdr6"]
+[ext_resource type="PackedScene" uid="uid://d3400x6xhb7c6" path="res://assets/models/throne.blend" id="2_1qu8k"]
+[ext_resource type="PackedScene" uid="uid://yfthreb74xp0" path="res://objects/components/movement_behaviours/alternate_movements.tscn" id="3_207q1"]
+[ext_resource type="PackedScene" uid="uid://clw4eesarcb1l" path="res://objects/components/movement_behaviours/combine_movements.tscn" id="3_e8gv6"]
+[ext_resource type="PackedScene" uid="uid://dcnlhqgfi657a" path="res://objects/components/movement_behaviours/axis_movement.tscn" id="4_minja"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_e14dx"]
+radius = 0.9184
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2xpfd"]
+radius = 1.25603
+
+[node name="Throne" instance=ExtResource("1_fgdr6")]
+speed = 0.5
+
+[node name="ThroneMesh" parent="." index="0" instance=ExtResource("2_1qu8k")]
+
+[node name="CollisionShape3D" parent="." index="3"]
+visible = false
+shape = SubResource("SphereShape3D_e14dx")
+
+[node name="HitBox" parent="." index="4"]
+visible = false
+
+[node name="CollisionShape3D" parent="HitBox" index="0"]
+shape = SubResource("SphereShape3D_2xpfd")
+
+[node name="AlternateMovements" parent="." index="5" instance=ExtResource("3_207q1")]
+switching_time = 50.0
+
+[node name="CombineMovements" parent="AlternateMovements" index="0" instance=ExtResource("3_e8gv6")]
+
+[node name="AxisMovement" parent="AlternateMovements/CombineMovements" index="0" instance=ExtResource("4_minja")]
+axis = Vector3(1, 0, 0)
+
+[node name="AxisMovement2" parent="AlternateMovements/CombineMovements" index="1" instance=ExtResource("4_minja")]
+axis = Vector3(0, 0, 0.5)
+
+[node name="CombineMovements2" parent="AlternateMovements" index="1" instance=ExtResource("3_e8gv6")]
+
+[node name="AxisMovement" parent="AlternateMovements/CombineMovements2" index="0" instance=ExtResource("4_minja")]
+axis = Vector3(-1, 0, 0)
+
+[node name="AxisMovement2" parent="AlternateMovements/CombineMovements2" index="1" instance=ExtResource("4_minja")]
+axis = Vector3(0, 0, 0.5)
+
+[editable path="HitBox"]

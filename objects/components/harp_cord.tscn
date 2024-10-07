@@ -17,6 +17,7 @@ mesh = SubResource("BoxMesh_pu56v")
 skeleton = NodePath("../InteractableAreaButton")
 
 [node name="InteractableAreaButton" parent="." instance=ExtResource("1_1lmc0")]
+visible = false
 button = NodePath("../MeshInstance3D2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableAreaButton"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://k2fsb0k6tqu5"]
+
+[ext_resource type="PackedScene" uid="uid://54jegna8r7wy" path="res://objects/enemies/enemy.tscn" id="1_fna2w"]
+[ext_resource type="PackedScene" uid="uid://cq14sf87jvogn" path="res://assets/models/cherubim.blend" id="2_7xhj2"]
+[ext_resource type="PackedScene" uid="uid://yfthreb74xp0" path="res://objects/components/movement_behaviours/alternate_movements.tscn" id="3_o2nrf"]
+[ext_resource type="PackedScene" uid="uid://clw4eesarcb1l" path="res://objects/components/movement_behaviours/combine_movements.tscn" id="4_gay0j"]
+[ext_resource type="PackedScene" uid="uid://cahuhrywy2u5s" path="res://objects/components/movement_behaviours/noisy_movement.tscn" id="5_i6aue"]
+[ext_resource type="PackedScene" uid="uid://j8disy850j84" path="res://objects/components/movement_behaviours/sine_axis_movement.tscn" id="6_rv6x4"]
+[ext_resource type="PackedScene" uid="uid://dcnlhqgfi657a" path="res://objects/components/movement_behaviours/axis_movement.tscn" id="7_wmyyw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cplll"]
+radius = 0.541657
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lxjw5"]
+size = Vector3(2.3479, 2.1881, 0.80957)
+
+[node name="Cherubim" instance=ExtResource("1_fna2w")]
+speed = 0.5
+
+[node name="CherubimMesh" parent="." index="0" instance=ExtResource("2_7xhj2")]
+
+[node name="CollisionShape3D" parent="." index="3"]
+visible = false
+shape = SubResource("SphereShape3D_cplll")
+
+[node name="HitBox" parent="." index="4"]
+visible = false
+
+[node name="CollisionShape3D" parent="HitBox" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00193024, 0)
+shape = SubResource("BoxShape3D_lxjw5")
+
+[node name="AlternateMovements" parent="." index="5" instance=ExtResource("3_o2nrf")]
+switching_time = 2.055
+tooltip_lenght = 50.0
+
+[node name="CombineMovements" parent="AlternateMovements" index="0" instance=ExtResource("4_gay0j")]
+
+[node name="NoisyMovement" parent="AlternateMovements/CombineMovements" index="0" instance=ExtResource("5_i6aue")]
+axis = Vector3(1, 1, 0)
+noise_influence = 0.07
+
+[node name="SineAxisMovement" parent="AlternateMovements/CombineMovements" index="1" instance=ExtResource("6_rv6x4")]
+axis = Vector3(0, 1, 0)
+amplitude = 17.685
+
+[node name="AxisMovement" parent="AlternateMovements/CombineMovements" index="2" instance=ExtResource("7_wmyyw")]
+axis = Vector3(0, 0, 0.5)
+
+[node name="AxisMovement" parent="AlternateMovements" index="1" instance=ExtResource("7_wmyyw")]
+axis = Vector3(0, 0, 4.435)
+
+[editable path="HitBox"]

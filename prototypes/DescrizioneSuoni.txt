@@ -1,0 +1,38 @@
+Suoni oggetti - oggetti:
+[Generico]
+- Cannone/Palle di cannone colpite (metallo)
+- Muro in mattone colpito 
+- Tavolo di legno colpito (sarebbe la scrivania su cui poggiano le armi)
+
+[Martello]
+- Martello pesante colpisce legno
+- Martello pesante colpisce mattone
+- Martello pesante colpisce metallo
+
+Suoni interazione con oggetti:
+[Cannone]
+- Palla di cannone inserita nello scompartimento del cannone
+- Pulsantone sul cannone premuto con successo
+- Pulsantone sul cannone premuto senza munizioni all'interno
+- Cannone che spara (pliz controlla il volume prima di passarmela o.O)
+- Suono dello scompartimento del cannone che si muove (più breve e meno fastidioso possibile credo)
+
+[Balestra]
+- Freccia inserita sulla balestra
+- Freccia viene lanciata
+- Trigger della balestra viene premuto
+
+[Arpa]
+- Corda dell'arpa viene toccata (sono 10 corde vedete voi come devono suonare idk)
+- (L'arpa per qualche oscuro motivo a me ignoto quando viene rilasciata si stabilizza in piedi, magari potremmo fare che fa un suono mentre si stabilizza idk, magari un suono tipo di risonanza, segui la tua fantasia)
+
+[Martello]
+- Martello viene lanciato
+- Martello colpisce nemico (è un'arma che stunna i nemici in un determinato raggio se fa colpo, quindi mi immagino un suono pesante)
+- Martello respawna (magari un suono tipo "swhooooop" con dell'eco)
+
+Suoni per nemici:
+(me li immagino come degli angeli biblicamente accurati, quindi occhi, ali, luce e anelli, quindi onestamente l'unico suono che mi viene in mente è una specie di suono ambientale tipo Radiance di Hollow Knight)
+- Ambientale
+- Viene colpito
+- Muore

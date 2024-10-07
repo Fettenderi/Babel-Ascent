@@ -84,6 +84,7 @@ mesh = SubResource("ArrayMesh_743un")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+visible = false
 shape = SubResource("ConvexPolygonShape3D_tn4n2")
 
 [node name="RespawnDetector" parent="." instance=ExtResource("2_rlkjy")]
@@ -105,12 +106,12 @@ shape = SubResource("SphereShape3D_tj44a")
 
 [node name="GrabPointHandRight" parent="." instance=ExtResource("7_c3wup")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00691292, 0.0382484, 0.152364)
-visible = true
 mode = 1
 hand_pose = SubResource("Resource_7vk3j")
 
 [node name="PullOrigin" type="Marker3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -0.174797)
+visible = false
 gizmo_extents = 1.0
 
 [node name="InteractableSlider" parent="PullOrigin" groups=["InteractionBlocking"] instance=ExtResource("9_s1gof")]
@@ -146,6 +147,7 @@ target = NodePath("../../../MeshInstance3D/GrabPointHandLeft")
 
 [node name="CrossbowTrigger" parent="." node_paths=PackedStringArray("ammo_slot", "pull_trigger") instance=ExtResource("4_6tacc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01464)
+visible = false
 fire_force = 100.0
 ammo_slot = NodePath("../SnapZone")
 pull_trigger = NodePath("../PullOrigin/InteractableSlider")

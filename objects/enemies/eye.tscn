@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://buyxtv0vey4dt"]
+
+[ext_resource type="PackedScene" uid="uid://54jegna8r7wy" path="res://objects/enemies/enemy.tscn" id="1_6tasv"]
+[ext_resource type="PackedScene" uid="uid://ju050i0ql0g1" path="res://assets/models/eye.blend" id="2_75bfa"]
+[ext_resource type="PackedScene" uid="uid://clw4eesarcb1l" path="res://objects/components/movement_behaviours/combine_movements.tscn" id="3_8uwxv"]
+[ext_resource type="PackedScene" uid="uid://cahuhrywy2u5s" path="res://objects/components/movement_behaviours/noisy_movement.tscn" id="4_2fdbh"]
+[ext_resource type="PackedScene" uid="uid://dcnlhqgfi657a" path="res://objects/components/movement_behaviours/axis_movement.tscn" id="5_bwy3r"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_34b6p"]
+radius = 0.273735
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kb3qg"]
+radius = 0.589363
+
+[node name="Eye" instance=ExtResource("1_6tasv")]
+speed = 0.5
+
+[node name="EyeMesh" parent="." index="0" instance=ExtResource("2_75bfa")]
+
+[node name="CollisionShape3D" parent="." index="3"]
+visible = false
+shape = SubResource("SphereShape3D_34b6p")
+
+[node name="HitBox" parent="." index="4"]
+visible = false
+
+[node name="CollisionShape3D" parent="HitBox" index="0"]
+shape = SubResource("SphereShape3D_kb3qg")
+
+[node name="CombineMovements" parent="." index="5" instance=ExtResource("3_8uwxv")]
+
+[node name="NoisyMovement" parent="CombineMovements" index="0" instance=ExtResource("4_2fdbh")]
+axis = Vector3(1, 1, 0)
+noise_influence = 0.3
+
+[node name="AxisMovement" parent="CombineMovements" index="1" instance=ExtResource("5_bwy3r")]
+axis = Vector3(0, 0, 0.3)
+
+[editable path="HitBox"]

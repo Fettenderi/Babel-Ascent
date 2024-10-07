@@ -8,5 +8,6 @@ script = ExtResource("1_ylsgy")
 
 [node name="SnapZone" parent="." instance=ExtResource("1_73mwg")]
 unique_name_in_owner = true
+visible = false
 
 [connection signal="has_dropped" from="SnapZone" to="." method="_on_snap_zone_has_dropped"]

@@ -1,69 +1,89 @@
 extends Node3D
 
-@export var entities : Node3D
-
 @export var fire_force := 100.0
-@export var cooldown_time := 0.5
-@export var delay_time := 1.5
+@export var cooldown_time := 0.4
+@export var delay_time := 0.3
+
 @export var cannon_ball_scene : PackedScene
 
-var _ammo_cannon_ball : XRToolsPickable
+@onready var _cooldown_timer : Timer
+@onready var _delay_timer : Timer
+@onready var _entities : Node
+@onready var _ammos : Array[XRToolsSnapZone] = []
+
 var _on_cooldown := false
+var _has_fired := false
 var _is_buffered := false
 
-func _on_interactable_area_button_button_pressed(_button: Variant) -> void:
-	if not _has_ammo():
-		return
+func _ready() -> void:
+	_cooldown_timer = Timer.new()
+	_cooldown_timer.name = "CooldownTimer"
+	_cooldown_timer.autostart = false
+	_cooldown_timer.one_shot = true
+	_cooldown_timer.wait_time = cooldown_time
+	_cooldown_timer.timeout.connect(_on_cooldown_timer_timeout)
+	call_deferred("add_child", _cooldown_timer, true)
+#
+	_delay_timer = Timer.new()
+	_delay_timer.name = "DelayTimer"
+	_delay_timer.autostart = false
+	_delay_timer.one_shot = true
+	_delay_timer.wait_time = delay_time
+	_delay_timer.timeout.connect(_on_delay_timer_timeout)
+	call_deferred("add_child", _delay_timer, true)
 	
-	if _on_cooldown:
+	_entities = Node.new()
+	_entities.name = "Entities"
+	call_deferred("add_child", _entities, true)
+	
+	_ammos.append_array(%Ammos.get_children())
+
+func _fire_cannon():
+	_remove_ammo()
+	var _cannon_ball_instance : CannonBallPickable = cannon_ball_scene.instantiate()
+	
+	_entities.add_child(_cannon_ball_instance, true)
+	
+	_cannon_ball_instance.throw((%FireHole.global_position - %BallDirection.global_position).normalized() * fire_force, %FireHole.global_position)
+
+	%GPUParticles3D.restart()
+
+func _has_ammo() -> bool:
+	for _ammo: XRToolsSnapZone in _ammos:
+		if is_instance_valid(_ammo.picked_up_object):
+			return true
+	return false
+
+func _remove_ammo():
+	var _cannon_ball : XRToolsPickable
+	
+	for _ammo: XRToolsSnapZone in _ammos:
+		_cannon_ball = _ammo.picked_up_object
+		if is_instance_valid(_cannon_ball):
+			_ammo.drop_object()
+			_cannon_ball.queue_free()
+			return
+
+func _on_large_button_button_pressed() -> void:
+	if not _has_ammo(): return
+	if _on_cooldown: return
+	if _has_fired:
 		_is_buffered = true
 		return
 	
+	_has_fired = true
 	_on_cooldown = true
-	
-	_remove_ammo()
-	
-	%FireCooldown.start(cooldown_time)
+	_cooldown_timer.start()
+	_delay_timer.start()
 
-func _fire_cannon():
-	var cannon_ball_instance : CannonBallPickable = cannon_ball_scene.instantiate()
+func _on_cooldown_timer_timeout():
+	_on_cooldown = false
 	
-	entities.add_child(cannon_ball_instance, true)
-	
-	cannon_ball_instance.throw((%FireHole.global_position - %BallDirection.global_position).normalized() * fire_force, %FireHole.global_position)
-	
-	if _is_buffered:
-		_is_buffered = false
-		_remove_ammo()
-		
-		%FireCooldown.start(cooldown_time / 2)
-	else:
-		%FireDelay.start(delay_time)
-
-func _has_ammo() -> bool:
-	return is_instance_valid(%SnapZone4.picked_up_object) or is_instance_valid(%SnapZone3.picked_up_object) or is_instance_valid(%SnapZone2.picked_up_object) or is_instance_valid(%SnapZone1.picked_up_object)
-
-func _remove_ammo():
-	if is_instance_valid(%SnapZone4.picked_up_object):
-		_ammo_cannon_ball = %SnapZone4.picked_up_object
-		%SnapZone4.drop_object()
-	elif is_instance_valid(%SnapZone3.picked_up_object):
-		_ammo_cannon_ball = %SnapZone3.picked_up_object
-		%SnapZone3.drop_object()
-	elif is_instance_valid(%SnapZone2.picked_up_object):
-		_ammo_cannon_ball = %SnapZone2.picked_up_object
-		%SnapZone2.drop_object()
-	elif is_instance_valid(%SnapZone1.picked_up_object):
-		_ammo_cannon_ball = %SnapZone1.picked_up_object
-		%SnapZone1.drop_object()
-	else:
-		return
-	
-	_ammo_cannon_ball.queue_free()
-
-
-func _on_fire_cooldown_timeout() -> void:
+func _on_delay_timer_timeout():
 	_fire_cannon()
 
-func _on_fire_delay_timeout() -> void:
-	_on_cooldown = false
+func _on_gpu_particles_3d_finished() -> void:
+	_has_fired = false
+	if _is_buffered and _has_ammo():
+		_is_buffered = false
+		_fire_cannon()
