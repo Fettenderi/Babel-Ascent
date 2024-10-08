@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=6 format=3 uid="uid://5bs8ulyvsyp2"]
+
+[ext_resource type="Script" path="res://scripts/enemy_resource.gd" id="1_43ult"]
+[ext_resource type="PackedScene" uid="uid://c1ow0xqn3x8ek" path="res://objects/enemies/cherubim_x.tscn" id="2_ra2jq"]
+[ext_resource type="PackedScene" uid="uid://cubqntfl8bqyg" path="res://objects/enemies/cherubim_xy.tscn" id="3_ttx8b"]
+[ext_resource type="PackedScene" uid="uid://k2fsb0k6tqu5" path="res://objects/enemies/cherubim_y.tscn" id="4_a58nv"]
+[ext_resource type="PackedScene" uid="uid://doogqkqcxoxqq" path="res://objects/enemies/cherubim_yx.tscn" id="5_1kmhh"]
+
+[resource]
+script = ExtResource("1_43ult")
+variants = Array[PackedScene]([ExtResource("2_ra2jq"), ExtResource("3_ttx8b"), ExtResource("4_a58nv"), ExtResource("5_1kmhh")])

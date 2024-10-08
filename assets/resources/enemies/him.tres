@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=3 format=3 uid="uid://cw6k0h12m0xnp"]
+
+[ext_resource type="Script" path="res://scripts/enemy_resource.gd" id="1_awp8l"]
+[ext_resource type="PackedScene" uid="uid://bu702oichphet" path="res://objects/enemies/him.tscn" id="2_mhx5j"]
+
+[resource]
+script = ExtResource("1_awp8l")
+variants = Array[PackedScene]([ExtResource("2_mhx5j")])

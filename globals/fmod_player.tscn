@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://48kf2xf8etki"]
+
+[ext_resource type="Script" path="res://globals/fmod_player.gd" id="1_er66v"]
+
+[node name="FmodPlayer" type="FmodBankLoader"]
+bank_paths = ["res://assets/banks/Desktop/Master.strings.bank", "res://assets/banks/Desktop/Master.bank", "res://assets/banks/Desktop/Master.assets.bank", "res://assets/banks/Desktop/Music.assets.bank", "res://assets/banks/Desktop/Music.bank"]
+script = ExtResource("1_er66v")

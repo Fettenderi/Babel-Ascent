@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://cjpmv7i7enbry"]
+
+[ext_resource type="PackedScene" uid="uid://bcgohe28tbxbe" path="res://objects/items/harp_item.tscn" id="1_k502q"]
+[ext_resource type="Script" path="res://scripts/item_resource.gd" id="1_mwvhd"]
+
+[resource]
+script = ExtResource("1_mwvhd")
+scene = ExtResource("1_k502q")

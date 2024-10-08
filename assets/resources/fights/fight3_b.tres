@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FightPhaseResource" load_steps=3 format=3 uid="uid://bbeya2dkjasba"]
+
+[ext_resource type="Script" path="res://scripts/enemy_resource.gd" id="1_eg2ms"]
+[ext_resource type="Script" path="res://scripts/fight_phase_resource.gd" id="2_xm2o6"]
+
+[resource]
+script = ExtResource("2_xm2o6")
+enemies = Array[ExtResource("1_eg2ms")]([])
+spawn_probabilities = Array[float]([])
