@@ -1,14 +1,14 @@
 extends Node3D
 
 func _on_previous_button_button_pressed() -> void:
-	if %MusicEmitter.get_parameter(&"event_parameter/music_states/value") <= 0:
-		%MusicEmitter.set_parameter(&"event_parameter/music_states/value", 3)
+	if int(FmodServer.get_global_parameter_by_name(&"music_states")) <= 0:
+		FmodServer.set_global_parameter_by_name_with_label(&"music_states", "3")
 	else:
-		%MusicEmitter.set_parameter(&"event_parameter/music_states/value", (%MusicEmitter.get_parameter(&"event_parameter/music_states/value") - 1) % 4)
+		FmodServer.set_global_parameter_by_name_with_label(&"music_states", str(int(FmodServer.get_global_parameter_by_name(&"music_states")) - 1) % 4)
 	
-	print(%MusicEmitter.get_parameter(&"event_parameter/music_states/value"))
+	print(FmodServer.get_global_parameter_by_name(&"music_states"))
 	
 func _on_next_button_button_pressed() -> void:
-	%MusicEmitter.set_parameter(&"event_parameter/music_states/value", (%MusicEmitter.get_parameter(&"event_parameter/music_states/value") + 1) % 4)
+	FmodServer.set_global_parameter_by_name_with_label(&"music_states", str(int(FmodServer.get_global_parameter_by_name(&"music_states")) + 1) % 4)
 
-	print(%MusicEmitter.get_parameter(&"event_parameter/music_states/value"))
+	print(FmodServer.get_global_parameter_by_name(&"music_states"))
