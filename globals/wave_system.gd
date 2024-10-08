@@ -1,1 +1,1 @@
-class_name WaveSystem extends Node
+extends Node

@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="FightPhaseResource" load_steps=3 format=3 uid="uid://fkkj2ml6xs7i"]
+[gd_resource type="Resource" script_class="FightPhaseResource" load_steps=6 format=3 uid="uid://ph6cnl5t1nx2"]
 
 [ext_resource type="Script" path="res://scripts/enemy_resource.gd" id="1_6331w"]
 [ext_resource type="Script" path="res://scripts/fight_phase_resource.gd" id="2_8a3wn"]
+[ext_resource type="Resource" uid="uid://15l66l55dsuo" path="res://assets/resources/enemies/throne.tres" id="2_cao8v"]
+[ext_resource type="Resource" uid="uid://dkbc77cqlw0hl" path="res://assets/resources/enemies/seraphim.tres" id="3_qif7u"]
+[ext_resource type="Resource" uid="uid://5bs8ulyvsyp2" path="res://assets/resources/enemies/cherubim.tres" id="4_7g2iq"]
 
 [resource]
 script = ExtResource("2_8a3wn")
-enemies = Array[ExtResource("1_6331w")]([])
-spawn_probabilities = Array[float]([])
+enemies = Array[ExtResource("1_6331w")]([ExtResource("2_cao8v"), ExtResource("2_cao8v"), ExtResource("2_cao8v"), ExtResource("3_qif7u"), ExtResource("4_7g2iq"), ExtResource("4_7g2iq"), ExtResource("3_qif7u"), ExtResource("3_qif7u"), ExtResource("4_7g2iq")])
+spawn_probabilities = Array[float]([1.0, 1.0, 1.0, 1.0, 0.9, 1.0, 1.0, 1.0, 0.9])
+next_shop = 2

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7jcff3pjwuu8"]
+
+[ext_resource type="Script" path="res://globals/phase_handler.gd" id="1_i204s"]
+[ext_resource type="Resource" uid="uid://nyhvpff5kfre" path="res://assets/resources/fights/fight0.tres" id="2_xbhs3"]
+
+[node name="PhaseHandler" type="Node"]
+script = ExtResource("1_i204s")
+first_phase = ExtResource("2_xbhs3")

@@ -1,4 +1,4 @@
-class_name PlayerStats extends Node
+extends Node
 
 @export var health : int:
 	set(value):

@@ -40,6 +40,8 @@ XRToolsRumbleManager="*res://addons/godot-xr-tools/rumble/rumble_manager.gd"
 PostProcessing="*res://post_processing/post_processing.tscn"
 FmodManager="*res://addons/fmod/FmodManager.gd"
 FmodPlayer="*res://globals/fmod_player.tscn"
+PlayerStats="*res://globals/player_stats.tscn"
+PhaseHandler="*res://globals/phase_handler.tscn"
 
 [editor_plugins]
 

@@ -8,22 +8,29 @@
 [sub_resource type="TextMesh" id="TextMesh_8kfq6"]
 text = "What I have"
 
+[sub_resource type="TextMesh" id="TextMesh_ew40v"]
+text = "What you get"
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_1pggx"]
 resource_local_to_scene = true
 radius = 0.3
 
-[sub_resource type="TextMesh" id="TextMesh_ew40v"]
-text = "What you get"
-
 [node name="MerchDisplayer" type="Node3D"]
 script = ExtResource("1_y0hxb")
 
-[node name="Merch" parent="." instance=ExtResource("1_5lbte")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.414707, 0, -0.0093677)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Merch"]
-transform = Transform3D(1, 0, 0, 0, 0.870433, 0.492287, 0, -0.492287, 0.870433, 0.064614, 0.0490131, -0.61504)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.870433, 0.492287, 0, -0.492287, 0.870433, -0.350093, 0.0490131, -0.624408)
 mesh = SubResource("TextMesh_8kfq6")
+skeleton = NodePath("../Merch")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.486354, -4.18741e-08, 7.40123e-08, 0, 0.423301, 0.239492, -8.50368e-08, -0.239492, 0.423301, 0.557222, 0.0418247, -0.0109907)
+mesh = SubResource("TextMesh_ew40v")
+skeleton = NodePath("../SelectedMerch")
+
+[node name="Merch" parent="." instance=ExtResource("1_5lbte")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.414707, 0, -0.0093677)
 
 [node name="SnapZone" parent="Merch" instance=ExtResource("3_t3i5x")]
 transform = Transform3D(0.69282, -0.393923, 0.0694593, 0, 0.138919, 0.787846, -0.4, -0.682295, 0.120307, 0.40133, 0.123228, 0.240712)
@@ -93,11 +100,8 @@ shape = SubResource("SphereShape3D_1pggx")
 visible = false
 
 [node name="SelectedMerch" parent="." instance=ExtResource("1_5lbte")]
+unique_name_in_owner = true
 transform = Transform3D(-0.486354, 0, -4.25184e-08, 0, 0.486354, 0, 4.25184e-08, 0, -0.486354, 0.588835, 0.0179934, 0.288117)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SelectedMerch"]
-transform = Transform3D(-1, 4.3049e-08, -7.60889e-08, 0, 0.870356, 0.492424, 8.74228e-08, 0.492424, -0.870356, 0.0650001, 0.049, 0.615)
-mesh = SubResource("TextMesh_ew40v")
 
 [node name="SnapZone" parent="SelectedMerch" instance=ExtResource("3_t3i5x")]
 transform = Transform3D(0.866025, -0.492404, 0.0868241, 0, 0.173648, 0.984808, -0.5, -0.852868, 0.150384, 0.434628, 0.123228, 0.224807)

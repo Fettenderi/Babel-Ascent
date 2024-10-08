@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ShopPhaseResource" load_steps=7 format=3 uid="uid://bnxk8l21hrjfp"]
+
+[ext_resource type="Resource" uid="uid://dpiu0rwjdm71p" path="res://assets/resources/items/hammer.tres" id="1_30vma"]
+[ext_resource type="Script" path="res://scripts/shop_phase_resource.gd" id="1_qi2fg"]
+[ext_resource type="Script" path="res://scripts/item_resource.gd" id="2_0x4ol"]
+[ext_resource type="Resource" uid="uid://bqpgft8jb6kxr" path="res://assets/resources/items/tower_upgrade.tres" id="2_hfasf"]
+[ext_resource type="Resource" uid="uid://i88e31w52wli" path="res://assets/resources/fights/fight1.tres" id="3_gal3f"]
+[ext_resource type="Resource" uid="uid://nyhvpff5kfre" path="res://assets/resources/fights/fight0.tres" id="4_vmt75"]
+
+[resource]
+script = ExtResource("1_qi2fg")
+main_item1 = ExtResource("1_30vma")
+main_item2 = ExtResource("2_hfasf")
+secondary_items = Array[ExtResource("2_0x4ol")]([])
+next_only_item1 = ExtResource("4_vmt75")
+next_only_item2 = ExtResource("4_vmt75")
+next_both_items = ExtResource("3_gal3f")

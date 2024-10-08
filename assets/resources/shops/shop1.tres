@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ShopPhaseResource" load_steps=8 format=3 uid="uid://dd80fb3n6kxdx"]
+
+[ext_resource type="Script" path="res://scripts/shop_phase_resource.gd" id="1_4e8ue"]
+[ext_resource type="Resource" uid="uid://d0t6w8j16h5ms" path="res://assets/resources/items/crossbow.tres" id="1_vxq8l"]
+[ext_resource type="Resource" uid="uid://cjpmv7i7enbry" path="res://assets/resources/items/harp.tres" id="2_5yb2l"]
+[ext_resource type="Script" path="res://scripts/item_resource.gd" id="2_kxama"]
+[ext_resource type="Resource" uid="uid://fkkj2ml6xs7i" path="res://assets/resources/fights/fight3.tres" id="3_dgcm8"]
+[ext_resource type="Resource" uid="uid://dg5giwebagnd2" path="res://assets/resources/fights/fight2_a.tres" id="4_bn2mh"]
+[ext_resource type="Resource" uid="uid://bbeya2dkjasba" path="res://assets/resources/fights/fight2_b.tres" id="5_8usqc"]
+
+[resource]
+script = ExtResource("1_4e8ue")
+main_item1 = ExtResource("1_vxq8l")
+main_item2 = ExtResource("2_5yb2l")
+secondary_items = Array[ExtResource("2_kxama")]([])
+next_only_item1 = ExtResource("4_bn2mh")
+next_only_item2 = ExtResource("5_8usqc")
+next_both_items = ExtResource("3_dgcm8")

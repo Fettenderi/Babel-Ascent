@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="FightPhaseResource" load_steps=3 format=3 uid="uid://nyhvpff5kfre"]
+[gd_resource type="Resource" script_class="FightPhaseResource" load_steps=4 format=3 uid="uid://i88e31w52wli"]
 
 [ext_resource type="Script" path="res://scripts/enemy_resource.gd" id="1_ls3tw"]
 [ext_resource type="Script" path="res://scripts/fight_phase_resource.gd" id="2_g3mgs"]
+[ext_resource type="Resource" uid="uid://d1hpn8nuxfwa" path="res://assets/resources/enemies/eye.tres" id="2_x1n5s"]
 
 [resource]
 script = ExtResource("2_g3mgs")
-enemies = Array[ExtResource("1_ls3tw")]([])
-spawn_probabilities = Array[float]([])
+enemies = Array[ExtResource("1_ls3tw")]([ExtResource("2_x1n5s"), ExtResource("2_x1n5s"), ExtResource("2_x1n5s"), ExtResource("2_x1n5s"), ExtResource("2_x1n5s"), ExtResource("2_x1n5s")])
+spawn_probabilities = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0, 0.6])
+next_shop = 1
