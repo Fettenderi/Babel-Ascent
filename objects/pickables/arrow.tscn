@@ -64,7 +64,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 
 collision_layer = 4
 collision_mask = 65575
 script = ExtResource("1_61d2c")
-direction = Vector3(0, 0, -1)
 second_hand_grab = 1
 
 [node name="ArrowMesh" type="MeshInstance3D" parent="."]
@@ -77,6 +76,7 @@ shape = SubResource("ConvexPolygonShape3D_oxk56")
 
 [node name="HurtBox" parent="." groups=["Player"] instance=ExtResource("2_u1ji3")]
 visible = false
+damage = 2.0
 
 [node name="CollisionShape3D" parent="HurtBox" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.249655)

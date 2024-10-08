@@ -23,6 +23,7 @@ shape = SubResource("SphereShape3D_e14dx")
 
 [node name="HitBox" parent="." index="4"]
 visible = false
+health = 20.0
 
 [node name="CollisionShape3D" parent="HitBox" index="0"]
 shape = SubResource("SphereShape3D_2xpfd")

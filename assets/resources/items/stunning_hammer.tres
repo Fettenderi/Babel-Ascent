@@ -1,8 +1,10 @@
 [gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://cibdn8c68q7s7"]
 
-[ext_resource type="PackedScene" uid="uid://cfuw46fqxuk4o" path="res://objects/items/stunning_hammer_item.tscn" id="1_ncu5h"]
+[ext_resource type="PackedScene" uid="uid://dqkmclyx080f3" path="res://objects/items/stunning_hammer_item.tscn" id="1_ncu5h"]
 [ext_resource type="Script" path="res://scripts/item_resource.gd" id="1_w6oe6"]
 
 [resource]
 script = ExtResource("1_w6oe6")
 scene = ExtResource("1_ncu5h")
+item_id = &"StunningHammer"
+cost = 0

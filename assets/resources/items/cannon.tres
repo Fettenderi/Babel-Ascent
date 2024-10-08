@@ -6,3 +6,5 @@
 [resource]
 script = ExtResource("1_kddyb")
 scene = ExtResource("1_6msm8")
+item_id = &"Cannon"
+cost = 0

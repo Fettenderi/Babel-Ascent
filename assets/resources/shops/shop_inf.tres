@@ -10,3 +10,4 @@ secondary_items = Array[ExtResource("2_d8p4k")]([])
 next_only_item1 = ExtResource("1_4vwba")
 next_only_item2 = ExtResource("1_4vwba")
 next_both_items = ExtResource("1_4vwba")
+next_scene_name = "res://scenes/fight_scene.tscn"

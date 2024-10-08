@@ -6,3 +6,5 @@
 [resource]
 script = ExtResource("1_wvjqu")
 scene = ExtResource("1_1gbaf")
+item_id = &"Crossbow"
+cost = 0

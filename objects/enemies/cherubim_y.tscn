@@ -25,6 +25,7 @@ shape = SubResource("SphereShape3D_cplll")
 
 [node name="HitBox" parent="." index="4"]
 visible = false
+health = 4.0
 
 [node name="CollisionShape3D" parent="HitBox" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00193024, 0)

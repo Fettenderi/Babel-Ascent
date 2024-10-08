@@ -29,7 +29,7 @@ General/should_load_by_name=false
 [application]
 
 config/name="BabelAscent"
-run/main_scene="res://scenes/merchant_scene.tscn"
+run/main_scene="res://scenes/main_staging.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 

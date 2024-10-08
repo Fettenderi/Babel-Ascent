@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=4 uid="uid://cdm1qdok6gcqk"]
+
+[ext_resource type="Script" path="res://scripts/merch_slot.gd" id="1_7dwt2"]
+[ext_resource type="PackedScene" uid="uid://b6any8ipar8u0" path="res://assets/models/tag.blend" id="2_p0045"]
+[ext_resource type="Material" uid="uid://ybpin33drebr" path="res://assets/materials/hands.tres" id="2_vkujr"]
+[ext_resource type="Material" uid="uid://r2f32d4cdrmd" path="res://assets/materials/handles.tres" id="4_6h04s"]
+
+[sub_resource type="SphereShape3D" id="1"]
+resource_local_to_scene = true
+radius = 0.609586
+
+[sub_resource type="TextMesh" id="TextMesh_msbiu"]
+text = "/"
+depth = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_328j7"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_taisb"]
+_surfaces = [{
+"aabb": AABB(-0.763675, -0.763676, -0.08, 1.52735, 1.52735, 0.16),
+"format": 34896613377,
+"index_count": 72,
+"index_data": PackedByteArray("BQADAAEABQAHAAMABQAAAAQABQABAAAABwAEAAYABwAFAAQAAwAGAAIAAwAHAAYAAAAGAAQAAAACAAYAAQACAAAAAQADAAIACAALAAkACAAKAAsACgAPAAsACgAOAA8ADgANAA8ADgAMAA0ADAAJAA0ADAAIAAkACgAMAA4ACgAIAAwADwAJAAsADwANAAkA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("9hL+/wAAAAD+//YSAAAAAPYS///+/wAA/v/2Ev//AAAAAAjtAAAAAAjtAAAAAAAAAAAI7f7/AAAI7QAA/v8AAAAA9hL//wAACO3+//7/AAAAAPYSAAAAAAjt/v8AAAAA9hIAAP7/AAD//wjt/v8AAPYSAAAAAAAA/v8I7QAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_roemn"]
+resource_name = "cross_Cube_001"
+_surfaces = [{
+"aabb": AABB(-0.763675, -0.763676, -0.08, 1.52735, 1.52735, 0.16),
+"attribute_data": PackedByteArray("/5//f/+f/3//n/9//1//f/9f/3//X/9//5//P/+f/z//n/8//1//P/9f/z//X/8//5//v//f/3//n/+//1//v/8f/3//X/+//58AAP/f/z//n////18AAP8f/z//X////18AAP9f////H/8//58AAP/f/z//n////1//v/9f/7//H/9//5//v//f/3//n/+//1//P/9f/z//X/8//5//P/+f/z//n/8//1//f/9f/3//X/9//5//f/+f/3//n/9/"),
+"format": 34896613399,
+"index_count": 72,
+"index_data": PackedByteArray("EAALAAUAEAAWAAsADwAAAAwADwADAAAAFwAOABQAFwARAA4ACQASAAYACQAVABIAAgATAA0AAgAIABMABAAHAAEABAAKAAcAGQAjAB0AGQAfACMAHgAtACEAHgAqAC0AKwApAC8AKwAlACkAJAAbACcAJAAYABsAIAAmACwAIAAaACYALgAcACIALgAoABwA"),
+"material": SubResource("StandardMaterial3D_328j7"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("9hL+/wAA///2Ev7/AACq6fYS/v8AAKrp/v/2EgAA///+//YSAACq6f7/9hIAAPzF9hL///7//9/2Ev///v+q6fYS///+/6rp/v/2Ev///9/+//YS//+q6f7/9hL///zFAAAI7QAA//8AAAjtAACq6QAACO0AAKrpCO0AAAAA//8I7QAAAAD8xQjtAAAAAKrpAAAI7f7//98AAAjt/v+q6QAACO3+/6rpCO0AAP7//98I7QAA/v/8xQjtAAD+/6rpAAD2Ev///58AAPYS///8xQAA9hL///zFCO3+//7//58I7f7//v+q6Qjt/v/+//zFAAD2EgAA//8AAPYSAAD8xQAA9hIAAPzFCO3+/wAA//8I7f7/AACq6Qjt/v8AAPzF9hIAAP7//5/2EgAA/v/8xfYSAAD+//zF//8I7f7//5///wjt/v+q6f//CO3+//zF9hIAAAAA///2EgAAAAD8xfYSAAAAAPzF/v8I7QAA///+/wjtAACq6f7/CO0AAPzFfKWB2gQ19hUJagS1fKWB2gQ19hX/HAFG/////wQ19hUJagS1/////wQ19hX/HAFGfKWB2glqBLX6ygjqfKWB2v8cAUb6ygjq/////wlqBLX6ygjq//////8cAUb6ygjq///////i/bn+Of6c/////wQ19hX/4v25gdp8pf/i/bn+Of6cgdp8pQQ19hX/4v25//////8cAUb+Of6c/////wQ19hX/HAFGgdp8pf8cAUb+Of6cgdp8pQQ19hX/HAFG")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_taisb")
+
+[node name="MerchSlot" type="Area3D"]
+collision_layer = 4
+collision_mask = 65540
+script = ExtResource("1_7dwt2")
+snap_mode = 1
+snap_exclude = "Light"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("1")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+visible = false
+unit_size = 3.0
+max_db = 1.0
+max_distance = 100.0
+
+[node name="PriceTag" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.870794, 0.491649, 0, -0.491649, 0.870794, 0, 0.125246, 0.618589)
+mesh = SubResource("TextMesh_msbiu")
+surface_material_override/0 = ExtResource("2_vkujr")
+
+[node name="TagMesh" parent="." instance=ExtResource("2_p0045")]
+transform = Transform3D(0.102147, 0, 0, 0, 0.102147, 0, 0, 0, 0.102147, 0, 0, 0.549029)
+
+[node name="CrossMesh" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.6, 0, 0, 0, 0.424264, 0.424264, 0, -0.424264, 0.424264, 0, 0.383292, 0.17466)
+visible = false
+mesh = SubResource("ArrayMesh_roemn")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("4_6h04s")
+
+[connection signal="body_entered" from="." to="." method="_on_snap_zone_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_snap_zone_body_exited"]

@@ -1,3 +1,3 @@
 class_name PhaseResource extends Resource
 
-@export var phase_scene : PackedScene
+@export_file('*.tscn') var next_scene_name : String

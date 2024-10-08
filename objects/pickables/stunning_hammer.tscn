@@ -75,6 +75,7 @@ shape = SubResource("ConvexPolygonShape3D_xcpd4")
 [node name="HurtBox" parent="." index="2" groups=["Player"] instance=ExtResource("2_dba3u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0600324, -0.000229472)
 visible = false
+damage = 2.5
 
 [node name="CollisionShape3D" parent="HurtBox" index="0"]
 shape = SubResource("BoxShape3D_sabxe")
