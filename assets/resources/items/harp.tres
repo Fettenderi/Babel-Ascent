@@ -7,4 +7,4 @@
 script = ExtResource("1_mwvhd")
 scene = ExtResource("1_k502q")
 item_id = &"Harp"
-cost = 0
+cost = 7

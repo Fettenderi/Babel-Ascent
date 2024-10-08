@@ -18,14 +18,17 @@ signal light_changed(value)
 		if value <= 0:
 			died.emit()
 
-@onready var _unlocked_items : Array[bool] = []
-@onready var _tower_level : int = 0
+@onready var unlocked_items : Dictionary = {
+	&"Hammer" : false,
+	&"Crossbow" : false,
+	&"Harp" : false,
+	&"StunningHammer" : false,
+	&"Cannon" : false
+}
+
+@onready var tower_level : int = 0
 
 var _current_light := 0:
 	set(value):
 		_current_light = value
 		light_changed.emit(_current_light)
-
-func _ready() -> void:
-	for _i in range(5):
-		_unlocked_items.append(false)

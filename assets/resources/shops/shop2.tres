@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ShopPhaseResource" load_steps=7 format=3 uid="uid://bn5n24keudj33"]
+[gd_resource type="Resource" script_class="ShopPhaseResource" load_steps=8 format=3 uid="uid://bn5n24keudj33"]
 
 [ext_resource type="Resource" uid="uid://dwelmkf0prcs8" path="res://assets/resources/items/cannon.tres" id="1_742rl"]
 [ext_resource type="Script" path="res://scripts/shop_phase_resource.gd" id="1_oxerc"]
@@ -6,12 +6,13 @@
 [ext_resource type="Script" path="res://scripts/item_resource.gd" id="2_iokqa"]
 [ext_resource type="Resource" uid="uid://c5prsl876p4v8" path="res://assets/resources/fights/fight5.tres" id="3_w7sfn"]
 [ext_resource type="Resource" uid="uid://ph6cnl5t1nx2" path="res://assets/resources/fights/fight4.tres" id="4_2vo05"]
+[ext_resource type="Resource" uid="uid://bqpgft8jb6kxr" path="res://assets/resources/items/tower_upgrade.tres" id="7_kw07i"]
 
 [resource]
 script = ExtResource("1_oxerc")
 main_item1 = ExtResource("1_742rl")
 main_item2 = ExtResource("2_errpt")
-secondary_items = Array[ExtResource("2_iokqa")]([])
+secondary_items = Array[ExtResource("2_iokqa")]([ExtResource("7_kw07i"), ExtResource("7_kw07i")])
 next_only_item1 = ExtResource("4_2vo05")
 next_only_item2 = ExtResource("4_2vo05")
 next_both_items = ExtResource("3_w7sfn")

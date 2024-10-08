@@ -12,6 +12,7 @@ points = PackedVector3Array(0.00804567, 2.44213, -0.00673079, -0.0246599, 2.3560
 
 [node name="Him" instance=ExtResource("1_cbm6v")]
 speed = 0.2
+light_released = 10
 
 [node name="HimMesh" parent="." index="0" instance=ExtResource("2_hqp71")]
 

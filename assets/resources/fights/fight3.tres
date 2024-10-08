@@ -9,6 +9,7 @@
 [resource]
 script = ExtResource("5_8awm5")
 enemies = Array[ExtResource("1_yxypo")]([ExtResource("2_5l6ie"), ExtResource("3_0350q"), ExtResource("2_5l6ie"), ExtResource("2_5l6ie"), ExtResource("3_0350q"), ExtResource("3_0350q"), ExtResource("4_gk5hh")])
+enemy_waves = Array[int]([3, 2, 2])
 spawn_probabilities = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0])
 next_shop = 2
 next_scene_name = "res://scenes/merchant_scene.tscn"

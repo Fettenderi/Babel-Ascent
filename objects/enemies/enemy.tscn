@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://54jegna8r7wy"]
+[gd_scene load_steps=7 format=3 uid="uid://54jegna8r7wy"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_r0ntq"]
+[ext_resource type="PackedScene" uid="uid://bdr7j4a0yrlbu" path="res://objects/pickables/light.tscn" id="2_0ylml"]
 [ext_resource type="PackedScene" uid="uid://dnukot3s50pwy" path="res://objects/components/hit_box.tscn" id="2_waawj"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_hdwye"]
@@ -26,6 +27,7 @@ collision_layer = 2
 collision_mask = 32
 script = ExtResource("1_r0ntq")
 speed = 0.74
+_light_scene = ExtResource("2_0ylml")
 
 [node name="AxisPreview" type="Node3D" parent="."]
 visible = false

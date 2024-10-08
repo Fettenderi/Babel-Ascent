@@ -14,6 +14,7 @@ radius = 1.25603
 
 [node name="Throne" instance=ExtResource("1_fgdr6")]
 speed = 0.5
+light_released = 3
 
 [node name="ThroneMesh" parent="." index="0" instance=ExtResource("2_1qu8k")]
 

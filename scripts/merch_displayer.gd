@@ -54,6 +54,12 @@ func _complete_transaction() -> void:
 	for _merch : PickableItem in _selected_merch:
 		if _merch:
 			_consumed_lights += _merch.item_resource.cost
+			
+			if PlayerStats.unlocked_items.has(_merch.item_resource.item_id):
+				PlayerStats.unlocked_items[_merch.item_resource.item_id] = true
+			elif _merch.item_resource.item_id == &"TowerUpgrade":
+				PlayerStats.tower_level += 1
+			
 			match _merch.get_meta(&"ItemType"):
 				ItemType.MAIN_ITEM1:
 					_shop_resource.main_item1 = null

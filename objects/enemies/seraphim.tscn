@@ -13,6 +13,7 @@ radius = 0.484334
 size = Vector3(3.07056, 2.96704, 0.69043)
 
 [node name="Seraphim" instance=ExtResource("1_l1j7s")]
+light_released = 2
 
 [node name="SeraphimMesh" parent="." index="0" instance=ExtResource("2_5mfe1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42018, 0)

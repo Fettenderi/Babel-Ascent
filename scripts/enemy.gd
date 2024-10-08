@@ -8,6 +8,10 @@ class_name AbstractEnemy extends CharacterBody3D
 		if not Engine.is_editor_hint() or not _movement_pattern: return
 		_movement_pattern._tooltip_preview_speed = value
 
+@export var light_released := 1
+
+@export var _light_scene : PackedScene
+
 var _movement_pattern : MovementBehaviour
 
 var _player : Camera3D
@@ -23,6 +27,15 @@ func _physics_process(delta: float) -> void:
 	move_and_collide(velocity)
 
 func _on_hit_box_died() -> void:
+	var _light_instance : XRToolsPickable
+	
+	for _i in range(light_released):
+		_light_instance = _light_scene.instantiate()
+		
+		_light_instance.global_position = global_position + Vector3(randf() * 2 - 1, randf() * 2 - 1, randf() * 2 - 1) * 0.5
+		
+		get_parent().add_child(_light_instance, true)
+	
 	queue_free()
 
 
