@@ -10,7 +10,7 @@ text = "What I have"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1pggx"]
 resource_local_to_scene = true
-radius = 0.207064
+radius = 0.3
 
 [sub_resource type="TextMesh" id="TextMesh_ew40v"]
 text = "What you get"
