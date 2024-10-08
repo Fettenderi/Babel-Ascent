@@ -1,13 +1,6 @@
-[gd_scene load_steps=17 format=4 uid="uid://cfuw46fqxuk4o"]
+[gd_scene load_steps=5 format=4 uid="uid://dqkmclyx080f3"]
 
-[ext_resource type="PackedScene" uid="uid://cft7fbllvavgi" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_1wne7"]
-[ext_resource type="PackedScene" uid="uid://dpl8em1nk60vo" path="res://objects/components/hurt_box.tscn" id="2_5karg"]
-[ext_resource type="PackedScene" uid="uid://d0qdej4i272k" path="res://objects/components/respawn_detector.tscn" id="3_v33qx"]
-[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_jl0tq"]
-[ext_resource type="Animation" uid="uid://dqa0h82y3qn1t" path="res://addons/godot-xr-tools/hands/animations/left/Grip 1.res" id="5_my1wk"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="6_d83ob"]
-[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="7_5abeo"]
-[ext_resource type="Animation" uid="uid://daqddcrbpam0c" path="res://addons/godot-xr-tools/hands/animations/right/Grip 1.res" id="8_kqv47"]
+[ext_resource type="PackedScene" uid="uid://c5c3ter83yb6f" path="res://abstractions/pickable_item.tscn" id="1_p0ju8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f03fp"]
 
@@ -24,7 +17,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_m6fgf"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_8joqi"]
 resource_name = "hammer_Cube_003"
 _surfaces = [{
 "aabb": AABB(-0.26051, -0.176912, -0.0949381, 0.521019, 1.04565, 0.189876),
@@ -41,66 +34,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wmvmt")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xcpd4"]
-points = PackedVector3Array(-0.26051, -0.115909, -0.0339012, -0.26051, -0.115909, 0.0338825, -0.26051, -0.00659464, -0.0339012, -0.233326, -0.176912, -0.0949381, -0.26051, -0.00659464, 0.0338825, -0.233326, -0.176912, 0.0949195, -0.233326, 0.0545107, 0.0949381, -0.0470223, 0.868736, -0.047023, -0.233326, 0.0545107, -0.0949381, 0.233276, -0.176912, -0.0949381, -0.0470223, 0.868736, 0.0470044, 0.233276, -0.176912, 0.0949195, 0.233276, 0.0545107, 0.0949381, 0.0469713, 0.868736, -0.047023, 0.233276, 0.0545107, -0.0949381, 0.26051, -0.115909, -0.0339012, 0.0469713, 0.868736, 0.0470044, 0.26051, -0.115909, 0.0338825, 0.260459, -0.00659464, 0.0338825, 0.260459, -0.00659464, -0.0339012)
+[node name="StunningHammerItem" instance=ExtResource("1_p0ju8")]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_sabxe"]
-size = Vector3(0.68457, 0.388123, 0.337891)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w8wyj"]
-points = PackedVector3Array(-0.26051, -0.115909, -0.0339012, -0.26051, -0.115909, 0.0338825, -0.26051, -0.00659464, -0.0339012, -0.233326, -0.176912, -0.0949381, -0.26051, -0.00659464, 0.0338825, -0.233326, -0.176912, 0.0949195, -0.233326, 0.0545107, 0.0949381, -0.0470223, 0.868736, -0.047023, -0.233326, 0.0545107, -0.0949381, 0.233276, -0.176912, -0.0949381, -0.0470223, 0.868736, 0.0470044, 0.233276, -0.176912, 0.0949195, 0.233276, 0.0545107, 0.0949381, 0.0469713, 0.868736, -0.047023, 0.233276, 0.0545107, -0.0949381, 0.26051, -0.115909, -0.0339012, 0.0469713, 0.868736, 0.0470044, 0.26051, -0.115909, 0.0338825, 0.260459, -0.00659464, 0.0338825, 0.260459, -0.00659464, -0.0339012)
-
-[sub_resource type="Resource" id="Resource_2xgan"]
-script = ExtResource("6_d83ob")
-open_pose = ExtResource("5_my1wk")
-closed_pose = ExtResource("5_my1wk")
-
-[sub_resource type="Resource" id="Resource_c0ofd"]
-script = ExtResource("6_d83ob")
-open_pose = ExtResource("8_kqv47")
-closed_pose = ExtResource("8_kqv47")
-
-[node name="Hammer" instance=ExtResource("1_1wne7")]
-transform = Transform3D(1, 0, 0, 0, 0.999993, 0.00382244, 0, -0.00382244, 0.999993, 0, 0, 0)
-collision_mask = 65575
-second_hand_grab = 2
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
-mesh = SubResource("ArrayMesh_m6fgf")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
-visible = false
-shape = SubResource("ConvexPolygonShape3D_xcpd4")
-
-[node name="HurtBox" parent="." index="2" groups=["Player"] instance=ExtResource("2_5karg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0600324, -0.000229472)
-visible = false
-
-[node name="CollisionShape3D" parent="HurtBox" index="0"]
-shape = SubResource("BoxShape3D_sabxe")
-
-[node name="RespawnDetector" parent="." index="3" instance=ExtResource("3_v33qx")]
-transform = Transform3D(1.095, 0, 0, 0, 1.095, 0, 0, 0, 1.095, 0, 0, 0)
-visible = false
-
-[node name="CollisionShape3D" parent="RespawnDetector" index="0"]
-shape = SubResource("ConvexPolygonShape3D_w8wyj")
-
-[node name="GrabPointHandLeftSecondary" parent="." index="4" instance=ExtResource("4_jl0tq")]
-transform = Transform3D(-5.90371e-08, -0.155124, -0.987895, 0.00382236, -0.987887, 0.155123, -0.999992, -0.00377608, 0.000592999, 0.0744947, 0.606654, -0.000835653)
-hand_pose = SubResource("Resource_2xgan")
-
-[node name="GrabPointHandLeftMain" parent="." index="5" instance=ExtResource("4_jl0tq")]
-transform = Transform3D(-5.90371e-08, -0.155124, -0.987895, 0.00382236, -0.987887, 0.155123, -0.999992, -0.00377608, 0.000592999, 0.0744947, 0.186485, -0.00244169)
-hand_pose = SubResource("Resource_2xgan")
-
-[node name="GrabPointHandRightSecondary" parent="." index="6" instance=ExtResource("7_5abeo")]
-transform = Transform3D(-8.83592e-08, -0.155124, -0.987895, 0.00382236, -0.987888, 0.155123, -0.999993, -0.00377608, 0.000593028, 0.0744947, 0.606654, -0.000835653)
-hand_pose = SubResource("Resource_c0ofd")
-
-[node name="GrabPointHandRightMain" parent="." index="7" instance=ExtResource("7_5abeo")]
-transform = Transform3D(-8.83592e-08, -0.155124, -0.987895, 0.00382236, -0.987888, 0.155123, -0.999993, -0.00377608, 0.000593028, 0.0744947, 0.186485, -0.00244169)
-hand_pose = SubResource("Resource_c0ofd")
-
-[editable path="HurtBox"]
-[editable path="RespawnDetector"]
+[node name="Mesh" parent="." index="0"]
+mesh = SubResource("ArrayMesh_8joqi")
