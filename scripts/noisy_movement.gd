@@ -20,5 +20,6 @@ func get_direction(time := -1.0) -> Vector3:
 	return axis * Vector3(_get_noise(time), _get_noise(time + 1.0), _get_noise(time + 2.0))
 
 func _get_noise(time: float) -> float:
+	@warning_ignore("narrowing_conversion")
 	seed((_elapsed if time < 0.0 else time) * 100)
 	return (randf() * 2 - 1) * noise_influence

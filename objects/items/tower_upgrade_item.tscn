@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7rqrppfyv5oh"]
+
+[ext_resource type="PackedScene" uid="uid://c5c3ter83yb6f" path="res://abstractions/pickable_item.tscn" id="1_gkagy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ytmle"]
+size = Vector3(0.182617, 0.184082, 0.390625)
+
+[node name="TowerUpgradeItem" instance=ExtResource("1_gkagy")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(-0.380427, 0, 1.57816, 0, 1.62336, 0, -1.57816, 0, -0.380427, 0.331635, 0.069915, 0.15995)
+mesh = SubResource("BoxMesh_ytmle")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." index="3"]
+transform = Transform3D(0.34613, 0, 1.58603, 0, 1.62336, 0, -1.58603, 0, 0.34613, -0.317711, 0.069915, 0.15995)
+mesh = SubResource("BoxMesh_ytmle")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." index="4"]
+transform = Transform3D(0.276619, 0, 1.59962, 0, 1.62336, 0, -1.59962, 0, 0.276619, -0.0268403, 0.069915, -0.262484)
+mesh = SubResource("BoxMesh_ytmle")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." index="5"]
+transform = Transform3D(-0.474355, 0, 1.55251, 0, 1.62336, 0, -1.55251, 0, -0.474355, -0.00662098, 0.383304, -0.0169643)
+mesh = SubResource("BoxMesh_ytmle")

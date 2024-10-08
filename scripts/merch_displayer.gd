@@ -15,8 +15,13 @@ signal item_deselected(id, is_main)
 @onready var _selected_merch : Array[XRToolsPickable] = []
 
 func _ready() -> void:
-	_merch_slots.append_array(%Merch.get_children())
-	_selected_merch_slots.append_array(%SelectedMerch.get_children())
+	for _child in %Merch.get_children():
+		if _child is XRToolsSnapZone:
+			_merch_slots.append(_child)
+	
+	for _child in %SelectedMerch.get_children():
+		if _child is XRToolsSnapZone:
+			_selected_merch_slots.append(_child)
 	
 	for _i in range(_selected_merch_slots.size()):
 		_selected_merch_slots[_i].has_picked_up.connect(_has_selected_item.bind(_i))
