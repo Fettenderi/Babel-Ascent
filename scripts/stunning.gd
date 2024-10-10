@@ -13,6 +13,7 @@ extends Area3D
 var _is_active := true
 
 func _ready() -> void:
+	%StunningEvent.preload_event = true
 	_stunn_activation_timer = Timer.new()
 	
 	_stunn_activation_timer.autostart = false
@@ -25,6 +26,8 @@ func _on_hurt_box_hurtbox_entered(_object: Variant) -> void:
 		var tween := create_tween()
 		_is_active = false
 		_stunn_activation_timer.start()
+		
+		%StunningEvent.play()
 		
 		tween.set_parallel(true)
 		tween.tween_property(_stunning_collision, "radius", stunn_radius, 0.5)

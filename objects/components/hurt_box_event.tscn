@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://gvxf06jw48jm"]
+
+[ext_resource type="Script" path="res://scripts/hurt_box_event.gd" id="1_gja45"]
+
+[node name="HurtBoxEvent" type="FmodEventEmitter3D"]
+event_guid = "{0000005f-006e-0000-6500-000077000000}"
+preload_event = false
+script = ExtResource("1_gja45")

@@ -16,6 +16,9 @@ var _light_amount := 0:
 
 
 func _ready() -> void:
+	%WeighterTicksEvent.preload_event = true
+	%NewWeightEvent.preload_event = true
+	
 	_entities = Node.new()
 	
 	_entities.name = "Entities"
@@ -40,6 +43,8 @@ func add_light(amount: int) -> void:
 func _on_light_detector_body_entered(body: Node3D) -> void:
 	if body.is_in_group(&"Light"):
 		_light_amount += 1
+		%WeighterTicksEvent.play()
+		%NewWeightEvent.play()
 		_lights.append(body)
 
 func _on_light_detector_body_exited(body: Node3D) -> void:

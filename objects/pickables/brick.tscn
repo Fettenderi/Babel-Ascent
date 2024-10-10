@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c1dd2llq67y8y"]
+[gd_scene load_steps=15 format=3 uid="uid://c1dd2llq67y8y"]
 
 [ext_resource type="PackedScene" uid="uid://cft7fbllvavgi" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_7nj2k"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_2au7d"]
@@ -8,6 +8,7 @@
 [ext_resource type="Animation" uid="uid://d3h36bkauutoq" path="res://addons/godot-xr-tools/hands/animations/right/Straight.res" id="6_kumdp"]
 [ext_resource type="PackedScene" uid="uid://dpl8em1nk60vo" path="res://objects/components/hurt_box.tscn" id="7_v1qk6"]
 [ext_resource type="PackedScene" uid="uid://vkfp61dc58mr" path="res://objects/components/despawn_detector.tscn" id="8_5lkiw"]
+[ext_resource type="PackedScene" uid="uid://gvxf06jw48jm" path="res://objects/components/hurt_box_event.tscn" id="8_mcv2e"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_hrp11"]
 size = Vector3(0.166, 0.167, 0.355)
@@ -53,6 +54,10 @@ damage = 0.75
 
 [node name="CollisionShape3D" parent="HurtBox" index="0"]
 shape = SubResource("BoxShape3D_wlmg7")
+
+[node name="HurtBoxEvent" parent="HurtBox" index="1" instance=ExtResource("8_mcv2e")]
+event_name = "event:/WALL/SFX_Wall_Hitted"
+event_guid = "{73663f08-acea-4e28-be0f-afc67282493d}"
 
 [node name="DespawnDetector" parent="." index="5" instance=ExtResource("8_5lkiw")]
 transform = Transform3D(1.14961, 0, 0, 0, 1.14961, 0, 0, 0, 1.14961, 0, 0, 0)

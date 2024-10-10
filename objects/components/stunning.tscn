@@ -23,4 +23,10 @@ mesh = SubResource("SphereMesh_c1gkf")
 unique_name_in_owner = true
 shape = SubResource("SphereShape3D_4ggcy")
 
+[node name="StunningEvent" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/HAMMER/SFX_Hammer_Hit_Enemy"
+event_guid = "{1784cb8b-a50b-415c-9481-ea5c4b237d78}"
+preload_event = false
+unique_name_in_owner = true
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

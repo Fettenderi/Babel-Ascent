@@ -172,5 +172,17 @@ collision_mask = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00420809, 0)
 shape = SubResource("BoxShape3D_3hm5i")
 
+[node name="WeighterTicksEvent" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/SHOP/SFX_Balance_Shop"
+event_guid = "{2aa1a815-a4ff-4f7f-9c56-85412c8652b2}"
+preload_event = false
+unique_name_in_owner = true
+
+[node name="NewWeightEvent" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/SHOP/SFX_Balance"
+event_guid = "{9fc236da-fa34-4ca7-a839-90636017d0a8}"
+preload_event = false
+unique_name_in_owner = true
+
 [connection signal="body_entered" from="WeighterPlate/LightDetector" to="." method="_on_light_detector_body_entered"]
 [connection signal="body_exited" from="WeighterPlate/LightDetector" to="." method="_on_light_detector_body_exited"]

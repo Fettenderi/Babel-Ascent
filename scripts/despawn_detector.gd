@@ -1,5 +1,7 @@
 extends Area3D
 
+signal despawn_detected
+
 @export var despawn_if_touch : StringName
 
 @onready var _parent : RigidBody3D = get_parent()
