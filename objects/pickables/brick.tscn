@@ -1,0 +1,66 @@
+[gd_scene load_steps=14 format=3 uid="uid://c1dd2llq67y8y"]
+
+[ext_resource type="PackedScene" uid="uid://cft7fbllvavgi" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_7nj2k"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_2au7d"]
+[ext_resource type="Animation" uid="uid://4g211my0hoiw" path="res://addons/godot-xr-tools/hands/animations/left/Straight.res" id="3_y462v"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="4_38r3x"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_gesrv"]
+[ext_resource type="Animation" uid="uid://d3h36bkauutoq" path="res://addons/godot-xr-tools/hands/animations/right/Straight.res" id="6_kumdp"]
+[ext_resource type="PackedScene" uid="uid://dpl8em1nk60vo" path="res://objects/components/hurt_box.tscn" id="7_v1qk6"]
+[ext_resource type="PackedScene" uid="uid://vkfp61dc58mr" path="res://objects/components/despawn_detector.tscn" id="8_5lkiw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hrp11"]
+size = Vector3(0.166, 0.167, 0.355)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bpd4x"]
+size = Vector3(0.166, 0.167, 0.355)
+
+[sub_resource type="Resource" id="Resource_cg7y3"]
+script = ExtResource("4_38r3x")
+open_pose = ExtResource("3_y462v")
+closed_pose = ExtResource("3_y462v")
+
+[sub_resource type="Resource" id="Resource_fgr3o"]
+script = ExtResource("4_38r3x")
+open_pose = ExtResource("6_kumdp")
+closed_pose = ExtResource("6_kumdp")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wlmg7"]
+size = Vector3(0.351563, 0.293213, 0.517822)
+
+[node name="Brick" instance=ExtResource("1_7nj2k")]
+collision_mask = 65799
+second_hand_grab = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
+mesh = SubResource("BoxMesh_hrp11")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+visible = false
+shape = SubResource("BoxShape3D_bpd4x")
+
+[node name="GrabPointHandLeft" parent="." index="2" instance=ExtResource("2_2au7d")]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, -0.989821, -3.70455e-08, 0.142318, 0.142318, 4.94874e-08, 0.989821, 0.0452523, 0.0555673, -0.0533228)
+hand_pose = SubResource("Resource_cg7y3")
+
+[node name="GrabPointHandRight" parent="." index="3" instance=ExtResource("5_gesrv")]
+transform = Transform3D(-4.37114e-08, -1, 0, 0.985473, -4.30764e-08, 0.169831, -0.169831, 7.42355e-09, 0.985473, -0.0486365, 0.0548581, -0.0533806)
+hand_pose = SubResource("Resource_fgr3o")
+
+[node name="HurtBox" parent="." index="4" groups=["Player"] instance=ExtResource("7_v1qk6")]
+visible = false
+damage = 0.75
+
+[node name="CollisionShape3D" parent="HurtBox" index="0"]
+shape = SubResource("BoxShape3D_wlmg7")
+
+[node name="DespawnDetector" parent="." index="5" instance=ExtResource("8_5lkiw")]
+transform = Transform3D(1.14961, 0, 0, 0, 1.14961, 0, 0, 0, 1.14961, 0, 0, 0)
+visible = false
+despawn_if_touch = &"Floor"
+
+[node name="CollisionShape3D" parent="DespawnDetector" index="0"]
+shape = SubResource("BoxShape3D_bpd4x")
+
+[editable path="HurtBox"]
+[editable path="DespawnDetector"]

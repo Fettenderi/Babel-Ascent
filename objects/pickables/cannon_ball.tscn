@@ -62,7 +62,7 @@ closed_pose = ExtResource("8_n750w")
 
 [node name="CannonBall" type="RigidBody3D" groups=["CannonBall"]]
 collision_layer = 4
-collision_mask = 65575
+collision_mask = 65799
 script = ExtResource("1_idlo2")
 second_hand_grab = 1
 

@@ -23,10 +23,11 @@ signal light_changed(value)
 	&"Crossbow" : false,
 	&"Harp" : false,
 	&"StunningHammer" : false,
-	&"Cannon" : false
+	&"Cannon" : false,
+	&"Bricks" : true
 }
 
-@onready var tower_level : int = 0
+@export var tower_level : int = 0
 
 @export var _current_light := 0:
 	set(value):

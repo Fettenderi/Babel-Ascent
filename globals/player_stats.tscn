@@ -6,9 +6,11 @@
 script = ExtResource("1_dxx8d")
 health = 20
 unlocked_items = {
+"Bricks": true,
 "Cannon": true,
 "Crossbow": true,
 "Hammer": true,
 "Harp": true,
 "StunningHammer": false
 }
+tower_level = 10

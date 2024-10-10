@@ -30,8 +30,6 @@ var _main_items_picked := 0:
 var _transaction_ongoing := true
 
 func _ready() -> void:
-	FmodServer.set_global_parameter_by_name_with_label("music_states", "0")
-	
 	for _child in %Merch.get_children():
 		if _child is MerchSlot:
 			_child.enabled = false

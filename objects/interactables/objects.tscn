@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=3 uid="uid://cs587nq25tdpl"]
+
+[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/interactables/interactable_hinge.tscn" id="1_4pi53"]
+[ext_resource type="PackedScene" uid="uid://fd54deu5wf1f" path="res://objects/components/unlocked_having.tscn" id="2_2rgup"]
+[ext_resource type="PackedScene" uid="uid://8trswcys7dn0" path="res://objects/interactables/cannon_stand.tscn" id="3_qpfm5"]
+[ext_resource type="PackedScene" uid="uid://be51ffipy25xo" path="res://objects/interactables/crossbow_stand.tscn" id="4_81qps"]
+[ext_resource type="PackedScene" uid="uid://bb8yld0p5u11j" path="res://objects/pickables/hammer.tscn" id="5_84rhx"]
+[ext_resource type="PackedScene" uid="uid://cim582wg60p5b" path="res://objects/interactables/bricks_stand.tscn" id="6_8atus"]
+[ext_resource type="PackedScene" uid="uid://e00a51x6jtqy" path="res://objects/pickables/stunning_hammer.tscn" id="7_ehbx0"]
+[ext_resource type="PackedScene" uid="uid://cf8cpd04pbedq" path="res://objects/pickables/harp.tscn" id="8_42gsd"]
+[ext_resource type="PackedScene" uid="uid://1f2lo4wdensq" path="res://objects/static/invisible_walls.tscn" id="9_3bma0"]
+[ext_resource type="PackedScene" uid="uid://bicgl2jqvh1fo" path="res://objects/static/ground.tscn" id="10_2omsh"]
+
+[node name="Objects" type="Node3D"]
+
+[node name="InvisibleWalls" parent="." instance=ExtResource("9_3bma0")]
+transform = Transform3D(1, -2.84217e-14, 4.37114e-08, 1.06581e-14, 2.2441, 4.37114e-08, -4.37114e-08, -9.80925e-08, 1, -3.55271e-15, -0.240438, 3.17637e-22)
+visible = false
+
+[node name="Ground" parent="." instance=ExtResource("10_2omsh")]
+
+[node name="CenterOrigin" type="Marker3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.218401, 0)
+gizmo_extents = 2.2
+
+[node name="InteractableHinge" parent="CenterOrigin" groups=["InteractionBlocking"] instance=ExtResource("1_4pi53")]
+hinge_limit_min = -720.0
+hinge_limit_max = 720.0
+
+[node name="Items" type="Node3D" parent="CenterOrigin/InteractableHinge"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.243089, 1.06257e-08, 0)
+
+[node name="CannonUnlocker" parent="CenterOrigin/InteractableHinge/Items" instance=ExtResource("2_2rgup")]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, 4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, -4.37114e-08, 0.0200828, 1.40063, -0.103293)
+unlocking_item = &"Cannon"
+item_scene = ExtResource("3_qpfm5")
+
+[node name="CrossbowUnlocker" parent="CenterOrigin/InteractableHinge/Items" instance=ExtResource("2_2rgup")]
+transform = Transform3D(8.74228e-08, 1, 4.37114e-08, -4.37114e-08, 4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, 0.091951, 0.101612, 1.33163)
+unlocking_item = &"Crossbow"
+item_scene = ExtResource("4_81qps")
+
+[node name="HammerUnlocker" parent="CenterOrigin/InteractableHinge/Items" instance=ExtResource("2_2rgup")]
+transform = Transform3D(7.76442e-08, 1, -5.93701e-08, -0.188033, -4.37114e-08, -0.982163, -0.982163, 8.74228e-08, 0.188033, 0.202637, -1.03674, -0.674384)
+unlocking_item = &"Hammer"
+locking_item = &"StunningHammer"
+item_scene = ExtResource("5_84rhx")
+
+[node name="BricksUnlocker" parent="CenterOrigin/InteractableHinge/Items" instance=ExtResource("2_2rgup")]
+transform = Transform3D(7.76442e-08, 1, -5.93701e-08, -0.188033, -4.37114e-08, -0.982163, -0.982163, 8.74228e-08, 0.188033, 0.0661061, -1.02378, 0.767608)
+unlocking_item = &"Bricks"
+item_scene = ExtResource("6_8atus")
+
+[node name="StunningHammerUnlocker" parent="CenterOrigin/InteractableHinge/Items" instance=ExtResource("2_2rgup")]
+transform = Transform3D(7.76442e-08, 1, -5.93701e-08, -0.188033, -4.37114e-08, -0.982163, -0.982163, 8.74228e-08, 0.188033, 0.202637, -1.03674, -0.674384)
+unlocking_item = &"StunningHammer"
+item_scene = ExtResource("7_ehbx0")
+
+[node name="HarpUnlocker" parent="CenterOrigin/InteractableHinge/Items" instance=ExtResource("2_2rgup")]
+transform = Transform3D(-8.74228e-08, 1, 4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1, 8.74228e-08, -4.37114e-08, 0.0240435, 0.000497193, -1.35183)
+unlocking_item = &"Harp"
+item_scene = ExtResource("8_42gsd")

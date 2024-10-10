@@ -62,7 +62,7 @@ closed_pose = ExtResource("7_yx4ne")
 [node name="Arrow" type="RigidBody3D" groups=["Arrow"]]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 collision_layer = 4
-collision_mask = 65575
+collision_mask = 65799
 script = ExtResource("1_61d2c")
 second_hand_grab = 1
 

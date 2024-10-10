@@ -24,9 +24,7 @@ var _current_enemy_count := 0:
 var _enemy_offset := 0
 
 func _ready() -> void:
-	FmodServer.set_global_parameter_by_name_with_label("music_states", "2")
-	
-	_player = XRTools.find_xr_child(get_parent(), "*", "XRPlayer", true)
+	_player = XRTools.find_xr_child(get_parent(), "*", "XRCamera3D", true)
 	
 	_enemies = Node.new()
 	_enemies.name = "Enemies"
@@ -36,8 +34,6 @@ func _ready() -> void:
 	_spawning_delay.autostart = false
 	_spawning_delay.one_shot = true
 	add_child(_spawning_delay, true)
-	
-	_update_waves()
 
 func _update_waves():
 	_enemy_offset = 0
@@ -68,11 +64,20 @@ func _spawn_enemy(enemy: EnemyResource) -> void:
 	_enemy_instance.died.connect(_enemy_died)
 
 func _get_spawn_location() -> Vector3:
-	var _player_direction := _player.basis.z
-	_player_direction.y = 0
+	var _spawn_location := _player.basis.z
+	_spawn_location.y = (randf() * 2 - 1) * 0.2
+	_spawn_location += _player.basis.x * (randf() * 2 - 1) * 0.4
 	
+	_spawn_location = _spawn_location.normalized()
 	
-	return Vector3.ZERO
+	_spawn_location *= 30
+	_spawn_location.y += _player.global_position.y
+	
+	return _spawn_location
 
 func _enemy_died():
 	_current_enemy_count -= 1
+
+
+func _on_tower_builder_tower_built() -> void:
+	_update_waves()

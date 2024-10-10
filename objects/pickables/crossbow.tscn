@@ -76,7 +76,7 @@ size = Vector3(0.219727, 0.125977, 0.150391)
 
 [node name="Crossbow" type="RigidBody3D"]
 collision_layer = 4
-collision_mask = 65575
+collision_mask = 65799
 script = ExtResource("1_24tpp")
 
 [node name="CrossbowMesh" type="MeshInstance3D" parent="."]
@@ -90,7 +90,6 @@ shape = SubResource("ConvexPolygonShape3D_tn4n2")
 [node name="RespawnDetector" parent="." instance=ExtResource("2_rlkjy")]
 transform = Transform3D(1.1015, 0, 0, 0, 1.1015, 0, 0, 0, 1.1015, 0, 0, 0)
 visible = false
-respawn_if_touch = &""
 
 [node name="CollisionShape3D" parent="RespawnDetector" index="0"]
 shape = SubResource("ConvexPolygonShape3D_6ul74")

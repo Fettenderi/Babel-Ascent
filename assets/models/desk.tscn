@@ -1,11 +1,11 @@
-[gd_scene load_steps=20 format=4 uid="uid://doiriutkmpxq7"]
+[gd_scene load_steps=20 format=4 uid="uid://dj3pi5q821h32"]
 
-[ext_resource type="PackedScene" uid="uid://bddj5m7ull6g0" path="res://addons/godot-xr-tools/interactables/interactable_handle.tscn" id="1_a0niy"]
-[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_c485r"]
-[ext_resource type="Animation" uid="uid://dd67rufxwj2u" path="res://addons/godot-xr-tools/hands/animations/left/Grip 3.res" id="3_18obi"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="4_g5blu"]
-[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_5b1u2"]
-[ext_resource type="Animation" uid="uid://rs7vpclot07o" path="res://addons/godot-xr-tools/hands/animations/right/Grip 3.res" id="6_pm14v"]
+[ext_resource type="PackedScene" uid="uid://bddj5m7ull6g0" path="res://addons/godot-xr-tools/interactables/interactable_handle.tscn" id="1_rojbh"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_qok8p"]
+[ext_resource type="Animation" uid="uid://dd67rufxwj2u" path="res://addons/godot-xr-tools/hands/animations/left/Grip 3.res" id="3_swbna"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="4_q8ocm"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_4ws8c"]
+[ext_resource type="Animation" uid="uid://rs7vpclot07o" path="res://addons/godot-xr-tools/hands/animations/right/Grip 3.res" id="6_a71gr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4jqfu"]
 resource_name = "Material.001"
@@ -125,18 +125,19 @@ shadow_mesh = SubResource("ArrayMesh_d422q")
 radius = 0.209675
 
 [sub_resource type="Resource" id="Resource_px03b"]
-script = ExtResource("4_g5blu")
-open_pose = ExtResource("3_18obi")
-closed_pose = ExtResource("3_18obi")
+script = ExtResource("4_q8ocm")
+open_pose = ExtResource("3_swbna")
+closed_pose = ExtResource("3_swbna")
 
 [sub_resource type="Resource" id="Resource_wkql2"]
-script = ExtResource("4_g5blu")
-open_pose = ExtResource("6_pm14v")
-closed_pose = ExtResource("6_pm14v")
+script = ExtResource("4_q8ocm")
+open_pose = ExtResource("6_a71gr")
+closed_pose = ExtResource("6_a71gr")
 
-[node name="Tower" type="StaticBody3D"]
+[node name="Desk" type="StaticBody3D"]
 
 [node name="Floor" type="StaticBody3D" parent="." groups=["Floor"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.842109, 0)
 collision_layer = 256
 collision_mask = 0
 
@@ -149,6 +150,7 @@ visible = false
 shape = SubResource("BoxShape3D_plw1q")
 
 [node name="Base" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.842109, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Base"]
 mesh = SubResource("ArrayMesh_pvc3x")
@@ -159,285 +161,287 @@ shape = SubResource("ConcavePolygonShape3D_jp2ul")
 disabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.842109, 0)
 mesh = SubResource("ArrayMesh_31rae")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.842109, 0)
 visible = false
 shape = SubResource("ConcavePolygonShape3D_jp2ul")
 
 [node name="Handles" type="Node3D" parent="."]
-transform = Transform3D(0.7, 0, 0, 0, 1, 0, 0, 0, 0.7, 0, 0, 0)
+transform = Transform3D(0.7, 0, 0, 0, 1, 0, 0, 0, 0.7, 0, -0.842109, 0)
 visible = false
 
 [node name="Handle" type="Node3D" parent="Handles"]
 transform = Transform3D(0.992625, 0.121228, 0, -0.121228, 0.992625, 0, 0, 0, 1, 0, 0.840818, -0.897406)
 
-[node name="InteractableHandle" parent="Handles/Handle" instance=ExtResource("1_a0niy")]
+[node name="InteractableHandle" parent="Handles/Handle" instance=ExtResource("1_rojbh")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Handles/Handle/InteractableHandle"]
 shape = SubResource("SphereShape3D_npjcc")
 
-[node name="GrabPointHandLeft" parent="Handles/Handle/InteractableHandle" instance=ExtResource("2_c485r")]
+[node name="GrabPointHandLeft" parent="Handles/Handle/InteractableHandle" instance=ExtResource("2_qok8p")]
 transform = Transform3D(-0.205456, 0.978166, -0.0313078, -0.476446, -0.127915, -0.869849, -0.854861, -0.163799, 0.492324, 0.04, 0.06, -0.04)
 visible = true
 hand_pose = SubResource("Resource_px03b")
 
-[node name="GrabPointHandRight" parent="Handles/Handle/InteractableHandle" instance=ExtResource("5_5b1u2")]
+[node name="GrabPointHandRight" parent="Handles/Handle/InteractableHandle" instance=ExtResource("5_4ws8c")]
 transform = Transform3D(-0.251889, -0.946972, 0.199489, 0.44173, -0.295914, -0.846941, 0.861062, -0.125215, 0.492843, -0.0748667, 0.0533437, -0.0451102)
 hand_pose = SubResource("Resource_wkql2")
 
 [node name="Handle2" type="Node3D" parent="Handles"]
 transform = Transform3D(0.701892, 0.0857214, -0.707107, -0.121228, 0.992625, 0, 0.701892, 0.0857214, 0.707107, 0.653883, 0.840818, -0.625035)
 
-[node name="InteractableHandle" parent="Handles/Handle2" instance=ExtResource("1_a0niy")]
+[node name="InteractableHandle" parent="Handles/Handle2" instance=ExtResource("1_rojbh")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Handles/Handle2/InteractableHandle"]
 shape = SubResource("SphereShape3D_npjcc")
 
-[node name="GrabPointHandLeft" parent="Handles/Handle2/InteractableHandle" instance=ExtResource("2_c485r")]
+[node name="GrabPointHandLeft" parent="Handles/Handle2/InteractableHandle" instance=ExtResource("2_qok8p")]
 transform = Transform3D(-0.205456, 0.978166, -0.0313078, -0.476446, -0.127915, -0.869849, -0.854861, -0.163799, 0.492324, 0.04, 0.06, -0.04)
 visible = true
 hand_pose = SubResource("Resource_px03b")
 
-[node name="GrabPointHandRight" parent="Handles/Handle2/InteractableHandle" instance=ExtResource("5_5b1u2")]
+[node name="GrabPointHandRight" parent="Handles/Handle2/InteractableHandle" instance=ExtResource("5_4ws8c")]
 transform = Transform3D(-0.251889, -0.946972, 0.199489, 0.44173, -0.295914, -0.846941, 0.861062, -0.125215, 0.492843, -0.0748667, 0.0533437, -0.0451102)
 hand_pose = SubResource("Resource_wkql2")
 
 [node name="Handle3" type="Node3D" parent="Handles"]
 transform = Transform3D(0, 0, -1, -0.121228, 0.992625, 0, 0.992625, 0.121228, 0, 0.903097, 0.840818, -0.00102194)
 
-[node name="InteractableHandle" parent="Handles/Handle3" instance=ExtResource("1_a0niy")]
+[node name="InteractableHandle" parent="Handles/Handle3" instance=ExtResource("1_rojbh")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Handles/Handle3/InteractableHandle"]
 shape = SubResource("SphereShape3D_npjcc")
 
-[node name="GrabPointHandLeft" parent="Handles/Handle3/InteractableHandle" instance=ExtResource("2_c485r")]
+[node name="GrabPointHandLeft" parent="Handles/Handle3/InteractableHandle" instance=ExtResource("2_qok8p")]
 transform = Transform3D(-0.205456, 0.978166, -0.0313078, -0.476446, -0.127915, -0.869849, -0.854861, -0.163799, 0.492324, 0.04, 0.06, -0.04)
 visible = true
 hand_pose = SubResource("Resource_px03b")
 
-[node name="GrabPointHandRight" parent="Handles/Handle3/InteractableHandle" instance=ExtResource("5_5b1u2")]
+[node name="GrabPointHandRight" parent="Handles/Handle3/InteractableHandle" instance=ExtResource("5_4ws8c")]
 transform = Transform3D(-0.251889, -0.946972, 0.199489, 0.44173, -0.295914, -0.846941, 0.861062, -0.125215, 0.492843, -0.0748667, 0.0533437, -0.0451102)
 hand_pose = SubResource("Resource_wkql2")
 
 [node name="Handle4" type="Node3D" parent="Handles"]
 transform = Transform3D(-0.992625, -0.121228, -8.74228e-08, -0.121228, 0.992625, 0, 8.6778e-08, 1.05981e-08, -1, -0.0019092, 0.840818, 0.896814)
 
-[node name="InteractableHandle" parent="Handles/Handle4" instance=ExtResource("1_a0niy")]
+[node name="InteractableHandle" parent="Handles/Handle4" instance=ExtResource("1_rojbh")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Handles/Handle4/InteractableHandle"]
 shape = SubResource("SphereShape3D_npjcc")
 
-[node name="GrabPointHandLeft" parent="Handles/Handle4/InteractableHandle" instance=ExtResource("2_c485r")]
+[node name="GrabPointHandLeft" parent="Handles/Handle4/InteractableHandle" instance=ExtResource("2_qok8p")]
 transform = Transform3D(-0.205456, 0.978166, -0.0313078, -0.476446, -0.127915, -0.869849, -0.854861, -0.163799, 0.492324, 0.04, 0.06, -0.04)
 visible = true
 hand_pose = SubResource("Resource_px03b")
 
-[node name="GrabPointHandRight" parent="Handles/Handle4/InteractableHandle" instance=ExtResource("5_5b1u2")]
+[node name="GrabPointHandRight" parent="Handles/Handle4/InteractableHandle" instance=ExtResource("5_4ws8c")]
 transform = Transform3D(-0.251889, -0.946972, 0.199489, 0.44173, -0.295914, -0.846941, 0.861062, -0.125215, 0.492843, -0.0748667, 0.0533437, -0.0451102)
 hand_pose = SubResource("Resource_wkql2")
 
 [node name="Handle5" type="Node3D" parent="Handles"]
 transform = Transform3D(-0.701892, -0.0857214, 0.707107, -0.121228, 0.992625, 0, -0.701892, -0.0857214, -0.707107, -0.655792, 0.840818, 0.624442)
 
-[node name="InteractableHandle" parent="Handles/Handle5" instance=ExtResource("1_a0niy")]
+[node name="InteractableHandle" parent="Handles/Handle5" instance=ExtResource("1_rojbh")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Handles/Handle5/InteractableHandle"]
 shape = SubResource("SphereShape3D_npjcc")
 
-[node name="GrabPointHandLeft" parent="Handles/Handle5/InteractableHandle" instance=ExtResource("2_c485r")]
+[node name="GrabPointHandLeft" parent="Handles/Handle5/InteractableHandle" instance=ExtResource("2_qok8p")]
 transform = Transform3D(-0.205456, 0.978166, -0.0313078, -0.476446, -0.127915, -0.869849, -0.854861, -0.163799, 0.492324, 0.04, 0.06, -0.04)
 visible = true
 hand_pose = SubResource("Resource_px03b")
 
-[node name="GrabPointHandRight" parent="Handles/Handle5/InteractableHandle" instance=ExtResource("5_5b1u2")]
+[node name="GrabPointHandRight" parent="Handles/Handle5/InteractableHandle" instance=ExtResource("5_4ws8c")]
 transform = Transform3D(-0.251889, -0.946972, 0.199489, 0.44173, -0.295914, -0.846941, 0.861062, -0.125215, 0.492843, -0.0748667, 0.0533437, -0.0451102)
 hand_pose = SubResource("Resource_wkql2")
 
 [node name="Handle6" type="Node3D" parent="Handles"]
 transform = Transform3D(-8.6778e-08, -1.05981e-08, 1, -0.121228, 0.992625, 0, -0.992625, -0.121228, -8.74228e-08, -0.905006, 0.840818, 0.000429392)
 
-[node name="InteractableHandle" parent="Handles/Handle6" instance=ExtResource("1_a0niy")]
+[node name="InteractableHandle" parent="Handles/Handle6" instance=ExtResource("1_rojbh")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Handles/Handle6/InteractableHandle"]
 shape = SubResource("SphereShape3D_npjcc")
 
-[node name="GrabPointHandLeft" parent="Handles/Handle6/InteractableHandle" instance=ExtResource("2_c485r")]
+[node name="GrabPointHandLeft" parent="Handles/Handle6/InteractableHandle" instance=ExtResource("2_qok8p")]
 transform = Transform3D(-0.205456, 0.978166, -0.0313078, -0.476446, -0.127915, -0.869849, -0.854861, -0.163799, 0.492324, 0.04, 0.06, -0.04)
 visible = true
 hand_pose = SubResource("Resource_px03b")
 
-[node name="GrabPointHandRight" parent="Handles/Handle6/InteractableHandle" instance=ExtResource("5_5b1u2")]
+[node name="GrabPointHandRight" parent="Handles/Handle6/InteractableHandle" instance=ExtResource("5_4ws8c")]
 transform = Transform3D(-0.251889, -0.946972, 0.199489, 0.44173, -0.295914, -0.846941, 0.861062, -0.125215, 0.492843, -0.0748667, 0.0533437, -0.0451102)
 hand_pose = SubResource("Resource_wkql2")
 
 [node name="Handle7" type="Node3D" parent="Handles"]
 transform = Transform3D(0.683805, 0.0835125, 0.72487, -0.121228, 0.992625, 0, -0.719523, -0.0878748, 0.688886, -0.642152, 0.840818, -0.639025)
 
-[node name="InteractableHandle" parent="Handles/Handle7" instance=ExtResource("1_a0niy")]
+[node name="InteractableHandle" parent="Handles/Handle7" instance=ExtResource("1_rojbh")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Handles/Handle7/InteractableHandle"]
 shape = SubResource("SphereShape3D_npjcc")
 
-[node name="GrabPointHandLeft" parent="Handles/Handle7/InteractableHandle" instance=ExtResource("2_c485r")]
+[node name="GrabPointHandLeft" parent="Handles/Handle7/InteractableHandle" instance=ExtResource("2_qok8p")]
 transform = Transform3D(-0.205456, 0.978166, -0.0313078, -0.476446, -0.127915, -0.869849, -0.854861, -0.163799, 0.492324, 0.04, 0.06, -0.04)
 visible = true
 hand_pose = SubResource("Resource_px03b")
 
-[node name="GrabPointHandRight" parent="Handles/Handle7/InteractableHandle" instance=ExtResource("5_5b1u2")]
+[node name="GrabPointHandRight" parent="Handles/Handle7/InteractableHandle" instance=ExtResource("5_4ws8c")]
 transform = Transform3D(-0.251889, -0.946972, 0.199489, 0.44173, -0.295914, -0.846941, 0.861062, -0.125215, 0.492843, -0.0748667, 0.0533437, -0.0451102)
 hand_pose = SubResource("Resource_wkql2")
 
 [node name="Handle8" type="Node3D" parent="Handles"]
 transform = Transform3D(-0.683805, -0.0835125, -0.72487, -0.121228, 0.992625, 0, 0.719523, 0.0878748, -0.688886, 0.640243, 0.840818, 0.638433)
 
-[node name="InteractableHandle" parent="Handles/Handle8" instance=ExtResource("1_a0niy")]
+[node name="InteractableHandle" parent="Handles/Handle8" instance=ExtResource("1_rojbh")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Handles/Handle8/InteractableHandle"]
 shape = SubResource("SphereShape3D_npjcc")
 
-[node name="GrabPointHandLeft" parent="Handles/Handle8/InteractableHandle" instance=ExtResource("2_c485r")]
+[node name="GrabPointHandLeft" parent="Handles/Handle8/InteractableHandle" instance=ExtResource("2_qok8p")]
 transform = Transform3D(-0.205456, 0.978166, -0.0313078, -0.476446, -0.127915, -0.869849, -0.854861, -0.163799, 0.492324, 0.04, 0.06, -0.04)
 visible = true
 hand_pose = SubResource("Resource_px03b")
 
-[node name="GrabPointHandRight" parent="Handles/Handle8/InteractableHandle" instance=ExtResource("5_5b1u2")]
+[node name="GrabPointHandRight" parent="Handles/Handle8/InteractableHandle" instance=ExtResource("5_4ws8c")]
 transform = Transform3D(-0.251889, -0.946972, 0.199489, 0.44173, -0.295914, -0.846941, 0.861062, -0.125215, 0.492843, -0.0748667, 0.0533437, -0.0451102)
 hand_pose = SubResource("Resource_wkql2")
 
 [node name="Handle9" type="Node3D" parent="Handles"]
 transform = Transform3D(0.917298, 0.112028, 0.382119, -0.121228, 0.992625, 0, -0.379301, -0.0463235, 0.924113, -0.342875, 0.840818, -0.829692)
 
-[node name="InteractableHandle" parent="Handles/Handle9" instance=ExtResource("1_a0niy")]
+[node name="InteractableHandle" parent="Handles/Handle9" instance=ExtResource("1_rojbh")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Handles/Handle9/InteractableHandle"]
 shape = SubResource("SphereShape3D_npjcc")
 
-[node name="GrabPointHandLeft" parent="Handles/Handle9/InteractableHandle" instance=ExtResource("2_c485r")]
+[node name="GrabPointHandLeft" parent="Handles/Handle9/InteractableHandle" instance=ExtResource("2_qok8p")]
 transform = Transform3D(-0.205456, 0.978166, -0.0313078, -0.476446, -0.127915, -0.869849, -0.854861, -0.163799, 0.492324, 0.04, 0.06, -0.04)
 visible = true
 hand_pose = SubResource("Resource_px03b")
 
-[node name="GrabPointHandRight" parent="Handles/Handle9/InteractableHandle" instance=ExtResource("5_5b1u2")]
+[node name="GrabPointHandRight" parent="Handles/Handle9/InteractableHandle" instance=ExtResource("5_4ws8c")]
 transform = Transform3D(-0.251889, -0.946972, 0.199489, 0.44173, -0.295914, -0.846941, 0.861062, -0.125215, 0.492843, -0.0748667, 0.0533437, -0.0451102)
 hand_pose = SubResource("Resource_wkql2")
 
 [node name="Handle10" type="Node3D" parent="Handles"]
 transform = Transform3D(0.916834, 0.111972, -0.383248, -0.121228, 0.992625, 0, 0.380421, 0.0464605, 0.923646, 0.365465, 0.840818, -0.827851)
 
-[node name="InteractableHandle" parent="Handles/Handle10" instance=ExtResource("1_a0niy")]
+[node name="InteractableHandle" parent="Handles/Handle10" instance=ExtResource("1_rojbh")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Handles/Handle10/InteractableHandle"]
 shape = SubResource("SphereShape3D_npjcc")
 
-[node name="GrabPointHandLeft" parent="Handles/Handle10/InteractableHandle" instance=ExtResource("2_c485r")]
+[node name="GrabPointHandLeft" parent="Handles/Handle10/InteractableHandle" instance=ExtResource("2_qok8p")]
 transform = Transform3D(-0.205456, 0.978166, -0.0313078, -0.476446, -0.127915, -0.869849, -0.854861, -0.163799, 0.492324, 0.04, 0.06, -0.04)
 visible = true
 hand_pose = SubResource("Resource_px03b")
 
-[node name="GrabPointHandRight" parent="Handles/Handle10/InteractableHandle" instance=ExtResource("5_5b1u2")]
+[node name="GrabPointHandRight" parent="Handles/Handle10/InteractableHandle" instance=ExtResource("5_4ws8c")]
 transform = Transform3D(-0.251889, -0.946972, 0.199489, 0.44173, -0.295914, -0.846941, 0.861062, -0.125215, 0.492843, -0.0748667, 0.0533437, -0.0451102)
 hand_pose = SubResource("Resource_wkql2")
 
 [node name="Handle11" type="Node3D" parent="Handles"]
 transform = Transform3D(0.379301, 0.0463235, -0.924113, -0.121228, 0.992625, 0, 0.917298, 0.112028, 0.382119, 0.834214, 0.840818, -0.346422)
 
-[node name="InteractableHandle" parent="Handles/Handle11" instance=ExtResource("1_a0niy")]
+[node name="InteractableHandle" parent="Handles/Handle11" instance=ExtResource("1_rojbh")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Handles/Handle11/InteractableHandle"]
 shape = SubResource("SphereShape3D_npjcc")
 
-[node name="GrabPointHandLeft" parent="Handles/Handle11/InteractableHandle" instance=ExtResource("2_c485r")]
+[node name="GrabPointHandLeft" parent="Handles/Handle11/InteractableHandle" instance=ExtResource("2_qok8p")]
 transform = Transform3D(-0.205456, 0.978166, -0.0313078, -0.476446, -0.127915, -0.869849, -0.854861, -0.163799, 0.492324, 0.04, 0.06, -0.04)
 visible = true
 hand_pose = SubResource("Resource_px03b")
 
-[node name="GrabPointHandRight" parent="Handles/Handle11/InteractableHandle" instance=ExtResource("5_5b1u2")]
+[node name="GrabPointHandRight" parent="Handles/Handle11/InteractableHandle" instance=ExtResource("5_4ws8c")]
 transform = Transform3D(-0.251889, -0.946972, 0.199489, 0.44173, -0.295914, -0.846941, 0.861062, -0.125215, 0.492843, -0.0748667, 0.0533437, -0.0451102)
 hand_pose = SubResource("Resource_wkql2")
 
 [node name="Handle12" type="Node3D" parent="Handles"]
 transform = Transform3D(-0.917298, -0.112028, -0.382119, -0.121228, 0.992625, -8.88178e-16, 0.379301, 0.0463235, -0.924113, 0.340966, 0.840818, 0.8291)
 
-[node name="InteractableHandle" parent="Handles/Handle12" instance=ExtResource("1_a0niy")]
+[node name="InteractableHandle" parent="Handles/Handle12" instance=ExtResource("1_rojbh")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Handles/Handle12/InteractableHandle"]
 shape = SubResource("SphereShape3D_npjcc")
 
-[node name="GrabPointHandLeft" parent="Handles/Handle12/InteractableHandle" instance=ExtResource("2_c485r")]
+[node name="GrabPointHandLeft" parent="Handles/Handle12/InteractableHandle" instance=ExtResource("2_qok8p")]
 transform = Transform3D(-0.205456, 0.978166, -0.0313078, -0.476446, -0.127915, -0.869849, -0.854861, -0.163799, 0.492324, 0.04, 0.06, -0.04)
 visible = true
 hand_pose = SubResource("Resource_px03b")
 
-[node name="GrabPointHandRight" parent="Handles/Handle12/InteractableHandle" instance=ExtResource("5_5b1u2")]
+[node name="GrabPointHandRight" parent="Handles/Handle12/InteractableHandle" instance=ExtResource("5_4ws8c")]
 transform = Transform3D(-0.251889, -0.946972, 0.199489, 0.44173, -0.295914, -0.846941, 0.861062, -0.125215, 0.492843, -0.0748667, 0.0533437, -0.0451102)
 hand_pose = SubResource("Resource_wkql2")
 
 [node name="Handle13" type="Node3D" parent="Handles"]
 transform = Transform3D(-0.916834, -0.111972, 0.383248, -0.121228, 0.992625, 0, -0.380421, -0.0464605, -0.923646, -0.367374, 0.840818, 0.827258)
 
-[node name="InteractableHandle" parent="Handles/Handle13" instance=ExtResource("1_a0niy")]
+[node name="InteractableHandle" parent="Handles/Handle13" instance=ExtResource("1_rojbh")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Handles/Handle13/InteractableHandle"]
 shape = SubResource("SphereShape3D_npjcc")
 
-[node name="GrabPointHandLeft" parent="Handles/Handle13/InteractableHandle" instance=ExtResource("2_c485r")]
+[node name="GrabPointHandLeft" parent="Handles/Handle13/InteractableHandle" instance=ExtResource("2_qok8p")]
 transform = Transform3D(-0.205456, 0.978166, -0.0313078, -0.476446, -0.127915, -0.869849, -0.854861, -0.163799, 0.492324, 0.04, 0.06, -0.04)
 visible = true
 hand_pose = SubResource("Resource_px03b")
 
-[node name="GrabPointHandRight" parent="Handles/Handle13/InteractableHandle" instance=ExtResource("5_5b1u2")]
+[node name="GrabPointHandRight" parent="Handles/Handle13/InteractableHandle" instance=ExtResource("5_4ws8c")]
 transform = Transform3D(-0.251889, -0.946972, 0.199489, 0.44173, -0.295914, -0.846941, 0.861062, -0.125215, 0.492843, -0.0748667, 0.0533437, -0.0451102)
 hand_pose = SubResource("Resource_wkql2")
 
 [node name="Handle14" type="Node3D" parent="Handles"]
 transform = Transform3D(-0.379301, -0.0463235, 0.924113, -0.121228, 0.992625, -8.88178e-16, -0.917298, -0.112028, -0.382119, -0.836123, 0.840818, 0.34583)
 
-[node name="InteractableHandle" parent="Handles/Handle14" instance=ExtResource("1_a0niy")]
+[node name="InteractableHandle" parent="Handles/Handle14" instance=ExtResource("1_rojbh")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Handles/Handle14/InteractableHandle"]
 shape = SubResource("SphereShape3D_npjcc")
 
-[node name="GrabPointHandLeft" parent="Handles/Handle14/InteractableHandle" instance=ExtResource("2_c485r")]
+[node name="GrabPointHandLeft" parent="Handles/Handle14/InteractableHandle" instance=ExtResource("2_qok8p")]
 transform = Transform3D(-0.205456, 0.978166, -0.0313078, -0.476446, -0.127915, -0.869849, -0.854861, -0.163799, 0.492324, 0.04, 0.06, -0.04)
 visible = true
 hand_pose = SubResource("Resource_px03b")
 
-[node name="GrabPointHandRight" parent="Handles/Handle14/InteractableHandle" instance=ExtResource("5_5b1u2")]
+[node name="GrabPointHandRight" parent="Handles/Handle14/InteractableHandle" instance=ExtResource("5_4ws8c")]
 transform = Transform3D(-0.251889, -0.946972, 0.199489, 0.44173, -0.295914, -0.846941, 0.861062, -0.125215, 0.492843, -0.0748667, 0.0533437, -0.0451102)
 hand_pose = SubResource("Resource_wkql2")
 
 [node name="Handle15" type="Node3D" parent="Handles"]
 transform = Transform3D(0.35697, 0.0435964, 0.933098, -0.121228, 0.992625, -5.1326e-09, -0.926216, -0.113118, 0.359622, -0.837564, 0.840818, -0.34554)
 
-[node name="InteractableHandle" parent="Handles/Handle15" instance=ExtResource("1_a0niy")]
+[node name="InteractableHandle" parent="Handles/Handle15" instance=ExtResource("1_rojbh")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Handles/Handle15/InteractableHandle"]
 shape = SubResource("SphereShape3D_npjcc")
 
-[node name="GrabPointHandLeft" parent="Handles/Handle15/InteractableHandle" instance=ExtResource("2_c485r")]
+[node name="GrabPointHandLeft" parent="Handles/Handle15/InteractableHandle" instance=ExtResource("2_qok8p")]
 transform = Transform3D(-0.205456, 0.978166, -0.0313078, -0.476446, -0.127915, -0.869849, -0.854861, -0.163799, 0.492324, 0.04, 0.06, -0.04)
 visible = true
 hand_pose = SubResource("Resource_px03b")
 
-[node name="GrabPointHandRight" parent="Handles/Handle15/InteractableHandle" instance=ExtResource("5_5b1u2")]
+[node name="GrabPointHandRight" parent="Handles/Handle15/InteractableHandle" instance=ExtResource("5_4ws8c")]
 transform = Transform3D(-0.251889, -0.946972, 0.199489, 0.44173, -0.295914, -0.846941, 0.861062, -0.125215, 0.492843, -0.0748667, 0.0533437, -0.0451102)
 hand_pose = SubResource("Resource_wkql2")
 
 [node name="Handle16" type="Node3D" parent="Handles"]
 transform = Transform3D(-0.35697, -0.0435964, -0.933098, -0.121228, 0.992625, -5.1326e-09, 0.926216, 0.113118, -0.359622, 0.835655, 0.840818, 0.344948)
 
-[node name="InteractableHandle" parent="Handles/Handle16" instance=ExtResource("1_a0niy")]
+[node name="InteractableHandle" parent="Handles/Handle16" instance=ExtResource("1_rojbh")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Handles/Handle16/InteractableHandle"]
 shape = SubResource("SphereShape3D_npjcc")
 
-[node name="GrabPointHandLeft" parent="Handles/Handle16/InteractableHandle" instance=ExtResource("2_c485r")]
+[node name="GrabPointHandLeft" parent="Handles/Handle16/InteractableHandle" instance=ExtResource("2_qok8p")]
 transform = Transform3D(-0.205456, 0.978166, -0.0313078, -0.476446, -0.127915, -0.869849, -0.854861, -0.163799, 0.492324, 0.04, 0.06, -0.04)
 visible = true
 hand_pose = SubResource("Resource_px03b")
 
-[node name="GrabPointHandRight" parent="Handles/Handle16/InteractableHandle" instance=ExtResource("5_5b1u2")]
+[node name="GrabPointHandRight" parent="Handles/Handle16/InteractableHandle" instance=ExtResource("5_4ws8c")]
 transform = Transform3D(-0.251889, -0.946972, 0.199489, 0.44173, -0.295914, -0.846941, 0.861062, -0.125215, 0.492843, -0.0748667, 0.0533437, -0.0451102)
 hand_pose = SubResource("Resource_wkql2")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cim582wg60p5b"]
+
+[ext_resource type="PackedScene" uid="uid://c1yx2ajujg4pr" path="res://objects/generator_zone.tscn" id="2_8ocp4"]
+[ext_resource type="PackedScene" uid="uid://c1dd2llq67y8y" path="res://objects/pickables/brick.tscn" id="2_dd0m2"]
+[ext_resource type="PackedScene" uid="uid://bju0l32rq5d16" path="res://objects/static/brick_static.tscn" id="4_a40fj"]
+
+[node name="CannonStand" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 3.59989e-21, 1, 3.59989e-21, 1, -3.59989e-21, -1, 3.59989e-21, -4.37114e-08, 0, 0, 0)
+
+[node name="BrickGenerator" parent="." instance=ExtResource("2_8ocp4")]
+transform = Transform3D(0.956356, 3.59989e-21, 0.292206, -4.49469e-21, 1, 2.39087e-21, -0.292206, -3.59989e-21, 0.956356, 0.00947578, 0.214103, -0.00369829)
+object_scene = ExtResource("2_dd0m2")
+
+[node name="BrickStatic" parent="." instance=ExtResource("4_a40fj")]
+transform = Transform3D(0.972154, 3.59989e-21, 0.234345, -4.34327e-21, 1, 2.65603e-21, -0.234345, -3.59989e-21, 0.972154, -0.0893436, 0.0390526, 0.185242)
+
+[node name="BrickStatic2" parent="." instance=ExtResource("4_a40fj")]
+transform = Transform3D(0.977005, 3.59989e-21, -0.213218, -2.74955e-21, 1, 4.28468e-21, 0.213218, -3.59989e-21, 0.977005, -0.0893436, 0.0390526, -0.177464)
+
+[node name="BrickStatic3" parent="." instance=ExtResource("4_a40fj")]
+transform = Transform3D(0.985375, 3.59989e-21, -0.170399, -2.93383e-21, 1, 4.16066e-21, 0.170399, -3.59989e-21, 0.985375, 0.146616, 0.0390526, -0.0149922)
