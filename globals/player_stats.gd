@@ -18,7 +18,7 @@ signal light_changed(value)
 		if value <= 0:
 			died.emit()
 
-@onready var unlocked_items : Dictionary = {
+@export var unlocked_items : Dictionary = {
 	&"Hammer" : false,
 	&"Crossbow" : false,
 	&"Harp" : false,
@@ -28,7 +28,7 @@ signal light_changed(value)
 
 @onready var tower_level : int = 0
 
-var _current_light := 0:
+@export var _current_light := 0:
 	set(value):
 		_current_light = value
 		light_changed.emit(_current_light)

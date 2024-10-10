@@ -33,7 +33,7 @@ func add_light(amount: int) -> void:
 	for _i in range(amount):
 		_light_instance = _light_scene.instantiate()
 		
-		_light_instance.global_position = global_position + Vector3(0.0, 0.8 + 0.2 * _i, 0.0)
+		_light_instance.global_position = global_position + Vector3(0.0, 0.6 + 0.1 * _i, 0.0)
 		
 		_entities.add_child(_light_instance, true)
 

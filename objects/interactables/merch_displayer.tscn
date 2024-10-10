@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bbhf0o63v45ur"]
+[gd_scene load_steps=21 format=4 uid="uid://bbhf0o63v45ur"]
 
 [ext_resource type="PackedScene" uid="uid://bq0l2igjq5icu" path="res://assets/models/merch_displayer.blend" id="1_5lbte"]
 [ext_resource type="Script" path="res://scripts/merch_displayer.gd" id="1_y0hxb"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cdm1qdok6gcqk" path="res://abstractions/merch_slot.tscn" id="3_teb6r"]
 [ext_resource type="PackedScene" uid="uid://eg6vu61iipdj" path="res://objects/interactables/weighter.tscn" id="4_ogquy"]
 [ext_resource type="PackedScene" uid="uid://8jhmsgyvle30" path="res://objects/static/merchant.tscn" id="6_6g317"]
+[ext_resource type="PackedScene" uid="uid://bdr7j4a0yrlbu" path="res://objects/pickables/light.tscn" id="6_7clgu"]
 [ext_resource type="Material" uid="uid://c6rj5hgtuccay" path="res://assets/materials/merchant.tres" id="7_ae7q4"]
 [ext_resource type="Material" uid="uid://ybpin33drebr" path="res://assets/materials/hands.tres" id="8_62tty"]
 [ext_resource type="PackedScene" uid="uid://cft7fbllvavgi" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="10_6kyxi"]
@@ -143,7 +144,7 @@ blend_shape_mode = 0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mk0yu"]
 resource_local_to_scene = true
-radius = 0.0652319
+radius = 0.3
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pdt6u"]
 radius = 0.148779
@@ -211,6 +212,7 @@ transform = Transform3D(-0.275516, 0, 2.40863e-08, 0, 0.275516, 0, -2.40863e-08,
 [node name="Weighter" parent="." instance=ExtResource("4_ogquy")]
 unique_name_in_owner = true
 transform = Transform3D(0.858212, 0, 0, 0, 0.858212, 0, 0, 0, 0.858212, 0.584443, 0.0191023, -0.351814)
+_light_scene = ExtResource("6_7clgu")
 
 [node name="Node3D" type="Node3D" parent="Weighter"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44426, 0)

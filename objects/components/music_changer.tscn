@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://rhn3ly03pvy8"]
+
+[ext_resource type="Script" path="res://scripts/music_changer.gd" id="1_unmbx"]
+
+[node name="MusicChanger" type="Node"]
+script = ExtResource("1_unmbx")

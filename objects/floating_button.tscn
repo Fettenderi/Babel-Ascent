@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdvc54ayjupnt"]
+
+[ext_resource type="Script" path="res://scripts/floating_button.gd" id="1_5cod7"]
+[ext_resource type="PackedScene" uid="uid://cme66uldrjl2i" path="res://addons/godot-xr-tools/interactables/interactable_area_button.tscn" id="1_7lp6s"]
+[ext_resource type="Material" uid="uid://ybpin33drebr" path="res://assets/materials/hands.tres" id="2_66qhm"]
+[ext_resource type="Material" uid="uid://c6rj5hgtuccay" path="res://assets/materials/merchant.tres" id="3_i2klt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pp13q"]
+resource_local_to_scene = true
+size = Vector3(0.62, 0.3, 0.195)
+
+[sub_resource type="TextMesh" id="TextMesh_nakvf"]
+resource_local_to_scene = true
+text = "Test"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bcxht"]
+resource_local_to_scene = true
+size = Vector3(0.62, 0.3, 0.195)
+
+[node name="FloatingButton" type="Node3D"]
+script = ExtResource("1_5cod7")
+text = "Test"
+
+[node name="Button" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_pp13q")
+surface_material_override/0 = ExtResource("2_66qhm")
+
+[node name="Text" type="MeshInstance3D" parent="Button"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0902063)
+mesh = SubResource("TextMesh_nakvf")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("3_i2klt")
+
+[node name="InteractableAreaButton" parent="." instance=ExtResource("1_7lp6s")]
+button = NodePath("../Button")
+displacement = Vector3(0, 0, -0.02)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableAreaButton"]
+shape = SubResource("BoxShape3D_bcxht")
+
+[connection signal="button_released" from="InteractableAreaButton" to="." method="_on_interactable_area_button_button_released"]

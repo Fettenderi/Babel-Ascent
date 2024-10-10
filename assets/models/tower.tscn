@@ -131,7 +131,7 @@ script = ExtResource("4_g5blu")
 open_pose = ExtResource("6_pm14v")
 closed_pose = ExtResource("6_pm14v")
 
-[node name="Desk" type="StaticBody3D"]
+[node name="Tower" type="StaticBody3D"]
 
 [node name="Floor" type="StaticBody3D" parent="." groups=["Floor"]]
 

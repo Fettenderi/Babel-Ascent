@@ -1,6 +1,8 @@
 @tool
 class_name AbstractEnemy extends CharacterBody3D
 
+signal died
+
 @export var speed := 5.0:
 	set(value):
 		speed = value
@@ -35,6 +37,8 @@ func _on_hit_box_died() -> void:
 		_light_instance.global_position = global_position + Vector3(randf() * 2 - 1, randf() * 2 - 1, randf() * 2 - 1) * 0.5
 		
 		get_parent().add_child(_light_instance, true)
+	
+	died.emit()
 	
 	queue_free()
 

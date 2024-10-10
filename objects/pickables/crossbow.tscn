@@ -90,6 +90,7 @@ shape = SubResource("ConvexPolygonShape3D_tn4n2")
 [node name="RespawnDetector" parent="." instance=ExtResource("2_rlkjy")]
 transform = Transform3D(1.1015, 0, 0, 0, 1.1015, 0, 0, 0, 1.1015, 0, 0, 0)
 visible = false
+respawn_if_touch = &""
 
 [node name="CollisionShape3D" parent="RespawnDetector" index="0"]
 shape = SubResource("ConvexPolygonShape3D_6ul74")

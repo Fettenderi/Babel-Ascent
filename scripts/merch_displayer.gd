@@ -2,10 +2,10 @@ class_name MerchDisplayer extends Node3D
 
 enum ItemType { MAIN_ITEM1, MAIN_ITEM2, SECONDARY_ITEM }
 
-signal item_selected(item_resource, item_type)
-signal item_deselected(item_resource, item_type)
+signal item_selected(item_resource : ItemResource, item_type : ItemType)
+signal item_deselected(item_resource : ItemResource, item_type : ItemType)
 
-signal transaction_finished()
+signal transaction_finished(main1_picked : bool, main2_picked : bool)
 
 @onready var _shop_resource : ShopPhaseResource:
 	set(value):
@@ -22,13 +22,16 @@ signal transaction_finished()
 
 var _main_items_picked := 0:
 	set(value):
-		_main_items_picked = value
 		if _main_items_picked + value == 1:
 			_set_hand_enable(value > 0)
+		_main_items_picked = value
+
 
 var _transaction_ongoing := true
 
 func _ready() -> void:
+	FmodServer.set_global_parameter_by_name_with_label("music_states", "0")
+	
 	for _child in %Merch.get_children():
 		if _child is MerchSlot:
 			_child.enabled = false
@@ -46,9 +49,16 @@ func _ready() -> void:
 		_selected_merch.append(null)
 	
 	_weighter.add_light(PlayerStats._current_light)
+	
+	if _shop_resource and _transaction_ongoing:
+		_update_merch()
+		_update_prices()
+
 
 func _complete_transaction() -> void:
 	var _consumed_lights := 0
+	var _main1_picked := false
+	var _main2_picked := false
 	_transaction_ongoing = false
 	
 	for _merch : PickableItem in _selected_merch:
@@ -63,12 +73,16 @@ func _complete_transaction() -> void:
 			match _merch.get_meta(&"ItemType"):
 				ItemType.MAIN_ITEM1:
 					_shop_resource.main_item1 = null
+					_main1_picked = true
 				ItemType.MAIN_ITEM2:
 					_shop_resource.main_item2 = null
+					_main2_picked = true
 				ItemType.SECONDARY_ITEM:
 					pass
 	
 	PlayerStats._current_light -= _consumed_lights
+	
+	transaction_finished.emit(_main1_picked, _main2_picked)
 
 func _set_hand_enable(value : bool) -> void:
 	var _tween := create_tween()
@@ -76,17 +90,18 @@ func _set_hand_enable(value : bool) -> void:
 	%Acceptance.enabled = value
 	
 	if value:
-		_tween.tween_property(%MerchantHand, "position", Vector3(-0.16, 0.533, -0.42), 1)
+		_tween.tween_property(%MerchantHand, "position", Vector3(-0.16, 0.533, -0.42), 3)
 	else:
-		_tween.tween_property(%MerchantHand, "position", Vector3(-0.16, 0.533, -1.766), 1)
+		_tween.tween_property(%MerchantHand, "position", Vector3(-0.16, 0.533, -1.766), 3)
 	
 
 func _update_merch():
 	_put_merch(_merch_slots[0], _shop_resource.main_item1, ItemType.MAIN_ITEM1)
 	_put_merch(_merch_slots[1], _shop_resource.main_item2, ItemType.MAIN_ITEM2)
 	
-	if _merch_slots.size() > 0:
+	if _merch_slots.size() > 0 and _shop_resource.secondary_items.size() == _merch_slots.size() - 2:
 		for _i in range(_merch_slots.size() - 2):
+			
 			_put_merch(_merch_slots[_i + 2], _shop_resource.secondary_items[_i])
 
 func _reposition_merch(merch: PickableItem) -> void:
@@ -98,7 +113,7 @@ func _reposition_merch(merch: PickableItem) -> void:
 
 func _update_prices():
 	for _merch_slot : MerchSlot in _merch_slots:
-		_merch_slot.set_enabled(_merch_slot.item_resource.cost <= _weighter._light_amount)
+		_merch_slot.set_enabled(_merch_slot.item_resource and _merch_slot.item_resource.cost <= _weighter._light_amount)
 
 func _put_merch(slot: MerchSlot, merch: ItemResource, item_type: ItemType = ItemType.SECONDARY_ITEM) -> void:
 	var merch_instance : PickableItem = merch.scene.instantiate()
