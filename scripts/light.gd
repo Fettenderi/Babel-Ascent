@@ -12,6 +12,7 @@ func _ready() -> void:
 	if not needs_despawning: return
 	
 	enabled = false
+	freeze = true
 	
 	_despawning_timer = Timer.new()
 	_despawning_timer.autostart = true
@@ -20,6 +21,8 @@ func _ready() -> void:
 	_despawning_timer.timeout.connect(_start_despawn)
 	
 	add_child(_despawning_timer, true)
+	
+	PlayerStats._current_light += 1
 
 
 func _start_despawn():

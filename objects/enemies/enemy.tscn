@@ -16,6 +16,7 @@ bottom_radius = 0.1
 height = 0.5
 
 [sub_resource type="SphereMesh" id="SphereMesh_u708i"]
+resource_local_to_scene = true
 flip_faces = true
 radius = 0.001
 height = 0.001

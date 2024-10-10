@@ -22,7 +22,7 @@ glow_enabled = true
 [sub_resource type="CompositorEffect" id="CompositorEffect_jxc8d"]
 resource_local_to_scene = false
 resource_name = ""
-enabled = false
+enabled = true
 effect_callback_type = 4
 needs_motion_vectors = false
 needs_normal_roughness = false
@@ -32,7 +32,7 @@ glsl_file = "res://post_processing/1bit.glsl"
 [sub_resource type="CompositorEffect" id="CompositorEffect_yijgy"]
 resource_local_to_scene = false
 resource_name = ""
-enabled = false
+enabled = true
 effect_callback_type = 4
 needs_motion_vectors = false
 needs_normal_roughness = false
@@ -63,7 +63,7 @@ script = ExtResource("4_6q0ew")
 enabled = false
 
 [node name="Floor" type="StaticBody3D" parent="Environment" groups=["Floor"]]
-collision_layer = 32
+collision_layer = 256
 collision_mask = 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Floor"]

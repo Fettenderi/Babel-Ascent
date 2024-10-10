@@ -20,7 +20,7 @@ signal light_changed(value)
 		if value <= 0:
 			died.emit()
 
-@export var unlocked_items : Dictionary = {
+@onready var unlocked_items : Dictionary = {
 	&"Hammer" : false,
 	&"Crossbow" : false,
 	&"Harp" : false,

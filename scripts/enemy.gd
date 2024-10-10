@@ -20,7 +20,7 @@ signal died
 
 var _movement_pattern : MovementBehaviour
 
-var _player : Camera3D
+@onready var _player : XRCamera3D
 
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint(): return

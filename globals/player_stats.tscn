@@ -5,11 +5,3 @@
 [node name="PlayerStats" type="Node"]
 script = ExtResource("1_dxx8d")
 health = 10.0
-unlocked_items = {
-"Bricks": false,
-"Cannon": false,
-"Crossbow": false,
-"Hammer": false,
-"Harp": false,
-"StunningHammer": false
-}

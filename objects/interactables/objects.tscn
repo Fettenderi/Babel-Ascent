@@ -14,8 +14,7 @@
 [node name="Objects" type="Node3D"]
 
 [node name="InvisibleWalls" parent="." instance=ExtResource("9_3bma0")]
-transform = Transform3D(1, -2.84217e-14, 4.37114e-08, 1.06581e-14, 2.2441, 4.37114e-08, -4.37114e-08, -9.80925e-08, 1, -3.55271e-15, -0.240438, 3.17637e-22)
-visible = false
+transform = Transform3D(1, -1.25688e-14, 4.37114e-08, 1.06581e-14, 1, 4.37113e-08, -4.37114e-08, -4.37113e-08, 1, -3.55271e-15, -0.240438, 3.17637e-22)
 
 [node name="Ground" parent="." instance=ExtResource("10_2omsh")]
 
@@ -60,3 +59,6 @@ item_scene = ExtResource("7_ehbx0")
 transform = Transform3D(-8.74228e-08, 1, 4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1, 8.74228e-08, -4.37114e-08, 0.0240435, 0.000497193, -1.35183)
 unlocking_item = &"Harp"
 item_scene = ExtResource("8_42gsd")
+
+[editable path="InvisibleWalls"]
+[editable path="Ground"]

@@ -13,7 +13,7 @@ radius = 0.273735
 radius = 0.589363
 
 [node name="Eye" instance=ExtResource("1_6tasv")]
-speed = 0.5
+speed = 1.2
 
 [node name="EyeMesh" parent="." index="0" instance=ExtResource("2_75bfa")]
 

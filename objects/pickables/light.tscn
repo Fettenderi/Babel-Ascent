@@ -41,7 +41,6 @@ closed_pose = ExtResource("6_1x6ie")
 
 [node name="Light" groups=["Light"] instance=ExtResource("1_n3xwx")]
 collision_mask = 65799
-freeze = true
 script = ExtResource("2_xlrjq")
 despawning_time = 2.0
 

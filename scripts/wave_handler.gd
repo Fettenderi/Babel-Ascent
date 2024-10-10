@@ -1,6 +1,11 @@
 class_name WaveHandler extends Node3D
 
-@onready var _fight_resource : FightPhaseResource
+signal waves_ended
+
+@onready var _fight_resource : FightPhaseResource:
+	set(value):
+		_fight_resource = value
+		_spawn_wave()
 
 @onready var _player : XRCamera3D
 @onready var _enemies : Node
@@ -31,13 +36,11 @@ func _ready() -> void:
 	_spawning_delay.one_shot = true
 	add_child(_spawning_delay, true)
 
-func _update_waves():
-	_enemy_offset = 0
-	_current_enemy_count = 0
-	_current_wave = 0
-
 func _spawn_wave():
 	if not _fight_resource: return
+	
+	if _fight_resource.enemy_waves.size() == _current_wave + 1:
+		waves_ended.emit()
 	
 	for _i in range(_fight_resource.enemy_waves[_current_wave]):
 		_spawn_enemy(_fight_resource.enemies[_i + _enemy_offset])
@@ -49,24 +52,25 @@ func _spawn_enemy(enemy: EnemyResource) -> void:
 	var _enemy_instance : AbstractEnemy = _enemy_scene.instantiate()
 	
 	_enemy_instance.global_position = _get_spawn_location()
+	_enemy_instance.died.connect(_enemy_died)
+	_enemy_instance._player = _player
 	
 	_enemies.add_child(_enemy_instance, true)
 	
 	_current_enemy_count += 1
 	
 	_spawning_delay.start(randf() * 5)
-	await _spawning_delay.timeout
 	
-	_enemy_instance.died.connect(_enemy_died)
+	await _spawning_delay.timeout
 
 func _get_spawn_location() -> Vector3:
-	var _spawn_location := _player.basis.z
+	var _spawn_location := -_player.basis.z
 	_spawn_location.y = (randf() * 2 - 1) * 0.2
-	_spawn_location += _player.basis.x * (randf() * 2 - 1) * 0.4
+	_spawn_location += _player.basis.x * (randf() * 2 - 1) * 0.6
 	
 	_spawn_location = _spawn_location.normalized()
 	
-	_spawn_location *= 30
+	_spawn_location *= 25
 	_spawn_location.y += _player.global_position.y
 	
 	return _spawn_location
@@ -74,6 +78,5 @@ func _get_spawn_location() -> Vector3:
 func _enemy_died():
 	_current_enemy_count -= 1
 
-
 func _on_tower_builder_tower_built() -> void:
-	_update_waves()
+	_spawn_wave()
