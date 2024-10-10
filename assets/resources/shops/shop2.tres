@@ -12,7 +12,7 @@
 script = ExtResource("1_oxerc")
 main_item1 = ExtResource("1_742rl")
 main_item2 = ExtResource("2_errpt")
-secondary_items = Array[ExtResource("2_iokqa")]([ExtResource("7_kw07i"), ExtResource("7_kw07i")])
+secondary_items = Array[ExtResource("2_iokqa")]([ExtResource("7_kw07i"), ExtResource("7_kw07i"), ExtResource("7_kw07i")])
 next_only_item1 = ExtResource("4_2vo05")
 next_only_item2 = ExtResource("4_2vo05")
 next_both_items = ExtResource("3_w7sfn")

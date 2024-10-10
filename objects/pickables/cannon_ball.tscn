@@ -84,7 +84,6 @@ shape = SubResource("SphereShape3D_1b2hq")
 
 [node name="DespawnDetector" parent="." instance=ExtResource("3_hd47a")]
 visible = false
-despawn_if_touch = &"Floor"
 
 [node name="CollisionShape3D" parent="DespawnDetector" index="0"]
 shape = SubResource("SphereShape3D_1b2hq")

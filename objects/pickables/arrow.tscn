@@ -85,7 +85,6 @@ shape = SubResource("SphereShape3D_aku3j")
 [node name="DespawnDetector" parent="." instance=ExtResource("2_s7uun")]
 transform = Transform3D(1.22993, 0, 0, 0, 1.22993, 0, 0, 0, 1.22993, 0, 0, 0)
 visible = false
-despawn_if_touch = &"Floor"
 
 [node name="CollisionShape3D" parent="DespawnDetector" index="0"]
 shape = SubResource("ConvexPolygonShape3D_oxk56")

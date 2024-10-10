@@ -1,9 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://bu702oichphet"]
+[gd_scene load_steps=8 format=3 uid="uid://bu702oichphet"]
 
 [ext_resource type="PackedScene" uid="uid://54jegna8r7wy" path="res://objects/enemies/enemy.tscn" id="1_cbm6v"]
 [ext_resource type="PackedScene" uid="uid://7kk77nn8pvux" path="res://assets/models/him.blend" id="2_hqp71"]
 [ext_resource type="PackedScene" uid="uid://dcnlhqgfi657a" path="res://objects/components/movement_behaviours/axis_movement.tscn" id="3_v8kvj"]
 [ext_resource type="PackedScene" uid="uid://rhn3ly03pvy8" path="res://objects/components/music_changer.tscn" id="4_v7ta1"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_i1q7b"]
+resource_local_to_scene = true
+flip_faces = true
+radius = 0.001
+height = 0.001
+radial_segments = 16
+rings = 8
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ojpc6"]
 radius = 0.776354
@@ -12,10 +20,13 @@ radius = 0.776354
 points = PackedVector3Array(0.00804567, 2.44213, -0.00673079, -0.0246599, 2.35606, 0.0378615, 0.368232, 2.05463, 0.288042, 0.410706, 2.12898, 0.249936, 0.0382028, 2.34758, -0.0525972, -0.395889, 2.13181, -0.31158, -0.418401, 2.05544, -0.259459, -2.00696, -0.476027, 0.00207186, -1.93602, -0.461077, 0.0561618, 0.587401, 1.68047, 0.435833, 0.4209, 2.04574, 0.191908, 0.636672, 1.74108, 0.402476, 1.90327, -0.477239, -0.0164601, 1.82512, -0.467542, -0.0708974, -0.347468, 2.05059, -0.343316, -0.57046, 1.68047, -0.520759, -0.627801, 1.74552, -0.495856, -0.73059, 1.29984, -0.595118, -2.22145, -0.981512, 0.00346172, -2.14203, -0.948783, 0.0574358, 0.678297, 1.25054, 0.515636, 0.729692, 1.29539, 0.484711, 2.05193, -0.947167, 0.0338077, 2.11777, -0.98232, -0.0197031, 2.02857, -0.951207, -0.0736772, -0.670276, 1.25337, -0.616661, -0.716998, 0.823445, -0.623379, -2.14373, -0.948379, -0.0525972, -0.657959, 0.796777, -0.644459, -2.21848, -1.65226, 0.0062415, -2.1399, -1.59246, 0.0602156, 0.654936, 0.791524, 0.538685, 2.04386, -1.60216, 0.0301013, 2.11479, -1.64984, -0.0251468, 2.03154, -1.58316, -0.080395, -2.1399, -1.59852, -0.0499333, -0.547949, 0.33089, -0.619209, -1.65059, -1.6858, 0.0349659, 1.55328, -1.68135, -0.0566511, -1.5975, -1.62115, 0.0873185, -0.695761, -1.26234, 0.2182, -0.300746, -0.944742, 0.304141, 0.0424502, -0.561689, 0.389735, 0.324058, -0.132572, 0.464442, 0.532184, 0.324425, 0.517721, 1.86334, -1.44619, 0.0799057, -1.13155, -1.49467, 0.142335, 1.50316, -1.60498, -0.107266, 1.04868, -1.48013, -0.17097, 0.625204, -1.249, -0.260386, 0.24378, -0.933429, -0.362774, -0.0858235, -0.552396, -0.465163, -0.353415, -0.124491, -0.554927)
 
 [node name="Him" instance=ExtResource("1_cbm6v")]
-speed = 0.2
+speed = 1.0
 light_released = 10
 
 [node name="HimMesh" parent="." index="0" instance=ExtResource("2_hqp71")]
+
+[node name="DamageIndicator" parent="." index="2"]
+mesh = SubResource("SphereMesh_i1q7b")
 
 [node name="CollisionShape3D" parent="." index="3"]
 visible = false

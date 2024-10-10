@@ -13,7 +13,7 @@
 script = ExtResource("1_4e8ue")
 main_item1 = ExtResource("1_vxq8l")
 main_item2 = ExtResource("2_5yb2l")
-secondary_items = Array[ExtResource("2_kxama")]([ExtResource("8_f5uvk"), ExtResource("8_f5uvk")])
+secondary_items = Array[ExtResource("2_kxama")]([ExtResource("8_f5uvk"), ExtResource("8_f5uvk"), ExtResource("8_f5uvk")])
 next_only_item1 = ExtResource("4_bn2mh")
 next_only_item2 = ExtResource("5_8usqc")
 next_both_items = ExtResource("3_dgcm8")

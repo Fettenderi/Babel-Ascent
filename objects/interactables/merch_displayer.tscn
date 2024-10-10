@@ -192,22 +192,22 @@ unique_name_in_owner = true
 transform = Transform3D(-0.486354, 0, -4.25184e-08, 0, 0.486354, 0, 4.25184e-08, 0, -0.486354, 0.588835, 0.0179934, 0.288117)
 
 [node name="MerchSlot" parent="SelectedMerch" instance=ExtResource("3_teb6r")]
-transform = Transform3D(-0.275516, 0, 2.40863e-08, 0, 0.275516, 0, -2.40863e-08, 0, -0.275516, 0.428987, 0.0245866, 0.175854)
+transform = Transform3D(-0.461, 0, 6.96091e-08, 0, 0.461, 0, -6.96091e-08, 0, -0.461, 0.399017, 0.0245866, 0.29281)
 
 [node name="MerchSlot1" parent="SelectedMerch" instance=ExtResource("3_teb6r")]
-transform = Transform3D(-0.275516, 0, 2.40863e-08, 0, 0.275516, 0, -2.40863e-08, 0, -0.275516, 0.0492902, 0.0245866, 0.175854)
+transform = Transform3D(-0.461, 0, 6.96091e-08, 0, 0.461, 0, -6.96091e-08, 0, -0.461, 0.0193201, 0.0245866, 0.29281)
 
 [node name="MerchSlot2" parent="SelectedMerch" instance=ExtResource("3_teb6r")]
-transform = Transform3D(-0.275516, 0, 2.40863e-08, 0, 0.275516, 0, -2.40863e-08, 0, -0.275516, -0.328175, 0.0245866, 0.175854)
+transform = Transform3D(-0.461, 0, 6.96091e-08, 0, 0.461, 0, -6.96091e-08, 0, -0.461, -0.358145, 0.0245866, 0.29281)
 
 [node name="MerchSlot3" parent="SelectedMerch" instance=ExtResource("3_teb6r")]
-transform = Transform3D(-0.275516, 0, 2.40863e-08, 0, 0.275516, 0, -2.40863e-08, 0, -0.275516, 0.428987, 0.0245866, -0.235369)
+transform = Transform3D(-0.461, 0, 6.96091e-08, 0, 0.461, 0, -6.96091e-08, 0, -0.461, 0.399017, 0.0245866, -0.118413)
 
 [node name="MerchSlot4" parent="SelectedMerch" instance=ExtResource("3_teb6r")]
-transform = Transform3D(-0.275516, 0, 2.40863e-08, 0, 0.275516, 0, -2.40863e-08, 0, -0.275516, 0.0492903, 0.0245866, -0.235369)
+transform = Transform3D(-0.461, 0, 6.96091e-08, 0, 0.461, 0, -6.96091e-08, 0, -0.461, 0.0193202, 0.0245866, -0.118413)
 
 [node name="MerchSlot5" parent="SelectedMerch" instance=ExtResource("3_teb6r")]
-transform = Transform3D(-0.275516, 0, 2.40863e-08, 0, 0.275516, 0, -2.40863e-08, 0, -0.275516, -0.328174, 0.0245866, -0.235369)
+transform = Transform3D(-0.461, 0, 6.96091e-08, 0, 0.461, 0, -6.96091e-08, 0, -0.461, -0.358144, 0.0245866, -0.118413)
 
 [node name="Weighter" parent="." instance=ExtResource("4_ogquy")]
 unique_name_in_owner = true

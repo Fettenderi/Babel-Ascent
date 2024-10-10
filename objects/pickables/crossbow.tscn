@@ -96,7 +96,6 @@ shape = SubResource("ConvexPolygonShape3D_6ul74")
 
 [node name="SnapZone" parent="." instance=ExtResource("3_8rant")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0321231, 0.132494)
-visible = false
 snap_mode = 1
 snap_require = "Arrow"
 

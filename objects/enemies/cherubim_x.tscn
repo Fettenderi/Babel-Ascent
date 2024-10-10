@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c1ow0xqn3x8ek"]
+[gd_scene load_steps=11 format=3 uid="uid://c1ow0xqn3x8ek"]
 
 [ext_resource type="PackedScene" uid="uid://54jegna8r7wy" path="res://objects/enemies/enemy.tscn" id="1_5nj3x"]
 [ext_resource type="PackedScene" uid="uid://cq14sf87jvogn" path="res://assets/models/cherubim.blend" id="2_ma8op"]
@@ -8,6 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://j8disy850j84" path="res://objects/components/movement_behaviours/sine_axis_movement.tscn" id="6_1l1wg"]
 [ext_resource type="PackedScene" uid="uid://dcnlhqgfi657a" path="res://objects/components/movement_behaviours/axis_movement.tscn" id="7_54dem"]
 
+[sub_resource type="SphereMesh" id="SphereMesh_oa611"]
+resource_local_to_scene = true
+flip_faces = true
+radius = 0.001
+height = 0.001
+radial_segments = 16
+rings = 8
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_cplll"]
 radius = 0.541657
 
@@ -15,10 +23,14 @@ radius = 0.541657
 size = Vector3(2.3479, 2.1881, 0.80957)
 
 [node name="Cherubim" instance=ExtResource("1_5nj3x")]
-speed = 0.5
-light_released = 2
+speed = 2.0
+light_released = 4
+damage_indicator_radius = 1.5
 
 [node name="CherubimMesh" parent="." index="0" instance=ExtResource("2_ma8op")]
+
+[node name="DamageIndicator" parent="." index="2"]
+mesh = SubResource("SphereMesh_oa611")
 
 [node name="CollisionShape3D" parent="." index="3"]
 visible = false
@@ -33,7 +45,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00193024, 0)
 shape = SubResource("BoxShape3D_lxjw5")
 
 [node name="AlternateMovements" parent="." index="5" instance=ExtResource("3_pjo31")]
-switching_time = 2.055
+switching_time = 5.0
 tooltip_lenght = 50.0
 
 [node name="CombineMovements" parent="AlternateMovements" index="0" instance=ExtResource("4_nmuej")]
@@ -44,12 +56,12 @@ noise_influence = 0.07
 
 [node name="SineAxisMovement" parent="AlternateMovements/CombineMovements" index="1" instance=ExtResource("6_1l1wg")]
 axis = Vector3(1, 0, 0)
-amplitude = 17.685
+amplitude = 18.0
 
 [node name="AxisMovement" parent="AlternateMovements/CombineMovements" index="2" instance=ExtResource("7_54dem")]
-axis = Vector3(0, 0, 0.5)
+axis = Vector3(0, 0, 1.2)
 
 [node name="AxisMovement" parent="AlternateMovements" index="1" instance=ExtResource("7_54dem")]
-axis = Vector3(0, 0, 4.435)
+axis = Vector3(0, 0, 5)
 
 [editable path="HitBox"]

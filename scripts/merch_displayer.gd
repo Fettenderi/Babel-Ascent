@@ -79,9 +79,9 @@ func _complete_transaction() -> void:
 	if not _main2_picked and _shop_resource.main_item2.item_id == &"TowerUpgrade":
 		_main2_picked = PlayerStats.tower_level > 0
 	
-	if not _main1_picked:
+	if not _main1_picked and PlayerStats.unlocked_items.has(_shop_resource.main_item1.item_id):
 		_main1_picked = PlayerStats.unlocked_items[_shop_resource.main_item1.item_id]
-	if not _main2_picked:
+	if not _main2_picked and PlayerStats.unlocked_items.has(_shop_resource.main_item2.item_id):
 		_main2_picked = PlayerStats.unlocked_items[_shop_resource.main_item2.item_id]
 	
 	
@@ -102,9 +102,16 @@ func _set_hand_enable(value : bool) -> void:
 	
 
 func _update_merch():
-	if not PlayerStats.unlocked_items[_shop_resource.main_item1.item_id]:
+	if PlayerStats.unlocked_items.has(_shop_resource.main_item1.item_id):
+		if not PlayerStats.unlocked_items[_shop_resource.main_item1.item_id]:
+			_put_merch(_merch_slots[0], _shop_resource.main_item1, ItemType.MAIN_ITEM1)
+	else:
 		_put_merch(_merch_slots[0], _shop_resource.main_item1, ItemType.MAIN_ITEM1)
-	if not PlayerStats.unlocked_items[_shop_resource.main_item2.item_id]:
+	
+	if PlayerStats.unlocked_items.has(_shop_resource.main_item2.item_id):
+		if not PlayerStats.unlocked_items[_shop_resource.main_item2.item_id]:
+			_put_merch(_merch_slots[1], _shop_resource.main_item2, ItemType.MAIN_ITEM2)
+	else:
 		_put_merch(_merch_slots[1], _shop_resource.main_item2, ItemType.MAIN_ITEM2)
 	
 	if _merch_slots.size() > 0 and _shop_resource.secondary_items.size() == _merch_slots.size() - 2:

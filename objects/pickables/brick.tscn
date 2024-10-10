@@ -57,7 +57,6 @@ shape = SubResource("BoxShape3D_wlmg7")
 [node name="DespawnDetector" parent="." index="5" instance=ExtResource("8_5lkiw")]
 transform = Transform3D(1.14961, 0, 0, 0, 1.14961, 0, 0, 0, 1.14961, 0, 0, 0)
 visible = false
-despawn_if_touch = &"Floor"
 
 [node name="CollisionShape3D" parent="DespawnDetector" index="0"]
 shape = SubResource("BoxShape3D_bpd4x")

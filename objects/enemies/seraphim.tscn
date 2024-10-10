@@ -1,10 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://ceqjh0jrj3nx6"]
+[gd_scene load_steps=9 format=3 uid="uid://ceqjh0jrj3nx6"]
 
 [ext_resource type="PackedScene" uid="uid://54jegna8r7wy" path="res://objects/enemies/enemy.tscn" id="1_l1j7s"]
 [ext_resource type="PackedScene" uid="uid://cfbh7tai5dq43" path="res://assets/models/seraphim.blend" id="2_5mfe1"]
 [ext_resource type="PackedScene" uid="uid://clw4eesarcb1l" path="res://objects/components/movement_behaviours/combine_movements.tscn" id="3_rwotv"]
 [ext_resource type="PackedScene" uid="uid://j8disy850j84" path="res://objects/components/movement_behaviours/sine_axis_movement.tscn" id="4_1y2y4"]
 [ext_resource type="PackedScene" uid="uid://dcnlhqgfi657a" path="res://objects/components/movement_behaviours/axis_movement.tscn" id="5_j8xfp"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_vrbyv"]
+resource_local_to_scene = true
+flip_faces = true
+radius = 0.001
+height = 0.001
+radial_segments = 16
+rings = 8
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_phwcy"]
 radius = 0.484334
@@ -13,10 +21,15 @@ radius = 0.484334
 size = Vector3(3.07056, 2.96704, 0.69043)
 
 [node name="Seraphim" instance=ExtResource("1_l1j7s")]
-light_released = 2
+speed = 1.0
+light_released = 3
+damage_indicator_radius = 2.5
 
 [node name="SeraphimMesh" parent="." index="0" instance=ExtResource("2_5mfe1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42018, 0)
+
+[node name="DamageIndicator" parent="." index="2"]
+mesh = SubResource("SphereMesh_vrbyv")
 
 [node name="CollisionShape3D" parent="." index="3"]
 visible = false
@@ -33,10 +46,11 @@ shape = SubResource("BoxShape3D_nfu7t")
 
 [node name="SineAxisMovement" parent="CombineMovements" index="0" instance=ExtResource("4_1y2y4")]
 axis = Vector3(1, 0, 0)
-amplitude = 2.22
+amplitude = 4.51
 
 [node name="SineAxisMovement2" parent="CombineMovements" index="1" instance=ExtResource("4_1y2y4")]
 axis = Vector3(0, 1, 0)
+amplitude = 2.965
 frequency = 2.0
 offset = 1.571
 
@@ -44,6 +58,6 @@ offset = 1.571
 axis = Vector3(0, 0, 1)
 
 [node name="AxisMovement2" parent="CombineMovements" index="3" instance=ExtResource("5_j8xfp")]
-axis = Vector3(0, 0.05, 0)
+axis = Vector3(0, 0.3, 0)
 
 [editable path="HitBox"]

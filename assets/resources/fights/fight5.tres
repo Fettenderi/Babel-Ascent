@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="FightPhaseResource" load_steps=6 format=3 uid="uid://c5prsl876p4v8"]
+[gd_resource type="Resource" script_class="FightPhaseResource" load_steps=7 format=3 uid="uid://c5prsl876p4v8"]
 
 [ext_resource type="Script" path="res://scripts/enemy_resource.gd" id="1_m0ydw"]
 [ext_resource type="Script" path="res://scripts/fight_phase_resource.gd" id="2_d14nh"]
 [ext_resource type="Resource" uid="uid://cw6k0h12m0xnp" path="res://assets/resources/enemies/him.tres" id="2_lvnsc"]
 [ext_resource type="Resource" uid="uid://5bs8ulyvsyp2" path="res://assets/resources/enemies/cherubim.tres" id="3_7gbly"]
 [ext_resource type="Resource" uid="uid://dkbc77cqlw0hl" path="res://assets/resources/enemies/seraphim.tres" id="4_5fpvo"]
+[ext_resource type="Resource" uid="uid://15l66l55dsuo" path="res://assets/resources/enemies/throne.tres" id="4_h86yg"]
 
 [resource]
 script = ExtResource("2_d14nh")
-enemies = Array[ExtResource("1_m0ydw")]([ExtResource("3_7gbly"), ExtResource("4_5fpvo"), ExtResource("3_7gbly"), null, null, null, null, null, ExtResource("4_5fpvo"), ExtResource("2_lvnsc")])
-enemy_waves = Array[int]([5])
-spawn_probabilities = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0])
+enemies = Array[ExtResource("1_m0ydw")]([ExtResource("3_7gbly"), ExtResource("4_5fpvo"), ExtResource("4_h86yg"), ExtResource("4_5fpvo"), ExtResource("4_h86yg"), ExtResource("3_7gbly"), ExtResource("4_5fpvo"), ExtResource("3_7gbly"), ExtResource("4_5fpvo"), ExtResource("2_lvnsc")])
+enemy_waves = Array[int]([5, 5])
+spawn_probabilities = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0])
 next_shop = 3
 next_scene_name = "res://scenes/credits_scene.tscn"

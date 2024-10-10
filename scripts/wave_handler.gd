@@ -25,6 +25,8 @@ var _current_enemy_count := 0:
 var _enemy_offset := 0
 
 func _ready() -> void:
+	randomize()
+	
 	_player = XRTools.find_xr_child(get_parent(), "*", "XRCamera3D", true)
 	
 	_enemies = Node.new()
@@ -43,7 +45,8 @@ func _spawn_wave():
 		waves_ended.emit()
 	
 	for _i in range(_fight_resource.enemy_waves[_current_wave]):
-		_spawn_enemy(_fight_resource.enemies[_i + _enemy_offset])
+		if _fight_resource.spawn_probabilities[_i + _enemy_offset] == 1.0 or randf() <= _fight_resource.spawn_probabilities[_i + _enemy_offset]:
+			_spawn_enemy(_fight_resource.enemies[_i + _enemy_offset])
 	
 	_enemy_offset += _fight_resource.enemy_waves[_current_wave]
 

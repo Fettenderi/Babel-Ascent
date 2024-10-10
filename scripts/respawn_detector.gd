@@ -4,10 +4,10 @@ extends Area3D
 
 @onready var _parent : XRToolsPickable = get_parent()
 
-@onready var _initial_position : Vector3 = _parent.position
+@onready var _initial_position : Vector3 = _parent.global_position
 
 func _respawn():
-	_parent.position = _initial_position
+	_parent.global_position = _initial_position
 	_parent.linear_velocity = Vector3.ZERO
 	_parent.angular_velocity = Vector3.ZERO
 

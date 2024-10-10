@@ -154,6 +154,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_6yqlf")
 
 [node name="WeighterPlate" type="StaticBody3D" parent="."]
+transform = Transform3D(1.28451, 0, 0, 0, 1.28451, 0, 0, 0, 1.28451, 0, -0.0789611, 0)
 
 [node name="WeighterPlateMesh" type="MeshInstance3D" parent="WeighterPlate"]
 mesh = SubResource("ArrayMesh_g5phd")
@@ -163,7 +164,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_gmtjw")
 
 [node name="LightDetector" type="Area3D" parent="WeighterPlate"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.489695, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.478603, 0)
 collision_layer = 0
 collision_mask = 4
 

@@ -1,10 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://f7ytql1kpjhc"]
+[gd_scene load_steps=9 format=3 uid="uid://f7ytql1kpjhc"]
 
 [ext_resource type="PackedScene" uid="uid://54jegna8r7wy" path="res://objects/enemies/enemy.tscn" id="1_fgdr6"]
 [ext_resource type="PackedScene" uid="uid://d3400x6xhb7c6" path="res://assets/models/throne.blend" id="2_1qu8k"]
 [ext_resource type="PackedScene" uid="uid://yfthreb74xp0" path="res://objects/components/movement_behaviours/alternate_movements.tscn" id="3_207q1"]
 [ext_resource type="PackedScene" uid="uid://clw4eesarcb1l" path="res://objects/components/movement_behaviours/combine_movements.tscn" id="3_e8gv6"]
 [ext_resource type="PackedScene" uid="uid://dcnlhqgfi657a" path="res://objects/components/movement_behaviours/axis_movement.tscn" id="4_minja"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_apt4d"]
+resource_local_to_scene = true
+flip_faces = true
+radius = 0.001
+height = 0.001
+radial_segments = 16
+rings = 8
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_e14dx"]
 radius = 0.9184
@@ -13,10 +21,14 @@ radius = 0.9184
 radius = 1.25603
 
 [node name="Throne" instance=ExtResource("1_fgdr6")]
-speed = 0.5
-light_released = 3
+speed = 3.0
+light_released = 5
+damage_indicator_radius = 3.0
 
 [node name="ThroneMesh" parent="." index="0" instance=ExtResource("2_1qu8k")]
+
+[node name="DamageIndicator" parent="." index="2"]
+mesh = SubResource("SphereMesh_apt4d")
 
 [node name="CollisionShape3D" parent="." index="3"]
 visible = false
@@ -38,7 +50,7 @@ switching_time = 50.0
 axis = Vector3(1, 0, 0)
 
 [node name="AxisMovement2" parent="AlternateMovements/CombineMovements" index="1" instance=ExtResource("4_minja")]
-axis = Vector3(0, 0, 0.5)
+axis = Vector3(0, 0, 0.7)
 
 [node name="CombineMovements2" parent="AlternateMovements" index="1" instance=ExtResource("3_e8gv6")]
 
@@ -46,6 +58,6 @@ axis = Vector3(0, 0, 0.5)
 axis = Vector3(-1, 0, 0)
 
 [node name="AxisMovement2" parent="AlternateMovements/CombineMovements2" index="1" instance=ExtResource("4_minja")]
-axis = Vector3(0, 0, 0.5)
+axis = Vector3(0, 0, 0.7)
 
 [editable path="HitBox"]

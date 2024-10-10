@@ -9,7 +9,7 @@
 resource_local_to_scene = true
 radius = 0.609586
 
-[sub_resource type="TextMesh" id="TextMesh_msbiu"]
+[sub_resource type="TextMesh" id="TextMesh_6sjx1"]
 text = "/"
 depth = 0.01
 
@@ -53,6 +53,7 @@ snap_mode = 1
 snap_exclude = "Light"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29472, 0)
 shape = SubResource("1")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
@@ -64,7 +65,7 @@ max_distance = 100.0
 [node name="PriceTag" type="MeshInstance3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.870794, 0.491649, 0, -0.491649, 0.870794, 0, 0.125246, 0.618589)
-mesh = SubResource("TextMesh_msbiu")
+mesh = SubResource("TextMesh_6sjx1")
 surface_material_override/0 = ExtResource("2_vkujr")
 
 [node name="TagMesh" parent="." instance=ExtResource("2_p0045")]
