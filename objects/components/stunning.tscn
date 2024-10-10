@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbyaolkbtpevn"]
+
+[ext_resource type="Script" path="res://scripts/stunning.gd" id="1_j202l"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_c1gkf"]
+flip_faces = true
+radius = 0.001
+height = 0.001
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4ggcy"]
+radius = 0.001
+
+[node name="Stunning" type="Area3D"]
+collision_layer = 0
+collision_mask = 64
+script = ExtResource("1_j202l")
+
+[node name="StunningIndicatorMesh" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+mesh = SubResource("SphereMesh_c1gkf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("SphereShape3D_4ggcy")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

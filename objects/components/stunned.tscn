@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://p18fjwbq66ub"]
+
+[ext_resource type="Script" path="res://scripts/stunned.gd" id="1_i4uhm"]
+
+[node name="Stunned" type="Node"]
+script = ExtResource("1_i4uhm")

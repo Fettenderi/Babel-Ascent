@@ -1,10 +1,6 @@
 class_name WaveHandler extends Node3D
 
-@onready var _fight_resource : FightPhaseResource:
-	set(value):
-		_fight_resource = value
-		
-		_update_waves()
+@onready var _fight_resource : FightPhaseResource
 
 @onready var _player : XRCamera3D
 @onready var _enemies : Node

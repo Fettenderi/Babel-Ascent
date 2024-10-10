@@ -17,10 +17,14 @@ signal tower_built
 func _ready() -> void:
 	_xr_origin = XRTools.find_xr_child(get_parent(), "*", "XROrigin3D")
 	
+	%HitBox.health_changed.connect(func(new_health: float): PlayerStats.health = new_health)
+	
 	_spawn_tower()
 
 func _spawn_tower():
 	var _module_instance : Node3D
+	
+	%HitBox.health = PlayerStats.health
 	
 	if PlayerStats.tower_level == 0:
 		_module_instance = _objects_with_ground.instantiate()

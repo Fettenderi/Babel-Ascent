@@ -20,6 +20,7 @@ signal pressed
 # Size
 @export var size : Vector2 = Vector2(1.0, 1.0): set = set_size
 
+@onready var _xr_camera : XRCamera3D
 
 var time_held = 0.0
 
@@ -33,6 +34,7 @@ func is_xr_class(name : String) -> bool:
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	_xr_camera = XRTools.find_xr_child(get_parent().get_parent(), "*", "XRCamera3D")
 	material = $Visualise.get_surface_override_material(0)
 
 	if !Engine.is_editor_hint():
@@ -57,6 +59,8 @@ func _process(delta):
 			button_pressed = true
 
 	if button_pressed:
+		if _xr_camera:
+			$Visualise.look_at(_xr_camera.global_position)
 		_set_time_held(time_held + delta)
 		if time_held > hold_time:
 			# done, disable this

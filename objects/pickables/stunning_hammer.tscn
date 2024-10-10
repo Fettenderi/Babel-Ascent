@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=4 uid="uid://e00a51x6jtqy"]
+[gd_scene load_steps=18 format=4 uid="uid://e00a51x6jtqy"]
 
 [ext_resource type="PackedScene" uid="uid://cft7fbllvavgi" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_0e4ak"]
 [ext_resource type="PackedScene" uid="uid://dpl8em1nk60vo" path="res://objects/components/hurt_box.tscn" id="2_dba3u"]
 [ext_resource type="PackedScene" uid="uid://d0qdej4i272k" path="res://objects/components/respawn_detector.tscn" id="3_eraqu"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_5dm00"]
+[ext_resource type="PackedScene" uid="uid://cbyaolkbtpevn" path="res://objects/components/stunning.tscn" id="4_v3jc6"]
 [ext_resource type="Animation" uid="uid://dqa0h82y3qn1t" path="res://addons/godot-xr-tools/hands/animations/left/Grip 1.res" id="5_lwoof"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="6_gwnef"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="7_q43c3"]
@@ -87,21 +88,25 @@ visible = false
 [node name="CollisionShape3D" parent="RespawnDetector" index="0"]
 shape = SubResource("ConvexPolygonShape3D_w8wyj")
 
-[node name="GrabPointHandLeftSecondary" parent="." index="4" instance=ExtResource("4_5dm00")]
+[node name="Stunning" parent="." index="4" instance=ExtResource("4_v3jc6")]
+
+[node name="GrabPointHandLeftSecondary" parent="." index="5" instance=ExtResource("4_5dm00")]
 transform = Transform3D(-5.90371e-08, -0.155124, -0.987895, 0.00382236, -0.987887, 0.155123, -0.999992, -0.00377608, 0.000592999, 0.0744947, 0.606654, -0.000835653)
 hand_pose = SubResource("Resource_2xgan")
 
-[node name="GrabPointHandLeftMain" parent="." index="5" instance=ExtResource("4_5dm00")]
+[node name="GrabPointHandLeftMain" parent="." index="6" instance=ExtResource("4_5dm00")]
 transform = Transform3D(-5.90371e-08, -0.155124, -0.987895, 0.00382236, -0.987887, 0.155123, -0.999992, -0.00377608, 0.000592999, 0.0744947, 0.186485, -0.00244169)
 hand_pose = SubResource("Resource_2xgan")
 
-[node name="GrabPointHandRightSecondary" parent="." index="6" instance=ExtResource("7_q43c3")]
+[node name="GrabPointHandRightSecondary" parent="." index="7" instance=ExtResource("7_q43c3")]
 transform = Transform3D(-8.83592e-08, -0.155124, -0.987895, 0.00382236, -0.987888, 0.155123, -0.999993, -0.00377608, 0.000593028, 0.0744947, 0.606654, -0.000835653)
 hand_pose = SubResource("Resource_c0ofd")
 
-[node name="GrabPointHandRightMain" parent="." index="7" instance=ExtResource("7_q43c3")]
+[node name="GrabPointHandRightMain" parent="." index="8" instance=ExtResource("7_q43c3")]
 transform = Transform3D(-8.83592e-08, -0.155124, -0.987895, 0.00382236, -0.987888, 0.155123, -0.999993, -0.00377608, 0.000593028, 0.0744947, 0.186485, -0.00244169)
 hand_pose = SubResource("Resource_c0ofd")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="9"]
 
 [editable path="HurtBox"]
 [editable path="RespawnDetector"]

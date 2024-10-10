@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyatxnnpjimpb"]
+
+[ext_resource type="Script" path="res://scripts/clouds_handler.gd" id="1_4esoo"]
+[ext_resource type="PackedScene" uid="uid://56w5extv8nr8" path="res://assets/models/decorations/clouds.blend" id="1_32kvx"]
+
+[node name="CloudsHandler" type="Node3D"]
+script = ExtResource("1_4esoo")
+
+[node name="Clouds2" parent="." instance=ExtResource("1_32kvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 90.4236)
+
+[node name="Clouds4" parent="." instance=ExtResource("1_32kvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -62.9614)
+
+[node name="Clouds3" parent="." instance=ExtResource("1_32kvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -216.346)

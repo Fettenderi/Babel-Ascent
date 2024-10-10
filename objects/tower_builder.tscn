@@ -1,6 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbbmrfk5dtgae"]
+[gd_scene load_steps=4 format=3 uid="uid://cbbmrfk5dtgae"]
 
 [ext_resource type="Script" path="res://scripts/tower_builder.gd" id="1_5iodj"]
+[ext_resource type="PackedScene" uid="uid://dnukot3s50pwy" path="res://objects/components/hit_box.tscn" id="2_jtuv8"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6gmdo"]
+height = 1.07521
+radius = 0.870411
 
 [node name="TowerBuilder" type="Node3D"]
 script = ExtResource("1_5iodj")
+
+[node name="HitBox" parent="." groups=["Player"] instance=ExtResource("2_jtuv8")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.675052, 0)
+damaged_by = &"Enemy"
+
+[node name="CollisionShape3D" parent="HitBox" index="0"]
+shape = SubResource("CylinderShape3D_6gmdo")
+
+[editable path="HitBox"]

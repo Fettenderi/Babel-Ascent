@@ -1,11 +1,13 @@
 extends Node
 
+const STARTING_HEALTH := 10
+
 signal health_changed(value)
 signal died
 
 signal light_changed(value)
 
-@export var health : int:
+@export var health : float:
 	set(value):
 		health = value
 		_current_health = value
@@ -27,7 +29,10 @@ signal light_changed(value)
 	&"Bricks" : true
 }
 
-@export var tower_level : int = 0
+@export var tower_level : int = 0:
+	set(value):
+		tower_level = value
+		health = STARTING_HEALTH + 5 * tower_level
 
 @export var _current_light := 0:
 	set(value):

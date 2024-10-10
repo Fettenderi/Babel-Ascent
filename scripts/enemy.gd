@@ -12,7 +12,11 @@ signal died
 
 @export var light_released := 1
 
+@export var damage_indicator_radius := 1.0
+
 @export var _light_scene : PackedScene
+
+@onready var _damage_indicator_mesh : SphereMesh = %DamageIndicator.mesh
 
 var _movement_pattern : MovementBehaviour
 
@@ -29,12 +33,13 @@ func _physics_process(delta: float) -> void:
 	move_and_collide(velocity)
 
 func _on_hit_box_died() -> void:
-	var _light_instance : XRToolsPickable
+	var _light_instance : Light
 	
 	for _i in range(light_released):
 		_light_instance = _light_scene.instantiate()
 		
 		_light_instance.global_position = global_position + Vector3(randf() * 2 - 1, randf() * 2 - 1, randf() * 2 - 1) * 0.5
+		_light_instance.needs_despawning = true
 		
 		get_parent().add_child(_light_instance, true)
 	
@@ -46,9 +51,12 @@ func _on_hit_box_died() -> void:
 func _on_hit_box_health_changed(_new_heath: float) -> void:
 	var tween := create_tween()
 	
-	tween.tween_property(%DamageIndicator, "visible", true, 0.5)
-	tween.tween_property(%DamageIndicator, "visible", false, 0.5)
+	tween.set_parallel(true)
+	tween.tween_property(_damage_indicator_mesh, "radius", damage_indicator_radius, 0.5)
+	tween.tween_property(_damage_indicator_mesh, "height", damage_indicator_radius * 2, 0.5)
 
+	tween.tween_property(_damage_indicator_mesh, "radius", 0.001, 0.5).set_delay(0.5)
+	tween.tween_property(_damage_indicator_mesh, "height", 0.002, 0.5).set_delay(0.5)
 
 func _on_tree_entered() -> void:
 	if Engine.is_editor_hint(): return
