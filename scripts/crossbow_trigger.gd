@@ -14,6 +14,8 @@ func _ready() -> void:
 	ammo_slot.has_picked_up.connect(_on_arrow_picked_up)
 	pull_trigger.slider_moved.connect(_on_pull_trigger_moved)
 	_parent.action_pressed.connect(_on_action_pressed_crossbow)
+	
+	%FireEvent.preload_event = true
 
 func _on_arrow_picked_up(what: Variant):
 	_has_arrow = true
@@ -39,3 +41,5 @@ func _throw_arrow():
 	
 	_arrow = null
 	_has_arrow = false
+	
+	%FireEvent.play()

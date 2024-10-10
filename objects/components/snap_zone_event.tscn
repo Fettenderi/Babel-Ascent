@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4nacos82syd6"]
+
+[ext_resource type="Script" path="res://scripts/snap_zone_event.gd" id="1_uls87"]
+
+[node name="SnapZoneEvent" type="FmodEventEmitter3D"]
+event_name = "event:/CANNON/SFX_CannonBall_OnRail"
+event_guid = "{eca3afa1-5c32-4c9a-904d-e44e7520dcb8}"
+preload_event = false
+script = ExtResource("1_uls87")

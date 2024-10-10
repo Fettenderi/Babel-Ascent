@@ -18,9 +18,28 @@ signal died
 
 @onready var _damage_indicator_mesh : SphereMesh = %DamageIndicator.mesh
 
+@onready var _player : XRCamera3D
+@onready var _ambience_timer : Timer
+
 var _movement_pattern : MovementBehaviour
 
-@onready var _player : XRCamera3D
+func _ready() -> void:
+	_ambience_timer = Timer.new()
+	_ambience_timer.autostart = true
+	_ambience_timer.one_shot = false
+	_ambience_timer.wait_time = (randf() * 5) + 5
+	_ambience_timer.timeout.connect(_play_ambience)
+	
+	%DeathEvent.preload_event = true
+	%DamageEvent.preload_event = true
+	%AmbienceEvent.preload_event = true
+	
+	%DeathEvent.stopped.connect(_died)
+
+func _play_ambience():
+	_ambience_timer.wait_time = (randf() * 5) + 5
+	%AmbienceEvent.play()
+	
 
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint(): return
@@ -43,10 +62,11 @@ func _on_hit_box_died() -> void:
 		
 		get_parent().add_child(_light_instance, true)
 	
-	died.emit()
-	
-	queue_free()
+	%DeathEvent.play()
 
+func _died():
+	died.emit()
+	queue_free()
 
 func _on_hit_box_health_changed(_new_heath: float) -> void:
 	var tween := create_tween()
@@ -57,6 +77,8 @@ func _on_hit_box_health_changed(_new_heath: float) -> void:
 
 	tween.tween_property(_damage_indicator_mesh, "radius", 0.001, 0.5).set_delay(0.5)
 	tween.tween_property(_damage_indicator_mesh, "height", 0.002, 0.5).set_delay(0.5)
+	
+	%DamageEvent.play()
 
 func _on_tree_entered() -> void:
 	if Engine.is_editor_hint(): return

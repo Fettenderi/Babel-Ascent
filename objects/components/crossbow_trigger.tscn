@@ -10,3 +10,10 @@ unique_name_in_owner = true
 
 [node name="CrossbowEnd" type="Marker3D" parent="."]
 unique_name_in_owner = true
+
+[node name="FireEvent" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/CROSSBOW/SFX_Crossbow_Hit"
+event_guid = "{2453ed61-19f0-4802-bf0a-0b4ea9d012c9}"
+preload_event = false
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01464)

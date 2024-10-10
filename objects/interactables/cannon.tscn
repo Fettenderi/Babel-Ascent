@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://bwfntoi2ykbx4"]
+[gd_scene load_steps=35 format=4 uid="uid://bwfntoi2ykbx4"]
 
 [ext_resource type="Script" path="res://scripts/cannon.gd" id="1_q32ly"]
 [ext_resource type="Material" uid="uid://c07wny4rhorcw" path="res://assets/materials/cannon.tres" id="1_qnpri"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/interactables/interactable_joystick.tscn" id="3_jce2g"]
 [ext_resource type="PackedScene" uid="uid://b0r6edl74ddo7" path="res://addons/godot-xr-tools/interactables/interactable_slider.tscn" id="3_v0va7"]
 [ext_resource type="PackedScene" uid="uid://dafjpqng1mmyy" path="res://objects/components/large_button.tscn" id="6_1ldrl"]
+[ext_resource type="PackedScene" uid="uid://c4nacos82syd6" path="res://objects/components/snap_zone_event.tscn" id="9_phiia"]
 [ext_resource type="PackedScene" uid="uid://ce7vysyvondf8" path="res://addons/godot-xr-tools/objects/snap_zone.tscn" id="13_nlv0y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yhgf"]
@@ -260,6 +261,8 @@ snap_require = "CannonBall"
 [node name="CollisionShape3D" parent="CannonOrigin/InteractableJoystick/Cannon/BarrelOrigin/InteractableSlider/Barrel/Ammos/SnapZone" index="0"]
 shape = SubResource("SphereShape3D_bsdex")
 
+[node name="SnapZoneEvent" parent="CannonOrigin/InteractableJoystick/Cannon/BarrelOrigin/InteractableSlider/Barrel/Ammos/SnapZone" instance=ExtResource("9_phiia")]
+
 [node name="SnapZone2" parent="CannonOrigin/InteractableJoystick/Cannon/BarrelOrigin/InteractableSlider/Barrel/Ammos" instance=ExtResource("13_nlv0y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000394461, 0.46498, 0.18557)
 snap_mode = 1
@@ -267,6 +270,8 @@ snap_require = "CannonBall"
 
 [node name="CollisionShape3D" parent="CannonOrigin/InteractableJoystick/Cannon/BarrelOrigin/InteractableSlider/Barrel/Ammos/SnapZone2" index="0"]
 shape = SubResource("SphereShape3D_mink8")
+
+[node name="SnapZoneEvent" parent="CannonOrigin/InteractableJoystick/Cannon/BarrelOrigin/InteractableSlider/Barrel/Ammos/SnapZone2" instance=ExtResource("9_phiia")]
 
 [node name="SnapZone3" parent="CannonOrigin/InteractableJoystick/Cannon/BarrelOrigin/InteractableSlider/Barrel/Ammos" instance=ExtResource("13_nlv0y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000394461, 0.46498, 0.0175697)
@@ -276,6 +281,8 @@ snap_require = "CannonBall"
 [node name="CollisionShape3D" parent="CannonOrigin/InteractableJoystick/Cannon/BarrelOrigin/InteractableSlider/Barrel/Ammos/SnapZone3" index="0"]
 shape = SubResource("SphereShape3D_j0xbs")
 
+[node name="SnapZoneEvent" parent="CannonOrigin/InteractableJoystick/Cannon/BarrelOrigin/InteractableSlider/Barrel/Ammos/SnapZone3" instance=ExtResource("9_phiia")]
+
 [node name="SnapZone4" parent="CannonOrigin/InteractableJoystick/Cannon/BarrelOrigin/InteractableSlider/Barrel/Ammos" instance=ExtResource("13_nlv0y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000394461, 0.46498, -0.15043)
 snap_mode = 1
@@ -283,6 +290,8 @@ snap_require = "CannonBall"
 
 [node name="CollisionShape3D" parent="CannonOrigin/InteractableJoystick/Cannon/BarrelOrigin/InteractableSlider/Barrel/Ammos/SnapZone4" index="0"]
 shape = SubResource("SphereShape3D_kc235")
+
+[node name="SnapZoneEvent" parent="CannonOrigin/InteractableJoystick/Cannon/BarrelOrigin/InteractableSlider/Barrel/Ammos/SnapZone4" instance=ExtResource("9_phiia")]
 
 [node name="SnapZone5" parent="CannonOrigin/InteractableJoystick/Cannon/BarrelOrigin/InteractableSlider/Barrel/Ammos" instance=ExtResource("13_nlv0y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000394461, 0.46498, -0.31843)
@@ -292,6 +301,8 @@ snap_require = "CannonBall"
 [node name="CollisionShape3D" parent="CannonOrigin/InteractableJoystick/Cannon/BarrelOrigin/InteractableSlider/Barrel/Ammos/SnapZone5" index="0"]
 shape = SubResource("SphereShape3D_qflap")
 
+[node name="SnapZoneEvent" parent="CannonOrigin/InteractableJoystick/Cannon/BarrelOrigin/InteractableSlider/Barrel/Ammos/SnapZone5" instance=ExtResource("9_phiia")]
+
 [node name="SnapZone6" parent="CannonOrigin/InteractableJoystick/Cannon/BarrelOrigin/InteractableSlider/Barrel/Ammos" instance=ExtResource("13_nlv0y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000394461, 0.46498, -0.48643)
 snap_mode = 1
@@ -299,6 +310,8 @@ snap_require = "CannonBall"
 
 [node name="CollisionShape3D" parent="CannonOrigin/InteractableJoystick/Cannon/BarrelOrigin/InteractableSlider/Barrel/Ammos/SnapZone6" index="0"]
 shape = SubResource("SphereShape3D_1rkxh")
+
+[node name="SnapZoneEvent" parent="CannonOrigin/InteractableJoystick/Cannon/BarrelOrigin/InteractableSlider/Barrel/Ammos/SnapZone6" instance=ExtResource("9_phiia")]
 
 [node name="FireHole" type="Marker3D" parent="CannonOrigin/InteractableJoystick/Cannon"]
 unique_name_in_owner = true
@@ -323,6 +336,32 @@ randomness = 0.5
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_1mkao")
 draw_pass_1 = SubResource("SphereMesh_sd47d")
+
+[node name="ButtonPressedEvent" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/CANNON/SFX_Cannon_Button"
+event_guid = "{26da99b0-abe2-4172-bf75-5855921f5aa2}"
+preload_event = false
+event_parameter/Charged/id = 6081303234077863763
+event_parameter/Charged/value = "Empty"
+event_parameter/Charged/labels = PackedStringArray("Charge", "Empty")
+event_parameter/Charged/min_value = "Charge"
+event_parameter/Charged/max_value = "Empty"
+event_parameter/Charged/default_value = "Empty"
+event_parameter/Charged/variant_type = 4
+unique_name_in_owner = true
+
+[node name="FireEvent" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/CANNON/SFX_Cannon_Button"
+event_guid = "{26da99b0-abe2-4172-bf75-5855921f5aa2}"
+preload_event = false
+event_parameter/Charged/id = 6081303234077863763
+event_parameter/Charged/value = "Empty"
+event_parameter/Charged/labels = PackedStringArray("Charge", "Empty")
+event_parameter/Charged/min_value = "Charge"
+event_parameter/Charged/max_value = "Empty"
+event_parameter/Charged/default_value = "Empty"
+event_parameter/Charged/variant_type = 4
+unique_name_in_owner = true
 
 [connection signal="button_pressed" from="CannonOrigin/InteractableJoystick/Cannon/LargeButton" to="." method="_on_large_button_button_pressed"]
 [connection signal="finished" from="GPUParticles3D" to="." method="_on_gpu_particles_3d_finished"]

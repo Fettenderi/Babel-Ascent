@@ -16,6 +16,9 @@ var _has_fired := false
 var _is_buffered := false
 
 func _ready() -> void:
+	%ButtonPressedEvent.preload_event = true
+	%FireEvent.preload_event = true
+	
 	_cooldown_timer = Timer.new()
 	_cooldown_timer.name = "CooldownTimer"
 	_cooldown_timer.autostart = false
@@ -45,7 +48,9 @@ func _fire_cannon():
 	_entities.add_child(_cannon_ball_instance, true)
 	
 	_cannon_ball_instance.throw((%FireHole.global_position - %BallDirection.global_position).normalized() * fire_force, %FireHole.global_position)
-
+	
+	%FireEvent.play()
+	
 	%GPUParticles3D.restart()
 
 func _has_ammo() -> bool:
@@ -65,8 +70,14 @@ func _remove_ammo():
 			return
 
 func _on_large_button_button_pressed() -> void:
-	if not _has_ammo(): return
-	if _on_cooldown: return
+	if not _has_ammo() or _on_cooldown:
+		FmodServer.set_global_parameter_by_name_with_label("Charged", "Empty")
+		%ButtonPressedEvent.play()
+		return
+	
+	FmodServer.set_global_parameter_by_name_with_label("Charged", "Charge")
+	%ButtonPressedEvent.play()
+	
 	if _has_fired:
 		_is_buffered = true
 		return
