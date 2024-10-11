@@ -1,5 +1,16 @@
-[gd_scene format=3 uid="uid://beplovw3ggyko"]
+[gd_scene load_steps=2 format=3 uid="uid://beplovw3ggyko"]
+
+[ext_resource type="Script" path="res://globals/music_event.gd" id="1_xdrtl"]
 
 [node name="MusicEvent" type="FmodEventEmitter3D"]
-event_guid = "{0000005f-0062-0000-6f00-000075000000}"
+event_name = "event:/Music/Music"
+event_guid = "{a82e9539-a9af-4463-a367-c008b58db15f}"
 preload_event = false
+event_parameter/music_states/id = 7619304402217269018
+event_parameter/music_states/value = "0"
+event_parameter/music_states/labels = PackedStringArray("0", "1", "2", "3", "4", "5")
+event_parameter/music_states/min_value = "0"
+event_parameter/music_states/max_value = "5"
+event_parameter/music_states/default_value = "0"
+event_parameter/music_states/variant_type = 4
+script = ExtResource("1_xdrtl")

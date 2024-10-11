@@ -42,6 +42,7 @@ FmodPlayer="*res://globals/fmod_player.tscn"
 PlayerStats="*res://globals/player_stats.tscn"
 PhaseHandler="*res://globals/phase_handler.tscn"
 PostProcessing="*res://globals/post_processing.tscn"
+MusicEvent="*res://globals/music_event.tscn"
 
 [editor_plugins]
 
