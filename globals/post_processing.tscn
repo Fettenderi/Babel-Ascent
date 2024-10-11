@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://b1aim6j58c4ij"]
+
+[ext_resource type="Script" path="res://post_processing/1bit_effect.gd" id="1_aybmf"]
+[ext_resource type="Script" path="res://post_processing/palette_swapping_effect.gd" id="2_ohypo"]
+[ext_resource type="Script" path="res://scripts/post_processing.gd" id="3_kf6re"]
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_jxc8d"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("1_aybmf")
+glsl_file = "res://post_processing/1bit.glsl"
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_yijgy"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("2_ohypo")
+black_color = Color(0.0228208, 0.0228208, 0.0245217, 1)
+white_color = Color(0.929412, 0.854902, 0.717647, 1)
+glsl_file = "res://post_processing/palette_swapping.glsl"
+
+[sub_resource type="Compositor" id="Compositor_x6wna"]
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_jxc8d"), SubResource("CompositorEffect_yijgy")])
+
+[node name="PostProcessing" type="WorldEnvironment"]
+compositor = SubResource("Compositor_x6wna")
+script = ExtResource("3_kf6re")

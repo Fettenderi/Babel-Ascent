@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://beplovw3ggyko"]
+
+[node name="MusicEvent" type="FmodEventEmitter3D"]
+event_guid = "{0000005f-0062-0000-6f00-000075000000}"
+preload_event = false
