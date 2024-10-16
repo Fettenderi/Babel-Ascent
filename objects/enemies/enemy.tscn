@@ -65,19 +65,16 @@ damaged_by = &"Player"
 [node name="DeathEvent" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/ENEMY/SFX_Enemy_Death"
 event_guid = "{8907b90f-1d3a-4e75-9c64-5273799882d1}"
-preload_event = false
 unique_name_in_owner = true
 
 [node name="DamageEvent" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/ENEMY/SFX_Enemy_Damage"
 event_guid = "{3b64eb11-27b8-4d5b-bbc3-13f6403a6969}"
-preload_event = false
 unique_name_in_owner = true
 
 [node name="AmbienceEvent" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/ENEMY/SFX_Enemy_Ambiance"
 event_guid = "{7f11f0ff-2509-4157-86f5-2c339ad536dd}"
-preload_event = false
 unique_name_in_owner = true
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

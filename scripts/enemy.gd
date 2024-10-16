@@ -63,6 +63,8 @@ func _on_hit_box_died() -> void:
 		get_parent().add_child(_light_instance, true)
 	
 	%DeathEvent.play()
+	await get_tree().create_timer(0.2).timeout
+	_died()
 
 func _died():
 	died.emit()

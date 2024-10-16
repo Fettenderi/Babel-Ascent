@@ -49,6 +49,5 @@ noise_influence = 0.3
 axis = Vector3(0, 0, 0.3)
 
 [node name="AxisMovement2" parent="CombineMovements" index="2" instance=ExtResource("5_bwy3r")]
-axis = Vector3(0, 0.3, 0)
 
 [editable path="HitBox"]

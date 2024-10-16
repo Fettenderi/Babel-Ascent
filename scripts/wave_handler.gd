@@ -68,7 +68,7 @@ func _spawn_enemy(enemy: EnemyResource) -> void:
 
 func _get_spawn_location() -> Vector3:
 	var _spawn_location := -_player.basis.z
-	_spawn_location.y = (randf() * 2 - 1) * 0.2
+	_spawn_location.y = (randf() * 2 - 1) * 0.3 + 0.1
 	_spawn_location += _player.basis.x * (randf() * 2 - 1) * 0.6
 	
 	_spawn_location = _spawn_location.normalized()

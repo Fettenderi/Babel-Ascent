@@ -24,12 +24,13 @@ func _ready() -> void:
 	_entities.name = "Entities"
 	add_child(_entities, true)
 
-
+# BUG Puoi prendere più item insieme e comprarli con la stessa luce 
 func remove_light(amount: int) -> void:
 	var _light : XRToolsPickable
 	for _i in range(amount):
 		_light = _lights.pop_back()
-		_light.queue_free()
+		if is_instance_valid(_light):
+			_light.queue_free()
 
 func add_light(amount: int) -> void:
 	var _light_instance : XRToolsPickable
