@@ -44,12 +44,16 @@ func _play_ambience():
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint(): return
 	
-	if _player:
-		look_at_from_position(global_position, _player.global_position, Vector3.UP, true)
+	if not _player:
+		_search_player()
+	look_at_from_position(global_position, _player.global_position, Vector3.UP, true)
 	
 	velocity = transform.basis * _movement_pattern.get_direction().normalized() * speed * delta
 	
 	move_and_collide(velocity)
+
+func _search_player():
+	_player = get_parent().get_meta(&"Player")
 
 func _on_hit_box_died() -> void:
 	var _light_instance : Light

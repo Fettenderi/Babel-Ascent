@@ -21,8 +21,8 @@ radius = 0.9184
 radius = 1.25603
 
 [node name="Throne" instance=ExtResource("1_fgdr6")]
-speed = 3.0
-light_released = 5
+speed = 1.5
+light_released = 4
 damage_indicator_radius = 3.0
 
 [node name="ThroneMesh" parent="." index="0" instance=ExtResource("2_1qu8k")]
@@ -36,13 +36,13 @@ shape = SubResource("SphereShape3D_e14dx")
 
 [node name="HitBox" parent="." index="4"]
 visible = false
-health = 20.0
+health = 12.0
 
 [node name="CollisionShape3D" parent="HitBox" index="0"]
 shape = SubResource("SphereShape3D_2xpfd")
 
 [node name="AlternateMovements" parent="." index="5" instance=ExtResource("3_207q1")]
-switching_time = 50.0
+switching_time = 10.0
 
 [node name="CombineMovements" parent="AlternateMovements" index="0" instance=ExtResource("3_e8gv6")]
 
@@ -50,7 +50,7 @@ switching_time = 50.0
 axis = Vector3(1, 0, 0)
 
 [node name="AxisMovement2" parent="AlternateMovements/CombineMovements" index="1" instance=ExtResource("4_minja")]
-axis = Vector3(0, 0, 0.7)
+axis = Vector3(0, 0, 0.4)
 
 [node name="CombineMovements2" parent="AlternateMovements" index="1" instance=ExtResource("3_e8gv6")]
 
@@ -58,6 +58,6 @@ axis = Vector3(0, 0, 0.7)
 axis = Vector3(-1, 0, 0)
 
 [node name="AxisMovement2" parent="AlternateMovements/CombineMovements2" index="1" instance=ExtResource("4_minja")]
-axis = Vector3(0, 0, 0.7)
+axis = Vector3(0, 0, 0.4)
 
 [editable path="HitBox"]

@@ -24,7 +24,7 @@ size = Vector3(2.3479, 2.1881, 0.80957)
 
 [node name="Cherubim" instance=ExtResource("1_ecsgx")]
 speed = 2.0
-light_released = 4
+light_released = 3
 damage_indicator_radius = 1.5
 
 [node name="CherubimMesh" parent="." index="0" instance=ExtResource("2_bvyxq")]
@@ -38,7 +38,7 @@ shape = SubResource("SphereShape3D_cplll")
 
 [node name="HitBox" parent="." index="4"]
 visible = false
-health = 4.0
+health = 8.0
 
 [node name="CollisionShape3D" parent="HitBox" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00193024, 0)

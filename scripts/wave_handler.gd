@@ -31,6 +31,7 @@ func _ready() -> void:
 	
 	_enemies = Node.new()
 	_enemies.name = "Enemies"
+	_enemies.set_meta(&"Player", _player)
 	add_child(_enemies, true)
 	
 	_spawning_delay = Timer.new()
@@ -41,8 +42,9 @@ func _ready() -> void:
 func _spawn_wave():
 	if not _fight_resource: return
 	
-	if _fight_resource.enemy_waves.size() == _current_wave + 1:
+	if _fight_resource.enemy_waves.size() == _current_wave:
 		waves_ended.emit()
+		return
 	
 	for _i in range(_fight_resource.enemy_waves[_current_wave]):
 		if _fight_resource.spawn_probabilities[_i + _enemy_offset] == 1.0 or randf() <= _fight_resource.spawn_probabilities[_i + _enemy_offset]:

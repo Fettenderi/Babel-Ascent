@@ -20,11 +20,11 @@ signal transaction_finished(main1_picked : bool, main2_picked : bool)
 @onready var _selected_merch : Array[PickableItem] = []
 @onready var _weighter : Weighter = %Weighter
 
-var _main_items_picked := 0:
+var _items_picked := 0:
 	set(value):
-		if _main_items_picked + value == 1:
+		if _items_picked + value == 1:
 			_set_hand_enable(value > 0)
-		_main_items_picked = value
+		_items_picked = value
 
 
 var _transaction_ongoing := true
@@ -149,8 +149,8 @@ func _has_selected_item(what: PickableItem, slot_id: int) -> void:
 	
 	_weighter.remove_light(what.item_resource.cost)
 	
-	if  what.get_meta(&"ItemType") == ItemType.MAIN_ITEM1 or what.get_meta(&"ItemType") == ItemType.MAIN_ITEM2:
-		_main_items_picked += 1
+	_items_picked += 1
+	#if  what.get_meta(&"ItemType") == ItemType.MAIN_ITEM1 or what.get_meta(&"ItemType") == ItemType.MAIN_ITEM2:
 	
 	item_selected.emit(what.item_resource, what.get_meta(&"ItemType"))
 
@@ -161,8 +161,8 @@ func _has_deselected_item(slot_id: int) -> void:
 	
 	_weighter.add_light(what.item_resource.cost)
 	
-	if  what.get_meta(&"ItemType") == ItemType.MAIN_ITEM1 or what.get_meta(&"ItemType") == ItemType.MAIN_ITEM2:
-		_main_items_picked -= 1
+	_items_picked -= 1
+	#if  what.get_meta(&"ItemType") == ItemType.MAIN_ITEM1 or what.get_meta(&"ItemType") == ItemType.MAIN_ITEM2:
 	
 	item_deselected.emit(what.item_resource, what.get_meta(&"ItemType"))
 	

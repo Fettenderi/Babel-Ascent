@@ -36,5 +36,5 @@ signal light_changed(value)
 
 @export var _current_light := 0:
 	set(value):
-		_current_light = value
+		_current_light = min(value, 30)
 		light_changed.emit(_current_light)
