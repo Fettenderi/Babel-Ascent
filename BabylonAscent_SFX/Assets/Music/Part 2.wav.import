@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://y4t7u6pri35w"
+path="res://.godot/imported/Part 2.wav-86cdb7783ef354a83de1be9a19c82677.sample"
+
+[deps]
+
+source_file="res://BabylonAscent_SFX/Assets/Music/Part 2.wav"
+dest_files=["res://.godot/imported/Part 2.wav-86cdb7783ef354a83de1be9a19c82677.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
