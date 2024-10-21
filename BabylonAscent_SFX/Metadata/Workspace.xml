@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Workspace" id="{e982d3c3-0cbc-4df1-afcf-fa4418138d87}">
+		<property name="builtBanksOutputDirectory">
+			<value>../../../Documents/GitHub/BabelAscent/assets/banks</value>
+		</property>
+		<relationship name="masterEventFolder">
+			<destination>{aec6a457-a16b-4caf-800f-ae683224cce0}</destination>
+		</relationship>
+		<relationship name="masterTagFolder">
+			<destination>{0a262b5f-d9e0-42fb-b78b-049aad4961d2}</destination>
+		</relationship>
+		<relationship name="masterEffectPresetFolder">
+			<destination>{5b9d151d-25da-4cbf-9a72-ea4eb44084ae}</destination>
+		</relationship>
+		<relationship name="masterParameterPresetFolder">
+			<destination>{b78b6960-7c3d-4248-8c43-c3f1e004a0d1}</destination>
+		</relationship>
+		<relationship name="masterBankFolder">
+			<destination>{d7cda4b5-1e39-487d-9482-6adacfc5cc2a}</destination>
+		</relationship>
+		<relationship name="masterSandboxFolder">
+			<destination>{7c7277e6-9919-4ba2-970c-a5859e49af6d}</destination>
+		</relationship>
+		<relationship name="masterAssetFolder">
+			<destination>{54d18f2f-e97f-4088-803e-016e134c15c1}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{08e754ef-ac89-44f0-b01f-f8428cd0f953}</destination>
+		</relationship>
+		<relationship name="profilerSessionFolder">
+			<destination>{77761a02-45a6-4abb-a47e-dcf320a99582}</destination>
+		</relationship>
+		<relationship name="platforms">
+			<destination>{ffbcd51d-7e5a-4d5c-bdea-3304a216ec39}</destination>
+		</relationship>
+	</object>
+</objects>
