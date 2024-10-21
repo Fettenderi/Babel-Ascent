@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{0812335a-322b-458f-addd-9e08132c59f3}">
+		<property name="assetPath">
+			<value>CROSSBOW/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{54d18f2f-e97f-4088-803e-016e134c15c1}</destination>
+		</relationship>
+	</object>
+</objects>

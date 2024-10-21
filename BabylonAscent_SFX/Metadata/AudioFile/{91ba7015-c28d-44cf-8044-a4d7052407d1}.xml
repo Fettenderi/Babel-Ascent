@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{91ba7015-c28d-44cf-8044-a4d7052407d1}">
+		<property name="assetPath">
+			<value>TABLE/SFX_Table_Hitted.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.53756250000000005</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{54d18f2f-e97f-4088-803e-016e134c15c1}</destination>
+		</relationship>
+	</object>
+</objects>

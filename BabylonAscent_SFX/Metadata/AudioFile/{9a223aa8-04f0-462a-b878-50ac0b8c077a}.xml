@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{9a223aa8-04f0-462a-b878-50ac0b8c077a}">
+		<property name="assetPath">
+			<value>HARP_NOTES/harp-001.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.8888958333333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{54d18f2f-e97f-4088-803e-016e134c15c1}</destination>
+		</relationship>
+	</object>
+</objects>

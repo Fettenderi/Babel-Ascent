@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{742d3936-56e6-4e7a-b033-cf5dfc5db2a2}">
+		<property name="assetPath">
+			<value>WALL/SFX_Wall_Hitted.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.4185208333333332</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{54d18f2f-e97f-4088-803e-016e134c15c1}</destination>
+		</relationship>
+	</object>
+</objects>

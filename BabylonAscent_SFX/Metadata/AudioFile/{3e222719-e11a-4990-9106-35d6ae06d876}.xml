@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{3e222719-e11a-4990-9106-35d6ae06d876}">
+		<property name="assetPath">
+			<value>ANGEL/SFX_Enemy_Damage.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.0876666666666668</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{54d18f2f-e97f-4088-803e-016e134c15c1}</destination>
+		</relationship>
+	</object>
+</objects>
