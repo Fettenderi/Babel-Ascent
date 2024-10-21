@@ -44,6 +44,10 @@ PhaseHandler="*res://globals/phase_handler.tscn"
 PostProcessing="*res://globals/post_processing.tscn"
 MusicEvent="*res://globals/music_event.tscn"
 
+[display]
+
+window/size/mode=3
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/fmod/plugin.cfg", "res://addons/godot-xr-tools/plugin.cfg")
@@ -81,4 +85,6 @@ textures/vram_compression/import_etc2_astc=true
 [xr]
 
 openxr/enabled=true
+openxr/foveation_level=3
+openxr/foveation_dynamic=true
 shaders/enabled=true
