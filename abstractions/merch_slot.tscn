@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=4 uid="uid://cdm1qdok6gcqk"]
+[gd_scene load_steps=11 format=4 uid="uid://cdm1qdok6gcqk"]
 
 [ext_resource type="Script" path="res://scripts/merch_slot.gd" id="1_7dwt2"]
+[ext_resource type="FontFile" uid="uid://bsfeh14ag5lbb" path="res://assets/fonts/UncialAntiqua-Regular.ttf" id="2_8kjkc"]
 [ext_resource type="PackedScene" uid="uid://b6any8ipar8u0" path="res://assets/models/tag.blend" id="2_p0045"]
 [ext_resource type="Material" uid="uid://ybpin33drebr" path="res://assets/materials/hands.tres" id="2_vkujr"]
 [ext_resource type="Material" uid="uid://r2f32d4cdrmd" path="res://assets/materials/handles.tres" id="4_6h04s"]
@@ -9,8 +10,9 @@
 resource_local_to_scene = true
 radius = 0.609586
 
-[sub_resource type="TextMesh" id="TextMesh_6sjx1"]
+[sub_resource type="TextMesh" id="TextMesh_sftca"]
 text = "/"
+font = ExtResource("2_8kjkc")
 depth = 0.01
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_328j7"]
@@ -65,7 +67,7 @@ max_distance = 100.0
 [node name="PriceTag" type="MeshInstance3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.870794, 0.491649, 0, -0.491649, 0.870794, 0, 0.125246, 0.618589)
-mesh = SubResource("TextMesh_6sjx1")
+mesh = SubResource("TextMesh_sftca")
 surface_material_override/0 = ExtResource("2_vkujr")
 
 [node name="TagMesh" parent="." instance=ExtResource("2_p0045")]

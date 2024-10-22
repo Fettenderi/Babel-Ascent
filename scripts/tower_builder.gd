@@ -8,6 +8,8 @@ const TOWER_OFFSET_SCALE := 0.3
 
 signal tower_built
 
+@export var _override_tower_level := 0
+
 @onready var _objects_with_desk := preload("res://objects/interactables/objects_with_desk.tscn")
 @onready var _objects_with_ground := preload("res://objects/interactables/objects.tscn")
 @onready var _tower_module := preload("res://objects/static/tower_module.tscn")
@@ -23,16 +25,20 @@ func _ready() -> void:
 
 func _spawn_tower():
 	var _module_instance : Node3D
+	var _tower_level := _override_tower_level
+	
+	if _tower_level <= 0:
+		_tower_level = PlayerStats.tower_level
 	
 	%HitBox.health = PlayerStats.health
 	
-	if PlayerStats.tower_level == 0:
+	if _tower_level == 0:
 		_module_instance = _objects_with_ground.instantiate()
 		add_child(_module_instance, true)
 		
 		tower_built.emit()
 		return
-	elif PlayerStats.tower_level == 1:
+	elif _tower_level == 1:
 		_module_instance = _objects_with_desk.instantiate()
 		add_child(_module_instance, true)
 		
@@ -44,7 +50,7 @@ func _spawn_tower():
 	
 	var _cumulative_offset := 0.0
 	
-	for _i in range(PlayerStats.tower_level - 1):
+	for _i in range(_tower_level - 1):
 		_module_instance = _tower_module.instantiate()
 		add_child(_module_instance, true)
 		

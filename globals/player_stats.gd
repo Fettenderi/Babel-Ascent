@@ -17,15 +17,24 @@ signal light_changed(value)
 		_current_health = value
 		health_changed.emit(_current_health)
 		
-		if value <= 0:
+		if value < health:
 			died.emit()
 
+#@onready var unlocked_items : Dictionary = {
+	#&"Hammer" : false,
+	#&"Crossbow" : false,
+	#&"Harp" : false,
+	#&"StunningHammer" : false,
+	#&"Cannon" : false,
+	#&"Bricks" : true
+#}
+
 @onready var unlocked_items : Dictionary = {
-	&"Hammer" : false,
-	&"Crossbow" : false,
-	&"Harp" : false,
-	&"StunningHammer" : false,
-	&"Cannon" : false,
+	&"Hammer" : true,
+	&"Crossbow" : true,
+	&"Harp" : true,
+	&"StunningHammer" : true,
+	&"Cannon" : true,
 	&"Bricks" : true
 }
 
