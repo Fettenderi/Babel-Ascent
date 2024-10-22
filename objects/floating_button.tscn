@@ -65,7 +65,7 @@ mesh = SubResource("TextMesh_nakvf")
 surface_material_override/0 = ExtResource("3_i2klt")
 
 [node name="Button" type="MeshInstance3D" parent="Text"]
-transform = Transform3D(0.462, 0, 0, 0, -4.25648e-08, -0.23, 0, 0.973768, -1.00536e-08, 0, -1.76224e-10, -0.0364971)
+transform = Transform3D(0.462, 0, 0, 0, -4.25647e-08, -0.23, 0, 0.973768, -1.00536e-08, 0, -1.76224e-10, -0.0364971)
 mesh = SubResource("ArrayMesh_k5hb2")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("2_66qhm")
