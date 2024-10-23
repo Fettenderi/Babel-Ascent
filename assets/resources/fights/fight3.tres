@@ -12,4 +12,5 @@ enemies = Array[ExtResource("1_yxypo")]([ExtResource("2_5l6ie"), ExtResource("3_
 enemy_waves = Array[int]([3, 2, 2])
 spawn_probabilities = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0])
 next_shop = 2
+current_scene_name = "res://scenes/fight_scene.tscn"
 next_scene_name = "res://scenes/merchant_scene.tscn"

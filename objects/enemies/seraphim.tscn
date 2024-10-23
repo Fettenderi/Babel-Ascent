@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ceqjh0jrj3nx6"]
+[gd_scene load_steps=10 format=3 uid="uid://ceqjh0jrj3nx6"]
 
 [ext_resource type="PackedScene" uid="uid://54jegna8r7wy" path="res://objects/enemies/enemy.tscn" id="1_l1j7s"]
 [ext_resource type="PackedScene" uid="uid://cfbh7tai5dq43" path="res://assets/models/seraphim.blend" id="2_5mfe1"]
@@ -16,6 +16,9 @@ rings = 8
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_phwcy"]
 radius = 0.484334
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sgxs0"]
+radius = 1.02034
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nfu7t"]
 size = Vector3(3.07056, 2.96704, 0.69043)
@@ -35,12 +38,8 @@ mesh = SubResource("SphereMesh_vrbyv")
 visible = false
 shape = SubResource("SphereShape3D_phwcy")
 
-[node name="HitBox" parent="." index="4"]
-visible = false
-health = 9.0
-
-[node name="CollisionShape3D" parent="HitBox" index="0"]
-shape = SubResource("BoxShape3D_nfu7t")
+[node name="CollisionShape3D" parent="HurtBox" index="0"]
+shape = SubResource("SphereShape3D_sgxs0")
 
 [node name="CombineMovements" parent="." index="5" instance=ExtResource("3_rwotv")]
 
@@ -60,4 +59,12 @@ axis = Vector3(0, 0, 1.4)
 [node name="AxisMovement2" parent="CombineMovements" index="3" instance=ExtResource("5_j8xfp")]
 axis = Vector3(0, 0.3, 0)
 
+[node name="HitBox" parent="." index="6"]
+visible = false
+health = 9.0
+
+[node name="CollisionShape3D" parent="HitBox" index="0"]
+shape = SubResource("BoxShape3D_nfu7t")
+
+[editable path="HurtBox"]
 [editable path="HitBox"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://buyxtv0vey4dt"]
+[gd_scene load_steps=10 format=3 uid="uid://buyxtv0vey4dt"]
 
 [ext_resource type="PackedScene" uid="uid://54jegna8r7wy" path="res://objects/enemies/enemy.tscn" id="1_6tasv"]
 [ext_resource type="PackedScene" uid="uid://ju050i0ql0g1" path="res://assets/models/eye.blend" id="2_75bfa"]
@@ -17,6 +17,9 @@ rings = 8
 [sub_resource type="SphereShape3D" id="SphereShape3D_34b6p"]
 radius = 0.273735
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_n3dra"]
+radius = 0.4
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_kb3qg"]
 radius = 0.589363
 
@@ -32,11 +35,8 @@ mesh = SubResource("SphereMesh_mye4x")
 visible = false
 shape = SubResource("SphereShape3D_34b6p")
 
-[node name="HitBox" parent="." index="4"]
-visible = false
-
-[node name="CollisionShape3D" parent="HitBox" index="0"]
-shape = SubResource("SphereShape3D_kb3qg")
+[node name="CollisionShape3D" parent="HurtBox" index="0"]
+shape = SubResource("SphereShape3D_n3dra")
 
 [node name="CombineMovements" parent="." index="5" instance=ExtResource("3_8uwxv")]
 
@@ -49,4 +49,11 @@ axis = Vector3(0, 0, 0.3)
 
 [node name="AxisMovement2" parent="CombineMovements" index="2" instance=ExtResource("5_bwy3r")]
 
+[node name="HitBox" parent="." index="6"]
+visible = false
+
+[node name="CollisionShape3D" parent="HitBox" index="0"]
+shape = SubResource("SphereShape3D_kb3qg")
+
+[editable path="HurtBox"]
 [editable path="HitBox"]

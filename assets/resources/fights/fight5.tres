@@ -9,8 +9,9 @@
 
 [resource]
 script = ExtResource("2_d14nh")
-enemies = Array[ExtResource("1_m0ydw")]([ExtResource("3_7gbly"), ExtResource("4_5fpvo"), ExtResource("4_h86yg"), ExtResource("4_5fpvo"), ExtResource("4_h86yg"), ExtResource("3_7gbly"), ExtResource("4_5fpvo"), ExtResource("3_7gbly"), ExtResource("4_5fpvo"), ExtResource("2_lvnsc")])
-enemy_waves = Array[int]([5, 5])
-spawn_probabilities = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0])
+enemies = Array[ExtResource("1_m0ydw")]([ExtResource("3_7gbly"), ExtResource("4_5fpvo"), ExtResource("4_h86yg"), ExtResource("4_5fpvo"), ExtResource("4_h86yg"), ExtResource("3_7gbly"), ExtResource("4_5fpvo"), ExtResource("4_h86yg"), ExtResource("3_7gbly"), ExtResource("4_5fpvo"), ExtResource("3_7gbly"), ExtResource("4_5fpvo"), ExtResource("2_lvnsc"), ExtResource("4_5fpvo"), ExtResource("3_7gbly")])
+enemy_waves = Array[int]([5, 5, 5])
+spawn_probabilities = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0])
 next_shop = 3
+current_scene_name = "res://scenes/fight_scene.tscn"
 next_scene_name = "res://scenes/credits_scene.tscn"

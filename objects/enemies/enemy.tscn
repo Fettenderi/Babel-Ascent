@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://54jegna8r7wy"]
+[gd_scene load_steps=8 format=3 uid="uid://54jegna8r7wy"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_r0ntq"]
 [ext_resource type="PackedScene" uid="uid://bdr7j4a0yrlbu" path="res://objects/pickables/light.tscn" id="2_0ylml"]
 [ext_resource type="PackedScene" uid="uid://dnukot3s50pwy" path="res://objects/components/hit_box.tscn" id="2_waawj"]
+[ext_resource type="PackedScene" uid="uid://dpl8em1nk60vo" path="res://objects/components/hurt_box.tscn" id="3_8ewak"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_hdwye"]
 radius = 0.25
@@ -58,6 +59,8 @@ mesh = SubResource("SphereMesh_u708i")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 
+[node name="HurtBox" parent="." groups=["Enemy"] instance=ExtResource("3_8ewak")]
+
 [node name="HitBox" parent="." groups=["Enemy"] instance=ExtResource("2_waawj")]
 health = 2.0
 damaged_by = &"Player"
@@ -81,4 +84,5 @@ unique_name_in_owner = true
 [connection signal="died" from="HitBox" to="." method="_on_hit_box_died"]
 [connection signal="health_changed" from="HitBox" to="." method="_on_hit_box_health_changed"]
 
+[editable path="HurtBox"]
 [editable path="HitBox"]

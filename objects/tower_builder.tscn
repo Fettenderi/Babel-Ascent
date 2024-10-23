@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dpl8em1nk60vo" path="res://objects/components/hurt_box.tscn" id="3_pbqra"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_6gmdo"]
-height = 1.07521
-radius = 0.870411
+height = 2.2
+radius = 1.13858
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_73i2m"]
 height = 1.74814

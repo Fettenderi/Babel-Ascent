@@ -19,4 +19,7 @@ func _on_merch_displayer_transaction_finished(main1_picked: bool, main2_picked: 
 		else:
 			PhaseHandler.current_phase = _shop_resource.next_only_item1
 	else:
-		PhaseHandler.current_phase = _shop_resource.next_only_item2
+		if main2_picked:
+			PhaseHandler.current_phase = _shop_resource.next_only_item2
+		else:
+			PhaseHandler.current_phase = [_shop_resource.next_only_item1, _shop_resource.next_only_item2].pick_random()

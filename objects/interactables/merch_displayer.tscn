@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=4 uid="uid://bbhf0o63v45ur"]
+[gd_scene load_steps=22 format=4 uid="uid://bbhf0o63v45ur"]
 
 [ext_resource type="PackedScene" uid="uid://bq0l2igjq5icu" path="res://assets/models/merch_displayer.blend" id="1_5lbte"]
 [ext_resource type="Script" path="res://scripts/merch_displayer.gd" id="1_y0hxb"]
 [ext_resource type="PackedScene" uid="uid://b6any8ipar8u0" path="res://assets/models/tag.blend" id="2_8f48x"]
+[ext_resource type="FontFile" uid="uid://bsfeh14ag5lbb" path="res://assets/fonts/UncialAntiqua-Regular.ttf" id="3_g2mjp"]
 [ext_resource type="PackedScene" uid="uid://ce7vysyvondf8" path="res://addons/godot-xr-tools/objects/snap_zone.tscn" id="3_t3i5x"]
 [ext_resource type="PackedScene" uid="uid://cdm1qdok6gcqk" path="res://abstractions/merch_slot.tscn" id="3_teb6r"]
 [ext_resource type="PackedScene" uid="uid://eg6vu61iipdj" path="res://objects/interactables/weighter.tscn" id="4_ogquy"]
@@ -14,9 +15,11 @@
 
 [sub_resource type="TextMesh" id="TextMesh_8kfq6"]
 text = "What I have"
+font = ExtResource("3_g2mjp")
 
 [sub_resource type="TextMesh" id="TextMesh_jrk2e"]
-text = "What you get"
+text = "What you Get"
+font = ExtResource("3_g2mjp")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6rl4s"]
 
@@ -164,7 +167,7 @@ skeleton = NodePath("../../Merch")
 transform = Transform3D(0.0928002, 0, 0, 0, 0.0310091, 0, 0, 0, 0.0310091, 0.557222, 0.0150234, -0.0109907)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SelectedTag"]
-transform = Transform3D(4.7482, 0, 0, 0, 12.3687, 6.99532, 0, -6.99532, 12.3687, 0, 1.10875, 0.653983)
+transform = Transform3D(3.98538, 0, 0, 0, 12.3687, 6.99532, 0, -6.99532, 12.3687, 0, 1.10875, 0.653983)
 mesh = SubResource("TextMesh_jrk2e")
 skeleton = NodePath("../../Merch")
 
