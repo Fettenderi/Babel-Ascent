@@ -29,4 +29,4 @@ Starting just from bricks you can earn light essences to buy items from the shad
 
 We recorded a full playthrough of the game for the people that don't have a VR headset, enjoy:
 
-[Gameplay](https://fettenderi.github.io)
+[Gameplay](https://www.youtube.com/embed/StAaA7DYxMg?si=MtQHS2mt9SeBrxY8)
