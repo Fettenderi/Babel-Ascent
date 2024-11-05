@@ -48,8 +48,8 @@ MusicEvent="*res://globals/music_event.tscn"
 
 [display]
 
-window/size/viewport_width=1260
-window/size/viewport_height=1000
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [editor_plugins]
 
