@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://vkfp61dc58mr"]
 
-[ext_resource type="Script" path="res://scripts/despawn_detector.gd" id="1_om4cl"]
+[ext_resource type="Script" uid="uid://dpdu0qmncddud" path="res://scripts/despawn_detector.gd" id="1_om4cl"]
 
 [node name="DespawnDetector" type="Area3D"]
 collision_layer = 0

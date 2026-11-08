@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="FightPhaseResource" load_steps=5 format=3 uid="uid://dg5giwebagnd2"]
 
-[ext_resource type="Script" path="res://scripts/enemy_resource.gd" id="1_mf30q"]
+[ext_resource type="Script" uid="uid://bjtr8jh8bxapg" path="res://scripts/enemy_resource.gd" id="1_mf30q"]
 [ext_resource type="Resource" uid="uid://5bs8ulyvsyp2" path="res://assets/resources/enemies/cherubim.tres" id="2_lvi7s"]
 [ext_resource type="Resource" uid="uid://dkbc77cqlw0hl" path="res://assets/resources/enemies/seraphim.tres" id="3_8803j"]
-[ext_resource type="Script" path="res://scripts/fight_phase_resource.gd" id="4_g7cda"]
+[ext_resource type="Script" uid="uid://dpy8vwy1jto2s" path="res://scripts/fight_phase_resource.gd" id="4_g7cda"]
 
 [resource]
 script = ExtResource("4_g7cda")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cbyaolkbtpevn"]
 
-[ext_resource type="Script" path="res://scripts/stunning.gd" id="1_j202l"]
+[ext_resource type="Script" uid="uid://cyjq1luyluqi3" path="res://scripts/stunning.gd" id="1_j202l"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_c1gkf"]
 flip_faces = true

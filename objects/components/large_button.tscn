@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=4 uid="uid://dafjpqng1mmyy"]
 
 [ext_resource type="PackedScene" uid="uid://cme66uldrjl2i" path="res://addons/godot-xr-tools/interactables/interactable_area_button.tscn" id="1_2oona"]
-[ext_resource type="Script" path="res://scripts/button.gd" id="1_n33jq"]
+[ext_resource type="Script" uid="uid://csth0o8ebn8y2" path="res://scripts/button.gd" id="1_n33jq"]
 [ext_resource type="Material" uid="uid://r2f32d4cdrmd" path="res://assets/materials/handles.tres" id="2_pk4oj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f818h"]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=29 format=3 uid="uid://cnvgds4au6gpx"]
 
 [ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_nvy7r"]
-[ext_resource type="Script" path="res://post_processing/1bit_effect.gd" id="2_4rgay"]
-[ext_resource type="Script" path="res://post_processing/palette_swapping_effect.gd" id="3_qb0u5"]
-[ext_resource type="Script" path="res://scripts/main_menu_buttons.gd" id="4_1g5ik"]
+[ext_resource type="Script" uid="uid://dkr0ulxv8eeaf" path="res://post_processing/1bit_effect.gd" id="2_4rgay"]
+[ext_resource type="Script" uid="uid://cb6ruywpb7tiw" path="res://post_processing/palette_swapping_effect.gd" id="3_qb0u5"]
+[ext_resource type="Script" uid="uid://b47e1d0d8qrq7" path="res://scripts/main_menu_buttons.gd" id="4_1g5ik"]
 [ext_resource type="FontFile" uid="uid://bsfeh14ag5lbb" path="res://assets/fonts/UncialAntiqua-Regular.ttf" id="5_bcv3a"]
 [ext_resource type="PackedScene" uid="uid://bdvc54ayjupnt" path="res://objects/floating_button.tscn" id="5_qm6od"]
 [ext_resource type="Material" uid="uid://c6rj5hgtuccay" path="res://assets/materials/merchant.tres" id="6_arqf0"]

@@ -1,11 +1,11 @@
 [gd_scene load_steps=16 format=4 uid="uid://dawksa4xma4ha"]
 
-[ext_resource type="Script" path="res://scripts/arrow_pickable.gd" id="1_61d2c"]
+[ext_resource type="Script" uid="uid://wbgm5j3yqv1h" path="res://scripts/arrow_pickable.gd" id="1_61d2c"]
 [ext_resource type="PackedScene" uid="uid://vkfp61dc58mr" path="res://objects/components/despawn_detector.tscn" id="2_s7uun"]
 [ext_resource type="PackedScene" uid="uid://dpl8em1nk60vo" path="res://objects/components/hurt_box.tscn" id="2_u1ji3"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="3_je2bn"]
 [ext_resource type="Animation" uid="uid://plad1r85f7ws" path="res://addons/godot-xr-tools/hands/animations/left/Grip.res" id="4_7wtk3"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="5_ms28v"]
+[ext_resource type="Script" uid="uid://bb5slk3tfq2ku" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="5_ms28v"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="6_dwty8"]
 [ext_resource type="Animation" uid="uid://ccds2u22gbxn7" path="res://addons/godot-xr-tools/hands/animations/right/Grip.res" id="7_yx4ne"]
 

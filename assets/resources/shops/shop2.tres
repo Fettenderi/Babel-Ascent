@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="ShopPhaseResource" load_steps=8 format=3 uid="uid://bn5n24keudj33"]
 
 [ext_resource type="Resource" uid="uid://dwelmkf0prcs8" path="res://assets/resources/items/cannon.tres" id="1_742rl"]
-[ext_resource type="Script" path="res://scripts/shop_phase_resource.gd" id="1_oxerc"]
+[ext_resource type="Script" uid="uid://6m4ym58mpsuy" path="res://scripts/shop_phase_resource.gd" id="1_oxerc"]
 [ext_resource type="Resource" uid="uid://cibdn8c68q7s7" path="res://assets/resources/items/stunning_hammer.tres" id="2_errpt"]
-[ext_resource type="Script" path="res://scripts/item_resource.gd" id="2_iokqa"]
+[ext_resource type="Script" uid="uid://c31l0m1jggg2" path="res://scripts/item_resource.gd" id="2_iokqa"]
 [ext_resource type="Resource" uid="uid://c5prsl876p4v8" path="res://assets/resources/fights/fight5.tres" id="3_w7sfn"]
 [ext_resource type="Resource" uid="uid://ph6cnl5t1nx2" path="res://assets/resources/fights/fight4.tres" id="4_2vo05"]
 [ext_resource type="Resource" uid="uid://bqpgft8jb6kxr" path="res://assets/resources/items/tower_upgrade.tres" id="7_kw07i"]

@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_dc2fv"]
 [ext_resource type="Material" uid="uid://c6rj5hgtuccay" path="res://assets/materials/merchant.tres" id="2_g2cc5"]
-[ext_resource type="Script" path="res://post_processing/1bit_effect.gd" id="2_unrcj"]
-[ext_resource type="Script" path="res://post_processing/palette_swapping_effect.gd" id="3_vyn7u"]
+[ext_resource type="Script" uid="uid://dkr0ulxv8eeaf" path="res://post_processing/1bit_effect.gd" id="2_unrcj"]
+[ext_resource type="Script" uid="uid://cb6ruywpb7tiw" path="res://post_processing/palette_swapping_effect.gd" id="3_vyn7u"]
 [ext_resource type="PackedScene" uid="uid://bt1vdiir6tlvu" path="res://addons/free_look_camera/free_look_camera.tscn" id="4_igqju"]
 [ext_resource type="Material" uid="uid://ybpin33drebr" path="res://assets/materials/hands.tres" id="4_q77np"]
 [ext_resource type="FontFile" uid="uid://bsfeh14ag5lbb" path="res://assets/fonts/UncialAntiqua-Regular.ttf" id="4_xprml"]

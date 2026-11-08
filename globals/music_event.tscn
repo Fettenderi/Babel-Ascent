@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://beplovw3ggyko"]
 
-[ext_resource type="Script" path="res://globals/music_event.gd" id="1_xdrtl"]
+[ext_resource type="Script" uid="uid://d32uptiju0y0r" path="res://globals/music_event.gd" id="1_xdrtl"]
 
 [node name="MusicEvent" type="FmodEventEmitter3D"]
 event_name = "event:/Music/Music"

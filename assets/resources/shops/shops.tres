@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ShopsResource" load_steps=7 format=3 uid="uid://dre8esx3b3iti"]
 
-[ext_resource type="Script" path="res://scripts/shops.gd" id="1_542i5"]
-[ext_resource type="Script" path="res://scripts/shop_phase_resource.gd" id="2_hcqkp"]
+[ext_resource type="Script" uid="uid://detq6te8ax5pu" path="res://scripts/shops.gd" id="1_542i5"]
+[ext_resource type="Script" uid="uid://6m4ym58mpsuy" path="res://scripts/shop_phase_resource.gd" id="2_hcqkp"]
 [ext_resource type="Resource" uid="uid://bnxk8l21hrjfp" path="res://assets/resources/shops/shop0.tres" id="3_35f4k"]
 [ext_resource type="Resource" uid="uid://dd80fb3n6kxdx" path="res://assets/resources/shops/shop1.tres" id="4_at6rs"]
 [ext_resource type="Resource" uid="uid://bn5n24keudj33" path="res://assets/resources/shops/shop2.tres" id="5_sahxx"]

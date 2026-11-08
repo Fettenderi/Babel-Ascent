@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bddj5m7ull6g0" path="res://addons/godot-xr-tools/interactables/interactable_handle.tscn" id="1_rojbh"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_qok8p"]
 [ext_resource type="Animation" uid="uid://dd67rufxwj2u" path="res://addons/godot-xr-tools/hands/animations/left/Grip 3.res" id="3_swbna"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="4_q8ocm"]
+[ext_resource type="Script" uid="uid://bb5slk3tfq2ku" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="4_q8ocm"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_4ws8c"]
 [ext_resource type="Animation" uid="uid://rs7vpclot07o" path="res://addons/godot-xr-tools/hands/animations/right/Grip 3.res" id="6_a71gr"]
 

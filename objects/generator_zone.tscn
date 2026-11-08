@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c1yx2ajujg4pr"]
 
 [ext_resource type="PackedScene" uid="uid://ce7vysyvondf8" path="res://addons/godot-xr-tools/objects/snap_zone.tscn" id="1_73mwg"]
-[ext_resource type="Script" path="res://scripts/generator_zone.gd" id="1_ylsgy"]
+[ext_resource type="Script" uid="uid://c7w8cbgvpvl7y" path="res://scripts/generator_zone.gd" id="1_ylsgy"]
 
 [node name="GeneratorZone" type="Node3D"]
 script = ExtResource("1_ylsgy")

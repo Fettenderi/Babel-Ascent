@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://bdvc54ayjupnt"]
 
-[ext_resource type="Script" path="res://scripts/floating_button.gd" id="1_5cod7"]
+[ext_resource type="Script" uid="uid://ccgfv3frvvdac" path="res://scripts/floating_button.gd" id="1_5cod7"]
 [ext_resource type="PackedScene" uid="uid://cme66uldrjl2i" path="res://addons/godot-xr-tools/interactables/interactable_area_button.tscn" id="1_7lp6s"]
 [ext_resource type="Material" uid="uid://ybpin33drebr" path="res://assets/materials/hands.tres" id="2_66qhm"]
 [ext_resource type="FontFile" uid="uid://bsfeh14ag5lbb" path="res://assets/fonts/UncialAntiqua-Regular.ttf" id="2_mjgt3"]

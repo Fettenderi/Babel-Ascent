@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cft7fbllvavgi"]
 
-[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_jwnfe"]
+[ext_resource type="Script" uid="uid://resogqbscpuk" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_jwnfe"]
 
 [node name="PickableObject" type="RigidBody3D"]
 collision_layer = 4

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="FightPhaseResource" load_steps=7 format=3 uid="uid://7haklakyfwqv"]
 
-[ext_resource type="Script" path="res://scripts/enemy_resource.gd" id="1_brsox"]
-[ext_resource type="Script" path="res://scripts/fight_phase_resource.gd" id="2_v7uwb"]
+[ext_resource type="Script" uid="uid://bjtr8jh8bxapg" path="res://scripts/enemy_resource.gd" id="1_brsox"]
+[ext_resource type="Script" uid="uid://dpy8vwy1jto2s" path="res://scripts/fight_phase_resource.gd" id="2_v7uwb"]
 [ext_resource type="Resource" uid="uid://15l66l55dsuo" path="res://assets/resources/enemies/throne.tres" id="2_xv4o3"]
 [ext_resource type="Resource" uid="uid://dkbc77cqlw0hl" path="res://assets/resources/enemies/seraphim.tres" id="3_4fc08"]
 [ext_resource type="Resource" uid="uid://5bs8ulyvsyp2" path="res://assets/resources/enemies/cherubim.tres" id="4_70uh7"]

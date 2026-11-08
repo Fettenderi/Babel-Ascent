@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://b1aim6j58c4ij"]
 
-[ext_resource type="Script" path="res://post_processing/1bit_effect.gd" id="1_aybmf"]
-[ext_resource type="Script" path="res://post_processing/palette_swapping_effect.gd" id="2_ohypo"]
-[ext_resource type="Script" path="res://scripts/post_processing.gd" id="3_kf6re"]
+[ext_resource type="Script" uid="uid://dkr0ulxv8eeaf" path="res://post_processing/1bit_effect.gd" id="1_aybmf"]
+[ext_resource type="Script" uid="uid://cb6ruywpb7tiw" path="res://post_processing/palette_swapping_effect.gd" id="2_ohypo"]
+[ext_resource type="Script" uid="uid://bclus18fjxex5" path="res://scripts/post_processing.gd" id="3_kf6re"]
 
 [sub_resource type="CompositorEffect" id="CompositorEffect_jxc8d"]
 resource_local_to_scene = false

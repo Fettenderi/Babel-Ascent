@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://8jhmsgyvle30"]
 
-[ext_resource type="Texture2D" uid="uid://o3kkedanj1s" path="res://assets/textures/eye.png" id="1_r6nu2"]
+[ext_resource type="Texture2D" uid="uid://cs8vobvtkk6gw" path="res://assets/textures/eye.png" id="1_r6nu2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gdl2d"]
 resource_name = "Material.003"

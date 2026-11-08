@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://cdm1qdok6gcqk"]
 
-[ext_resource type="Script" path="res://scripts/merch_slot.gd" id="1_7dwt2"]
+[ext_resource type="Script" uid="uid://b0crvmqdbakds" path="res://scripts/merch_slot.gd" id="1_7dwt2"]
 [ext_resource type="FontFile" uid="uid://bsfeh14ag5lbb" path="res://assets/fonts/UncialAntiqua-Regular.ttf" id="2_8kjkc"]
 [ext_resource type="PackedScene" uid="uid://b6any8ipar8u0" path="res://assets/models/tag.blend" id="2_p0045"]
 [ext_resource type="Material" uid="uid://ybpin33drebr" path="res://assets/materials/hands.tres" id="2_vkujr"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=4 uid="uid://bbhf0o63v45ur"]
 
 [ext_resource type="PackedScene" uid="uid://bq0l2igjq5icu" path="res://assets/models/merch_displayer.blend" id="1_5lbte"]
-[ext_resource type="Script" path="res://scripts/merch_displayer.gd" id="1_y0hxb"]
+[ext_resource type="Script" uid="uid://bdc155ejg7a2y" path="res://scripts/merch_displayer.gd" id="1_y0hxb"]
 [ext_resource type="PackedScene" uid="uid://b6any8ipar8u0" path="res://assets/models/tag.blend" id="2_8f48x"]
 [ext_resource type="FontFile" uid="uid://bsfeh14ag5lbb" path="res://assets/fonts/UncialAntiqua-Regular.ttf" id="3_g2mjp"]
 [ext_resource type="PackedScene" uid="uid://ce7vysyvondf8" path="res://addons/godot-xr-tools/objects/snap_zone.tscn" id="3_t3i5x"]

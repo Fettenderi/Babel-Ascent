@@ -1,10 +1,10 @@
 [gd_scene load_steps=35 format=4 uid="uid://bwfntoi2ykbx4"]
 
-[ext_resource type="Script" path="res://scripts/cannon.gd" id="1_q32ly"]
+[ext_resource type="Script" uid="uid://4dtx6j5dyhxk" path="res://scripts/cannon.gd" id="1_q32ly"]
 [ext_resource type="Material" uid="uid://c07wny4rhorcw" path="res://assets/materials/cannon.tres" id="1_qnpri"]
 [ext_resource type="PackedScene" uid="uid://bfxruhlfub012" path="res://objects/components/handle.tscn" id="1_trten"]
 [ext_resource type="PackedScene" uid="uid://dppmlrvrsvan" path="res://objects/pickables/cannon_ball.tscn" id="2_4gkt6"]
-[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/interactables/interactable_joystick.tscn" id="3_jce2g"]
+[ext_resource type="PackedScene" uid="uid://c4ux77k05hd4g" path="res://addons/godot-xr-tools/interactables/interactable_joystick.tscn" id="3_jce2g"]
 [ext_resource type="PackedScene" uid="uid://b0r6edl74ddo7" path="res://addons/godot-xr-tools/interactables/interactable_slider.tscn" id="3_v0va7"]
 [ext_resource type="PackedScene" uid="uid://dafjpqng1mmyy" path="res://objects/components/large_button.tscn" id="6_1ldrl"]
 [ext_resource type="PackedScene" uid="uid://c4nacos82syd6" path="res://objects/components/snap_zone_event.tscn" id="9_phiia"]

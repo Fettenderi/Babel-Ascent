@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_gepeb"]
 [ext_resource type="Material" uid="uid://c6rj5hgtuccay" path="res://assets/materials/merchant.tres" id="2_3nw2u"]
-[ext_resource type="Script" path="res://scripts/credits.gd" id="2_oyalf"]
+[ext_resource type="Script" uid="uid://y8ayfya80eu8" path="res://scripts/credits.gd" id="2_oyalf"]
 [ext_resource type="FontFile" uid="uid://bsfeh14ag5lbb" path="res://assets/fonts/UncialAntiqua-Regular.ttf" id="4_2gsrd"]
 [ext_resource type="PackedScene" uid="uid://rhn3ly03pvy8" path="res://objects/components/music_changer.tscn" id="5_dwyga"]
 [ext_resource type="Material" uid="uid://ybpin33drebr" path="res://assets/materials/hands.tres" id="5_h6dej"]

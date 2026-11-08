@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://j8disy850j84"]
 
 [ext_resource type="PackedScene" uid="uid://oocdsxrwxwck" path="res://objects/components/movement_behaviour.tscn" id="1_rbffe"]
-[ext_resource type="Script" path="res://scripts/sine_axis_movement.gd" id="2_yv0dx"]
+[ext_resource type="Script" uid="uid://omacr4y7h5o2" path="res://scripts/movement_modules/sine_axis_movement.gd" id="2_yv0dx"]
 
 [node name="SineAxisMovement" instance=ExtResource("1_rbffe")]
 script = ExtResource("2_yv0dx")

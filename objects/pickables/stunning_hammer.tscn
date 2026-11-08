@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_5dm00"]
 [ext_resource type="PackedScene" uid="uid://cbyaolkbtpevn" path="res://objects/components/stunning.tscn" id="4_v3jc6"]
 [ext_resource type="Animation" uid="uid://dqa0h82y3qn1t" path="res://addons/godot-xr-tools/hands/animations/left/Grip 1.res" id="5_lwoof"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="6_gwnef"]
+[ext_resource type="Script" uid="uid://bb5slk3tfq2ku" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="6_gwnef"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="7_q43c3"]
 [ext_resource type="Animation" uid="uid://daqddcrbpam0c" path="res://addons/godot-xr-tools/hands/animations/right/Grip 1.res" id="8_m0mj0"]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=27 format=3 uid="uid://wmaoufqbdfd4"]
 
-[ext_resource type="Script" path="res://scripts/xr_player.gd" id="1_ha0ac"]
+[ext_resource type="Script" uid="uid://dxspqxwhjee5s" path="res://scripts/xr_player.gd" id="1_ha0ac"]
 [ext_resource type="Material" uid="uid://ybpin33drebr" path="res://assets/materials/hands.tres" id="2_8v6jx"]
-[ext_resource type="Script" path="res://scripts/xr_camera_3d.gd" id="2_bb4j5"]
+[ext_resource type="Script" uid="uid://bcr228hv43og2" path="res://scripts/xr_camera_3d.gd" id="2_bb4j5"]
 [ext_resource type="PackedScene" uid="uid://bdwmserhqai5h" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_physics_hand_low.tscn" id="2_yig0o"]
 [ext_resource type="PackedScene" uid="uid://btf05hjpw6k05" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_physics_hand_low.tscn" id="3_a3xua"]
 [ext_resource type="PackedScene" uid="uid://bjcxf427un2wp" path="res://addons/godot-xr-tools/player/poke/poke.tscn" id="3_cgs28"]

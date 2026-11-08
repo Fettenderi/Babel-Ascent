@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cfg5nhp6kfrxo"]
 
 [ext_resource type="PackedScene" uid="uid://cme66uldrjl2i" path="res://addons/godot-xr-tools/interactables/interactable_area_button.tscn" id="1_1lmc0"]
-[ext_resource type="Script" path="res://scripts/harp_cord.gd" id="1_30ni5"]
+[ext_resource type="Script" uid="uid://cysvsiaou2gq8" path="res://scripts/harp_cord.gd" id="1_30ni5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_pu56v"]
 size = Vector3(1, 0.02, 0.02)

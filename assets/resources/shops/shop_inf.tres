@@ -2,8 +2,8 @@
 
 [ext_resource type="Resource" uid="uid://bqpgft8jb6kxr" path="res://assets/resources/items/tower_upgrade.tres" id="1_3neu4"]
 [ext_resource type="Resource" uid="uid://7haklakyfwqv" path="res://assets/resources/fights/fight_inf.tres" id="1_4vwba"]
-[ext_resource type="Script" path="res://scripts/shop_phase_resource.gd" id="1_jyaui"]
-[ext_resource type="Script" path="res://scripts/item_resource.gd" id="2_d8p4k"]
+[ext_resource type="Script" uid="uid://6m4ym58mpsuy" path="res://scripts/shop_phase_resource.gd" id="1_jyaui"]
+[ext_resource type="Script" uid="uid://c31l0m1jggg2" path="res://scripts/item_resource.gd" id="2_d8p4k"]
 
 [resource]
 script = ExtResource("1_jyaui")

@@ -9,5 +9,4 @@ extends WorldEnvironment
 			effect.set_deferred("enabled", value)
 
 func _ready() -> void:
-	if not Engine.is_editor_hint():
-		enabled = false
+	enabled = false
